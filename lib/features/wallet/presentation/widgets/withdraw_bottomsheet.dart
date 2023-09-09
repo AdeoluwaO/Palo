@@ -1,3 +1,4 @@
+import 'package:dispatchapp/features/wallet/presentation/widgets/widthdrawal_dialogue.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,7 @@ class WithdrawBottomSheet extends StatelessWidget {
             onTap: () {
               showDialog(
                 context: context,
-                builder: (context) => const AppAlertDialogue(),
+                builder: (context) => WidthdrawalAlertDialogue(),
               );
             },
           ),
@@ -45,7 +46,9 @@ class WithdrawBottomSheet extends StatelessWidget {
             width: 100.w,
             titleStyle:
                 AppTextStyle.bodyMedium.copyWith(color: AppColors.darkRed),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
         ],
       ),

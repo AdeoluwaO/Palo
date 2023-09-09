@@ -35,6 +35,9 @@ class WalletScreen extends StatelessWidget {
             //! check the lenght of the price from api
             //! if it's greater than 6 added an expanded text if not no
             CustomListTile(
+              onTap: () {
+                Navigator.pushNamed(context, RouteGenerator.transcationScreen);
+              },
               leading: const CircleAvatar(
                 foregroundImage: AssetImage(AppImages.testProfileImage),
               ),
@@ -51,6 +54,9 @@ class WalletScreen extends StatelessWidget {
             ),
             const Spacing.mediumHeight(),
             CustomListTile(
+              onTap: () {
+                Navigator.pushNamed(context, RouteGenerator.transcationScreen);
+              },
               leading: const CircleAvatar(
                 foregroundImage: AssetImage(AppImages.testProfileImage),
               ),
@@ -67,6 +73,9 @@ class WalletScreen extends StatelessWidget {
             ),
             const Spacing.mediumHeight(),
             CustomListTile(
+              onTap: () {
+                Navigator.pushNamed(context, RouteGenerator.transcationScreen);
+              },
               leading: const CircleAvatar(
                 foregroundImage: AssetImage(AppImages.testProfileImage),
               ),
@@ -83,6 +92,9 @@ class WalletScreen extends StatelessWidget {
             ),
             const Spacing.mediumHeight(),
             CustomListTile(
+              onTap: () {
+                Navigator.pushNamed(context, RouteGenerator.transcationScreen);
+              },
               leading: const CircleAvatar(
                 foregroundImage: AssetImage(AppImages.testProfileImage),
               ),
@@ -99,6 +111,9 @@ class WalletScreen extends StatelessWidget {
             ),
             const Spacing.mediumHeight(),
             CustomListTile(
+              onTap: () {
+                Navigator.pushNamed(context, RouteGenerator.transcationScreen);
+              },
               leading: const CircleAvatar(
                 foregroundImage: AssetImage(AppImages.testProfileImage),
               ),

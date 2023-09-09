@@ -81,7 +81,9 @@ class WidthdrawFundsScreen extends StatelessWidget {
               width: 100.w,
               titleStyle:
                   AppTextStyle.bodyMedium.copyWith(color: AppColors.darkRed),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
             const Spacing.mediumHeight(),
           ],

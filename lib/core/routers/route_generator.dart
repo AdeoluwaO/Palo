@@ -6,6 +6,7 @@ class RouteGenerator {
   static const vehicleScreen = 'vehicle_screen';
   static const walletScreen = 'wallet_screen';
   static const widthdrawFundsScreen = 'widthdraw_funds_screen';
+  static const transcationScreen = 'transaction_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -24,6 +25,10 @@ class RouteGenerator {
       case widthdrawFundsScreen:
         return CupertinoPageRoute(
           builder: (context) => const WidthdrawFundsScreen(),
+        );
+      case transcationScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const TransactionScreen(),
         );
       default:
         throw UnimplementedError('Route not found');
