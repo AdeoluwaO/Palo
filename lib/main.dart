@@ -1,3 +1,4 @@
+import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/login_screen.dart';
 import 'package:dispatchapp/shared/constants/strings.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,8 @@ class MyApp extends StatelessWidget {
         navigatorKey: navigatorKey,
         scrollBehavior: SBehavior(),
         title: appName,
+        initialRoute: RouteGenerator.moreScreen,
+        onGenerateRoute: RouteGenerator.onGenerateRoute,
         home: const MoreScreen(),
       ),
     );

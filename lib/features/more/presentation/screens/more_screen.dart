@@ -1,3 +1,4 @@
+import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
@@ -12,15 +13,57 @@ class MoreScreen extends StatelessWidget {
       titleText: 'More',
       centerTitle: true,
       body: ListView(
-        padding: EdgeInsets.all(16.w),
+        physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.w),
         children: [
-          AppImageView(
-            color: AppColors.primaryColor,
-            height: 100.h,
-            width: 100.w,
-            imagePath: AppConstants.testProfileImage,
+          const CircleAvatar(
+            foregroundImage: AssetImage(AppImages.testProfileImage),
+            radius: 90,
           ),
-          const Spacing.smallHeight()
+          const Spacing.mediumHeight(),
+          Text(
+            'Promise Tosin',
+            style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
+            textAlign: TextAlign.center,
+          ),
+          const Spacing.largeHeight(),
+          CustomListTile(
+            leadingIcon: AppImages.profileIcon,
+            title: 'Account',
+            subTitle: 'Upload your profile photo',
+            onTap: () {},
+          ),
+          const Spacing.bigHeight(),
+          CustomListTile(
+            leadingIcon: AppImages.walletIcon,
+            title: 'Wallet',
+            subTitle: 'Upload your profile photo',
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.walletScreen);
+            },
+          ),
+          const Spacing.bigHeight(),
+          CustomListTile(
+            leadingIcon: AppImages.transportationIcon,
+            title: 'Vehicle',
+            subTitle: 'Upload your profile photo',
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.vehicleScreen);
+            },
+          ),
+          const Spacing.bigHeight(),
+          CustomListTile(
+            leadingIcon: AppImages.helpIcon,
+            title: 'Help and Support',
+            subTitle: 'Upload your profile photo',
+            onTap: () {},
+          ),
+          const Spacing.bigHeight(),
+          AppButton(
+            title: 'Logout',
+            onTap: () {},
+          ),
+          const Spacing.mediumHeight()
         ],
       ),
     );

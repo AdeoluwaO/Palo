@@ -9,7 +9,7 @@ class NoChatWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SvgPicture.asset(AppConstants.noVisisbilityIcon),
+        SvgPicture.asset(AppImages.noVisisbilityIcon),
         const Text(
           'Nothing to see yet',
           style: AppTextStyle.headerMedium,
