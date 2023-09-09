@@ -3,8 +3,7 @@ class AppConstants {
   static const String baseSvgPath = "assets/images/svg";
 
 //?[PNG]
-  static const String testProfileImage =
-      '$baseImagePath/test_profile_image.png';
+  static const String testProfileImage = '$baseImagePath/berrystamp-logo.png';
 
 //?[SVG]
   static const String noVisisbilityIcon = '$baseSvgPath/visibility_off.svg';
