@@ -32,7 +32,12 @@ class WithdrawBottomSheet extends StatelessWidget {
             titleStyle:
                 AppTextStyle.bodyMedium.copyWith(color: AppColors.white),
             color: AppColors.darkRed,
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => const AppAlertDialogue(),
+              );
+            },
           ),
           const Spacing.smallHeight(),
           AppButton(

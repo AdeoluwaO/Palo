@@ -15,4 +15,6 @@ class AppImages {
   static const String arrowBack = '$baseSvgPath/arrow_forward_ios.svg';
   static const String nairaIcon = '$baseSvgPath/naira_icon.svg';
   static const String outboundIcon = '$baseSvgPath/outbound.svg';
+  static const String succssIcon = '$baseSvgPath/succes_icon.svg';
+  static const String errorIcon = '$baseSvgPath/error_icon.svg';
 }
