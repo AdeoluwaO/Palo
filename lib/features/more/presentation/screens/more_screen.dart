@@ -67,7 +67,9 @@ class MoreScreen extends StatelessWidget {
             title: 'Logout',
             titleStyle: AppTextStyle.headerLarge
                 .copyWith(fontSize: 16, color: AppColors.black),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.chatsScreen);
+            },
           ),
           const Spacing.mediumHeight()
         ],

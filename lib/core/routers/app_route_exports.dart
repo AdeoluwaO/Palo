@@ -20,3 +20,5 @@ export '../../features/help_and_support/presentation/screens/help_center_screen.
 export '../../features/help_and_support/presentation/screens/about_screen.dart';
 export '../../features/help_and_support/presentation/screens/terms_and_conditions_screen.dart';
 export '../../features/help_and_support/presentation/screens/privacy_policy_screen.dart';
+export '../../features/chat/presentation/screens/chat_screen.dart';
+export '../../features/chat/presentation/screens/chat_details_screen.dart';
