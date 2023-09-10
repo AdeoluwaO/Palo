@@ -31,7 +31,7 @@ class MyAccountScreen extends StatelessWidget {
             leadingIcon: AppImages.availableIcon,
             subTitle: 'Add your widthdrawal account',
             onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.widthdrawFundsScreen);
+              Navigator.pushNamed(context, RouteGenerator.myWidthdrawalScreen);
             },
           ),
           const Spacing.mediumHeight(),
@@ -46,7 +46,9 @@ class MyAccountScreen extends StatelessWidget {
             title: 'Password settings',
             leadingIcon: AppImages.passwordIcon,
             subTitle: 'Update your password',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.changePasswordScreen);
+            },
           ),
           const Spacing.mediumHeight(),
           CustomListTile(

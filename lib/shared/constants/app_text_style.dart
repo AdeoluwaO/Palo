@@ -44,4 +44,9 @@ class AppTextStyle {
       fontWeight: FontWeight.w600,
       fontSize: 20,
       color: AppColors.black);
+  static const TextStyle robotoFont = TextStyle(
+      fontFamily: 'RobotoRegular',
+      fontWeight: FontWeight.w500,
+      fontSize: 32,
+      color: AppColors.darkGrey);
 }

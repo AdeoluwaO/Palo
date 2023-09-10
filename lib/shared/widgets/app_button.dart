@@ -1,4 +1,5 @@
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
+import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,6 +17,7 @@ class AppButton extends StatelessWidget {
     this.borderColor,
     this.padding,
     this.titleStyle,
+    this.suffixIcon,
   });
   final Function() onTap;
   final String title;
@@ -25,6 +27,7 @@ class AppButton extends StatelessWidget {
   final EdgeInsets? padding;
   final double? width, height, borderRadius;
   final TextStyle? titleStyle;
+  final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -42,11 +45,19 @@ class AppButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius ?? 30),
         ),
         alignment: alignment ?? Alignment.center,
-        child: Text(
-          title,
-          style: titleStyle ??
-              AppTextStyle.headerLarge
-                  .copyWith(fontSize: 16, color: AppColors.white),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              title,
+              style: titleStyle ??
+                  AppTextStyle.headerLarge
+                      .copyWith(fontSize: 16, color: AppColors.white),
+              textAlign: TextAlign.center,
+            ),
+            const Spacing.mediumWidth(),
+            suffixIcon ?? const SizedBox.shrink(),
+          ],
         ),
       ),
     );

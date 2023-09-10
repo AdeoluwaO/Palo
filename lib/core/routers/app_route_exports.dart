@@ -6,3 +6,7 @@ export '../../features/wallet/presentation/screens/transaction_scren.dart';
 export '../../features/account/presentation/screens/my_account_screen.dart';
 export '../../features/profile/presentation/screens/my_profile_screen.dart';
 export '../../features/profile/presentation/screens/edit_profile_screen.dart';
+export '../../features/profile/presentation/screens/my_widthdrawal_screen.dart';
+export '../../features/profile/presentation/screens/change_password_scrreen.dart';
+export '../../features/profile/presentation/screens/new_password_screen.dart';
+export '../../features/profile/presentation/screens/otp_screen.dart';

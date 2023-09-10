@@ -23,7 +23,7 @@ class AppTextField extends StatefulWidget {
   final void Function(String)? onFieldSubmitted;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
-  final Color? bordercolor, backgroundColor, labelColor;
+  final Color? bordercolor, backgroundColor, labelColor, borderColor;
   final bool? autofocus;
   final String? label;
   final String? firstLabel;
@@ -31,45 +31,47 @@ class AppTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final bool isLoading;
   final double borderRadius;
-
+  final double? borderWidth;
   final String? initialValue;
 
-  const AppTextField({
-    Key? key,
-    this.width,
-    this.backgroundColor,
-    this.isLoading = false,
-    this.hintText,
-    this.controller,
-    this.minLines = 1,
-    this.obscureText = false,
-    this.enabled = true,
-    this.validateFunction,
-    this.onSaved,
-    this.onChange,
-    this.keyboardType,
-    this.textInputAction,
-    this.focusNode,
-    this.nextFocusNode,
-    this.submitAction,
-    this.enableErrorMessage = true,
-    this.maxLines = 1,
-    this.maxLength,
-    this.onFieldSubmitted,
-    this.suffixIcon,
-    this.prefixIcon,
-    this.bordercolor,
-    this.autofocus,
-    this.label,
-    this.firstLabel,
-    this.lastLabel,
-    this.inputFormatters,
-    this.borderRadius = 8,
-    this.initialValue,
-    this.labelSize,
-    this.labelColor,
-    this.onTap,
-  }) : super(key: key);
+  const AppTextField(
+      {Key? key,
+      this.width,
+      this.backgroundColor,
+      this.isLoading = false,
+      this.hintText,
+      this.controller,
+      this.minLines = 1,
+      this.obscureText = false,
+      this.enabled = true,
+      this.validateFunction,
+      this.onSaved,
+      this.onChange,
+      this.keyboardType,
+      this.textInputAction,
+      this.focusNode,
+      this.nextFocusNode,
+      this.submitAction,
+      this.enableErrorMessage = true,
+      this.maxLines = 1,
+      this.maxLength,
+      this.onFieldSubmitted,
+      this.suffixIcon,
+      this.prefixIcon,
+      this.bordercolor,
+      this.autofocus,
+      this.label,
+      this.firstLabel,
+      this.lastLabel,
+      this.inputFormatters,
+      this.borderRadius = 8,
+      this.initialValue,
+      this.labelSize,
+      this.labelColor,
+      this.onTap,
+      this.borderWidth,
+      this.borderColor})
+      : super(key: key);
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -171,15 +173,15 @@ class _AppTextFieldState extends State<AppTextField> {
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
-                borderSide: const BorderSide(
+                borderSide: BorderSide(
                   color: AppColors.grey,
-                  width: 1,
+                  width: widget.borderWidth ?? 1,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
-                borderSide: const BorderSide(
-                  color: AppColors.grey,
+                borderSide: BorderSide(
+                  color: widget.borderColor ?? AppColors.grey,
                   width: 0.5,
                 ),
               ),

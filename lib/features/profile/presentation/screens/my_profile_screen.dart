@@ -16,7 +16,7 @@ class MyProfileScreen extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.w),
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 60,
               foregroundImage: AssetImage(AppImages.testProfileImage),
             ),
