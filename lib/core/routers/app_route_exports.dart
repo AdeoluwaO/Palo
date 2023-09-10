@@ -15,3 +15,6 @@ export '../../features/profile/presentation/screens/otp_screen.dart';
 export '../../features/notifications/presentation/screens/notification_setting_screen.dart';
 export '../../features/display/presntation/screen/display_screen.dart';
 export '../../features/availability/presentation/screens/availability_screen.dart';
+export '../../features/help_and_support/presentation/screens/help_and_support_screen.dart';
+export '../../features/help_and_support/presentation/screens/help_center_screen.dart';
+export '../../features/help_and_support/presentation/screens/about_screen.dart';

@@ -13,42 +13,47 @@ class SimpleListTile extends StatelessWidget {
     this.trailingText,
     this.onTapSwitch,
     this.switchValue = true,
+    this.onTap,
   });
   final Color? color;
   final String? trailingText;
   final Widget? trailing, leading;
   final bool? switchValue;
   final Function(bool value)? onTapSwitch;
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 84.h,
-      width: 335.w,
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: color ?? AppColors.lightPurple,
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              leading ?? const SizedBox.shrink(),
-              Text(
-                trailingText ?? 'Add Text Here',
-                style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
-              ),
-            ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 84.h,
+        width: 335.w,
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: color ?? AppColors.lightPurple,
           ),
-          trailing ??
-              CupertinoSwitch(
-                value: switchValue!,
-                onChanged: onTapSwitch,
-              )
-        ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                leading ?? const SizedBox.shrink(),
+                Text(
+                  trailingText ?? 'Add Text Here',
+                  style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
+                ),
+              ],
+            ),
+            trailing ??
+                CupertinoSwitch(
+                  value: switchValue!,
+                  onChanged: onTapSwitch,
+                )
+          ],
+        ),
       ),
     );
   }

@@ -58,7 +58,9 @@ class MoreScreen extends StatelessWidget {
             leadingIcon: AppImages.helpIcon,
             title: 'Help and Support',
             subTitle: 'Upload your profile photo',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.helpAndSupportScreen);
+            },
           ),
           const Spacing.bigHeight(),
           AppButton(
