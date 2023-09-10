@@ -9,12 +9,14 @@ class RouteGenerator {
   static const transcationScreen = 'transaction_screen';
   static const myAccountScreen = 'my_account_screen';
   static const deleteAccountScreen = 'delete_account_screen';
+  static const confirmDeleteAccountScreen = 'confirm_delete_account_screen';
   static const myProfileScreen = 'my_profile_screen';
   static const editProfileScreen = 'edit_screen';
   static const myWidthdrawalScreen = 'my_widthdrawal_screen';
   static const changePasswordScreen = 'change_password_screen';
   static const newPasswordScreen = 'new_password_screen';
   static const otpScreen = 'otp_screen';
+  static const notificationsSettingsScreen = 'notifications_settings_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -69,6 +71,14 @@ class RouteGenerator {
       case deleteAccountScreen:
         return CupertinoPageRoute(
           builder: (context) => const DeleteAccountScreen(),
+        );
+      case confirmDeleteAccountScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const ConfirmDeleteccountScreen(),
+        );
+      case notificationsSettingsScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const NotificationSettingsScreen(),
         );
       default:
         throw UnimplementedError('Route not found');

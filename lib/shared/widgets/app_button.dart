@@ -55,7 +55,9 @@ class AppButton extends StatelessWidget {
                       .copyWith(fontSize: 16, color: AppColors.white),
               textAlign: TextAlign.center,
             ),
-            const Spacing.mediumWidth(),
+            suffixIcon != null
+                ? const Spacing.mediumWidth()
+                : const SizedBox.shrink(),
             suffixIcon ?? const SizedBox.shrink(),
           ],
         ),

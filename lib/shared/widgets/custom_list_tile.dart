@@ -40,12 +40,7 @@ class CustomListTile extends StatelessWidget {
           children: [
             Row(
               children: [
-                leading ??
-                    SvgPicture.asset(
-                      leadingIcon ?? AppImages.noVisisbilityIcon,
-                      height: 30.h,
-                      width: 30.w,
-                    ),
+                leading ?? const SizedBox.shrink(),
                 const Spacing.mediumWidth(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,6 +52,7 @@ class CustomListTile extends StatelessWidget {
                     Text(
                       subTitle ?? '',
                       style: AppTextStyle.bodySmall,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),

@@ -36,14 +36,14 @@ class WithdrawBottomSheet extends StatelessWidget {
             onTap: () {
               showDialog(
                 context: context,
-                builder: (context) => WidthdrawalAlertDialogue(),
+                builder: (context) => const WidthdrawalAlertDialogue(),
               );
             },
           ),
           const Spacing.smallHeight(),
           AppButton(
             title: 'Cancel',
-            width: 100.w,
+            width: 150.w,
             titleStyle:
                 AppTextStyle.bodyMedium.copyWith(color: AppColors.darkRed),
             onTap: () {

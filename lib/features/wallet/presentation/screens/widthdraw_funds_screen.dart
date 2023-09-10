@@ -62,7 +62,7 @@ class WidthdrawFundsScreen extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: AppButton(
                 title: 'Cancel',
-                width: 100.w,
+                width: 150.w,
                 titleStyle:
                     AppTextStyle.bodyMedium.copyWith(color: AppColors.darkRed),
                 onTap: () {

@@ -31,9 +31,6 @@ class WalletScreen extends StatelessWidget {
                   .copyWith(fontSize: 20, color: AppColors.black),
             ),
             const Spacing.mediumHeight(),
-            //! add an expanede to price text
-            //! check the lenght of the price from api
-            //! if it's greater than 6 added an expanded text if not no
             CustomListTile(
               onTap: () {
                 Navigator.pushNamed(context, RouteGenerator.transcationScreen);
@@ -43,13 +40,16 @@ class WalletScreen extends StatelessWidget {
               ),
               title: 'Payment for Order996789123456',
               subTitle: 'Feb 23, 07:06',
-              trailing: Text(
-                '+4500',
-                style: AppTextStyle.bodyMediumX.copyWith(
-                  fontSize: 12,
-                  color: AppColors.green,
+              trailing: SizedBox(
+                width: 40.w,
+                child: Text(
+                  '+4500',
+                  style: AppTextStyle.bodyMediumX.copyWith(
+                    fontSize: 12,
+                    color: AppColors.green,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-                overflow: TextOverflow.ellipsis,
               ),
             ),
             const Spacing.mediumHeight(),
@@ -62,13 +62,16 @@ class WalletScreen extends StatelessWidget {
               ),
               title: 'Widthdrawals',
               subTitle: '4 mins ago',
-              trailing: Text(
-                '+4500',
-                style: AppTextStyle.bodyMediumX.copyWith(
-                  fontSize: 12,
-                  color: AppColors.red,
+              trailing: SizedBox(
+                width: 40.w,
+                child: Text(
+                  '+4500',
+                  style: AppTextStyle.bodyMediumX.copyWith(
+                    fontSize: 12,
+                    color: AppColors.red,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-                overflow: TextOverflow.ellipsis,
               ),
             ),
             const Spacing.mediumHeight(),
@@ -81,13 +84,16 @@ class WalletScreen extends StatelessWidget {
               ),
               title: 'Payment for Order2328tw1w1esd',
               subTitle: 'Mar 23, 07:06',
-              trailing: Text(
-                '+500',
-                style: AppTextStyle.bodyMediumX.copyWith(
-                  fontSize: 12,
-                  color: AppColors.green,
+              trailing: SizedBox(
+                width: 40.w,
+                child: Text(
+                  '+500',
+                  style: AppTextStyle.bodyMediumX.copyWith(
+                    fontSize: 12,
+                    color: AppColors.green,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-                overflow: TextOverflow.ellipsis,
               ),
             ),
             const Spacing.mediumHeight(),
@@ -100,13 +106,16 @@ class WalletScreen extends StatelessWidget {
               ),
               title: 'Payment for Order1w2ejd2ejdwd',
               subTitle: 'Jan 31, 07:06',
-              trailing: Text(
-                '+10000',
-                style: AppTextStyle.bodyMediumX.copyWith(
-                  fontSize: 12,
-                  color: AppColors.red,
+              trailing: SizedBox(
+                width: 40.w,
+                child: Text(
+                  '+10000',
+                  style: AppTextStyle.bodyMediumX.copyWith(
+                    fontSize: 12,
+                    color: AppColors.red,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
-                overflow: TextOverflow.ellipsis,
               ),
             ),
             const Spacing.mediumHeight(),
@@ -121,9 +130,10 @@ class WalletScreen extends StatelessWidget {
               subTitle: 'Feb 23, 07:06',
               //? expanded heres with overflow
               //? to collapse anyover flowing
-              trailing: Expanded(
+              trailing: SizedBox(
+                width: 40.w,
                 child: Text(
-                  '+100000000000000',
+                  '+1000000',
                   style: AppTextStyle.bodyMediumX.copyWith(
                     fontSize: 12,
                     color: AppColors.green,

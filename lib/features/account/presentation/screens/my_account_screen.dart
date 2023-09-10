@@ -55,7 +55,10 @@ class MyAccountScreen extends StatelessWidget {
             title: 'Notifications',
             leadingIcon: AppImages.notificationIcon,
             subTitle: 'Update your notifications settings',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                  context, RouteGenerator.notificationsSettingsScreen);
+            },
           ),
           const Spacing.mediumHeight(),
           CustomListTile(

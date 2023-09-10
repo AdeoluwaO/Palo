@@ -10,3 +10,4 @@ export './info_contaner.dart';
 export './app_snackbar.dart';
 export './app_dropdown.dart';
 export './pin_code_widget.dart';
+export './simple_tile_widget.dart';

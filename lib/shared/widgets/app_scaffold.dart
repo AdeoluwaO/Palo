@@ -11,19 +11,26 @@ class AppScaffold extends StatelessWidget {
       required this.body,
       this.leading,
       this.centerTitle = false,
+      this.largeTitle = false,
       this.titleText,
       this.showBackButton = false});
   final Widget body;
   final Widget? leading;
   final String? titleText;
   final bool? centerTitle, showBackButton;
+  //? this helps to expand the app bar height
+  //? when the title like [Confrim Delete Account] screen is large
+  final bool largeTitle;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize:
-            centerTitle! ? Size.fromHeight(80.h) : Size.fromHeight(130.h),
+        preferredSize: centerTitle!
+            ? Size.fromHeight(80.h)
+            : !largeTitle
+                ? Size.fromHeight(130.h)
+                : Size.fromHeight(200.h),
         child: AppBar(
           flexibleSpace: Padding(
             padding: EdgeInsets.only(top: 20.h),
