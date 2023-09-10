@@ -18,6 +18,7 @@ class MyProfileScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 60,
+              foregroundImage: AssetImage(AppImages.testProfileImage),
             ),
             const Spacing.mediumHeight(),
             const AccountInfoContainer(title: 'Promise'),
@@ -28,17 +29,14 @@ class MyProfileScreen extends StatelessWidget {
             const Spacing.mediumHeight(),
             const AccountInfoContainer(title: '0908316384385u'),
             const Spacing.mediumHeight(),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: AppButton(
-                  color: AppColors.darkRed,
-                  title: 'Edit profile',
-                  width: 240.w,
-                  onTap: () {
-                    Navigator.pushNamed(
-                        context, RouteGenerator.editProfileScreen);
-                  }),
-            ),
+            AppButton(
+                color: AppColors.darkRed,
+                title: 'Edit profile',
+                width: 240.w,
+                onTap: () {
+                  Navigator.pushNamed(
+                      context, RouteGenerator.editProfileScreen);
+                }),
             const Spacing.mediumHeight(),
           ],
         ));

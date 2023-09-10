@@ -15,38 +15,32 @@ class WidthdrawFundsScreen extends StatelessWidget {
     return AppScaffold(
         showBackButton: true,
         titleText: 'Withdraw funds',
-        body: Column(
+        body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          physics: const BouncingScrollPhysics(),
           children: [
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                physics: const BouncingScrollPhysics(),
-                children: [
-                  AppTextField(
-                    hintText: 'Amount to widthdraw',
-                    width: 100.w,
-                  ),
-                  const Spacing.mediumHeight(),
-                  AppTextField(
-                    hintText: 'Enter your password',
-                    width: 100.w,
-                  ),
-                  const Spacing.mediumHeight(),
-                  const AccountInfoContainer(
-                    title: '2143588371',
-                  ),
-                  const Spacing.mediumHeight(),
-                  const AccountInfoContainer(
-                    title: 'First Bank',
-                  ),
-                  const Spacing.mediumHeight(),
-                  const AccountInfoContainer(
-                    title: 'Adesemoye Promise',
-                  ),
-                  const Spacing.mediumHeight(),
-                ],
-              ),
+            AppTextField(
+              hintText: 'Amount to widthdraw',
+              width: 100.w,
             ),
+            const Spacing.mediumHeight(),
+            AppTextField(
+              hintText: 'Enter your password',
+              width: 100.w,
+            ),
+            const Spacing.mediumHeight(),
+            const AccountInfoContainer(
+              title: '2143588371',
+            ),
+            const Spacing.mediumHeight(),
+            const AccountInfoContainer(
+              title: 'First Bank',
+            ),
+            const Spacing.mediumHeight(),
+            const AccountInfoContainer(
+              title: 'Adesemoye Promise',
+            ),
+            const Spacing.mediumHeight(),
             AppButton(
               title: 'Widthdraw now',
               width: 240.w,
@@ -64,14 +58,17 @@ class WidthdrawFundsScreen extends StatelessWidget {
               },
             ),
             const Spacing.mediumHeight(),
-            AppButton(
-              title: 'Cancel',
-              width: 100.w,
-              titleStyle:
-                  AppTextStyle.bodyMedium.copyWith(color: AppColors.darkRed),
-              onTap: () {
-                Navigator.pop(context);
-              },
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: AppButton(
+                title: 'Cancel',
+                width: 100.w,
+                titleStyle:
+                    AppTextStyle.bodyMedium.copyWith(color: AppColors.darkRed),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
             const Spacing.mediumHeight(),
           ],
