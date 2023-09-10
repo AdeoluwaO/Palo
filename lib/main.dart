@@ -1,9 +1,11 @@
+import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/login_screen.dart';
 import 'package:dispatchapp/shared/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:dispatchapp/features/more/presentation/screens/more_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,11 +34,14 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(428, 926),
       builder: (BuildContext context, Widget? child) => MaterialApp(
-          debugShowCheckedModeBanner: false,
-          navigatorKey: navigatorKey,
-          scrollBehavior: SBehavior(),
-          title: appName,
-          home: LoginScreen()),
+        debugShowCheckedModeBanner: false,
+        navigatorKey: navigatorKey,
+        scrollBehavior: SBehavior(),
+        title: appName,
+        initialRoute: RouteGenerator.moreScreen,
+        onGenerateRoute: RouteGenerator.onGenerateRoute,
+        home: const MoreScreen(),
+      ),
     );
   }
 }
