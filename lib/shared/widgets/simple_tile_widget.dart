@@ -34,11 +34,15 @@ class SimpleListTile extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          leading ??
+          Row(
+            children: [
+              leading ?? const SizedBox.shrink(),
               Text(
                 trailingText ?? 'Add Text Here',
                 style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
               ),
+            ],
+          ),
           trailing ??
               CupertinoSwitch(
                 value: switchValue!,

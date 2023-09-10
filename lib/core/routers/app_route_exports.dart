@@ -13,3 +13,5 @@ export '../../features/profile/presentation/screens/change_password_scrreen.dart
 export '../../features/profile/presentation/screens/new_password_screen.dart';
 export '../../features/profile/presentation/screens/otp_screen.dart';
 export '../../features/notifications/presentation/screens/notification_setting_screen.dart';
+export '../../features/display/presntation/screen/display_screen.dart';
+export '../../features/availability/presentation/screens/availability_screen.dart';

@@ -50,6 +50,8 @@ class _NotificationSettingsScreenState
             CustomListTile(
               title: 'Payment',
               subTitle: 'Upload profile photo',
+              //! note!!! sized box removes the default leading icon
+              leading: const SizedBox.shrink(),
               trailing: CupertinoSwitch(
                 value: allowPayments,
                 onChanged: (bool value) {
@@ -62,6 +64,8 @@ class _NotificationSettingsScreenState
             const Spacing.mediumHeight(),
             CustomListTile(
                 title: 'Messages',
+                //! note!!! sized box removes the default leading icon
+                leading: const SizedBox.shrink(),
                 subTitle:
                     'Allow notifications so you wont miss reples\nfrom customers',
                 trailing: CupertinoSwitch(

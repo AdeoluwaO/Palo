@@ -39,7 +39,9 @@ class MyAccountScreen extends StatelessWidget {
             title: 'Display',
             leadingIcon: AppImages.availableIcon,
             subTitle: 'Upload profile photo',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.displayScreen);
+            },
           ),
           const Spacing.mediumHeight(),
           CustomListTile(
@@ -65,7 +67,9 @@ class MyAccountScreen extends StatelessWidget {
             title: 'Availability',
             leadingIcon: AppImages.availableIcon,
             subTitle: 'Set your available time',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.availabilityScreen);
+            },
           ),
           const Spacing.mediumHeight(),
           CustomListTile(
