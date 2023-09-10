@@ -1,6 +1,5 @@
 import 'package:dispatchapp/shared/constants/app_text_style.dart';
 import 'package:dispatchapp/shared/constants/colors.dart';
-import 'package:dispatchapp/shared/constants/images.dart';
 import 'package:dispatchapp/shared/widgets/app_button.dart';
 import 'package:dispatchapp/shared/widgets/app_dialogue.dart';
 import 'package:dispatchapp/shared/widgets/app_scaffold.dart';
