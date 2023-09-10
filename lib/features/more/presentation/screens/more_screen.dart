@@ -31,7 +31,9 @@ class MoreScreen extends StatelessWidget {
             leadingIcon: AppImages.profileIcon,
             title: 'Account',
             subTitle: 'Upload your profile photo',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.myAccountScreen);
+            },
           ),
           const Spacing.bigHeight(),
           CustomListTile(
@@ -61,6 +63,8 @@ class MoreScreen extends StatelessWidget {
           const Spacing.bigHeight(),
           AppButton(
             title: 'Logout',
+            titleStyle: AppTextStyle.headerLarge
+                .copyWith(fontSize: 16, color: AppColors.black),
             onTap: () {},
           ),
           const Spacing.mediumHeight()

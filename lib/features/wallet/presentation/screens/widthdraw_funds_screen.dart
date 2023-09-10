@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:dispatchapp/features/wallet/presentation/widgets/info_contaner.dart';
+import 'package:dispatchapp/shared/widgets/info_contaner.dart';
 import 'package:dispatchapp/features/wallet/presentation/widgets/withdraw_bottomsheet.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
@@ -34,26 +34,14 @@ class WidthdrawFundsScreen extends StatelessWidget {
                   const Spacing.mediumHeight(),
                   const AccountInfoContainer(
                     title: '2143588371',
-                    titleStyle: AppTextStyle.bodyMedium,
-                    alignment: Alignment.centerLeft,
-                    color: AppColors.lightPurple,
-                    borderRadius: 12,
                   ),
                   const Spacing.mediumHeight(),
                   const AccountInfoContainer(
                     title: 'First Bank',
-                    titleStyle: AppTextStyle.bodyMedium,
-                    alignment: Alignment.centerLeft,
-                    color: AppColors.lightPurple,
-                    borderRadius: 12,
                   ),
                   const Spacing.mediumHeight(),
                   const AccountInfoContainer(
                     title: 'Adesemoye Promise',
-                    titleStyle: AppTextStyle.bodyMedium,
-                    alignment: Alignment.centerLeft,
-                    color: AppColors.lightPurple,
-                    borderRadius: 12,
                   ),
                   const Spacing.mediumHeight(),
                 ],

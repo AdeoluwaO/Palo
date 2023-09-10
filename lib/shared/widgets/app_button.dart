@@ -44,7 +44,9 @@ class AppButton extends StatelessWidget {
         alignment: alignment ?? Alignment.center,
         child: Text(
           title,
-          style: titleStyle ?? AppTextStyle.headerLarge.copyWith(fontSize: 16),
+          style: titleStyle ??
+              AppTextStyle.headerLarge
+                  .copyWith(fontSize: 16, color: AppColors.white),
         ),
       ),
     );

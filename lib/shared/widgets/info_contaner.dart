@@ -31,16 +31,16 @@ class AccountInfoContainer extends StatelessWidget {
       padding:
           padding ?? EdgeInsets.symmetric(horizontal: 14.w, vertical: 18.h),
       decoration: BoxDecoration(
-        color: color,
+        color: color ?? AppColors.lightPurple,
         border: Border.all(
           color: borderColor ?? Colors.transparent,
         ),
-        borderRadius: BorderRadius.circular(borderRadius ?? 0),
+        borderRadius: BorderRadius.circular(borderRadius ?? 12),
       ),
-      alignment: alignment ?? Alignment.center,
+      alignment: alignment ?? Alignment.centerLeft,
       child: Text(
         title,
-        style: titleStyle ?? AppTextStyle.headerLarge.copyWith(fontSize: 16),
+        style: titleStyle ?? AppTextStyle.bodyMedium,
       ),
     );
   }

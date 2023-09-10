@@ -6,3 +6,4 @@ export './app_button.dart';
 export './app_text_input.dart';
 export './app_bottomsheet.dart';
 export './app_alert_dialogue.dart';
+export './info_contaner.dart';
