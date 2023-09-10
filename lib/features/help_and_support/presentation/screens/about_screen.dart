@@ -32,7 +32,8 @@ class AboutScreen extends StatelessWidget {
               leading: SvgPicture.asset(AppImages.helpIcon),
               trailing: const Icon(Icons.chevron_right),
               onTap: () {
-                Navigator.pushNamed(context, RouteGenerator.aboutScreen);
+                Navigator.pushNamed(
+                    context, RouteGenerator.termAndConditionScreen);
               },
             ),
             const Spacing.mediumHeight(),
@@ -41,7 +42,8 @@ class AboutScreen extends StatelessWidget {
               leading: SvgPicture.asset(AppImages.helpIcon),
               trailing: const Icon(Icons.chevron_right),
               onTap: () {
-                Navigator.pushNamed(context, RouteGenerator.aboutScreen);
+                Navigator.pushNamed(
+                    context, RouteGenerator.privacyPolicyScreen);
               },
             ),
             const Spacing.largeHeight(),

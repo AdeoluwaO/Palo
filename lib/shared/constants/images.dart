@@ -31,4 +31,5 @@ class AppImages {
   static const String availableIcon = '$baseSvgPath/availability_icon.svg';
   static const String infoIcon = '$baseSvgPath/info_svg.svg';
   static const String berrystampLogo = '$baseSvgPath/berrystamp_logo.svg';
+  static const String privacyIcon = '$baseSvgPath/privacy_svg.svg';
 }

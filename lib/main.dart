@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: navigatorKey,
         scrollBehavior: SBehavior(),
-        title: appName,
+        title: AppStrings.appName,
         initialRoute: RouteGenerator.moreScreen,
         onGenerateRoute: RouteGenerator.onGenerateRoute,
         home: const MoreScreen(),
