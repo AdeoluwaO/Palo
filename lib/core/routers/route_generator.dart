@@ -8,6 +8,7 @@ class RouteGenerator {
   static const widthdrawFundsScreen = 'widthdraw_funds_screen';
   static const transcationScreen = 'transaction_screen';
   static const myAccountScreen = 'my_account_screen';
+  static const deleteAccountScreen = 'delete_account_screen';
   static const myProfileScreen = 'my_profile_screen';
   static const editProfileScreen = 'edit_screen';
   static const myWidthdrawalScreen = 'my_widthdrawal_screen';
@@ -64,6 +65,10 @@ class RouteGenerator {
       case otpScreen:
         return CupertinoPageRoute(
           builder: (context) => const OtpScreen(),
+        );
+      case deleteAccountScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const DeleteAccountScreen(),
         );
       default:
         throw UnimplementedError('Route not found');

@@ -69,7 +69,9 @@ class MyAccountScreen extends StatelessWidget {
             title: 'Delete Account',
             leadingIcon: AppImages.deleteIcon,
             subTitle: 'Delete your account and data',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.deleteAccountScreen);
+            },
           ),
         ],
       ),
