@@ -8,12 +8,17 @@ class RouteGenerator {
   static const widthdrawFundsScreen = 'widthdraw_funds_screen';
   static const transcationScreen = 'transaction_screen';
   static const myAccountScreen = 'my_account_screen';
+  static const deleteAccountScreen = 'delete_account_screen';
+  static const confirmDeleteAccountScreen = 'confirm_delete_account_screen';
   static const myProfileScreen = 'my_profile_screen';
   static const editProfileScreen = 'edit_screen';
   static const myWidthdrawalScreen = 'my_widthdrawal_screen';
   static const changePasswordScreen = 'change_password_screen';
   static const newPasswordScreen = 'new_password_screen';
   static const otpScreen = 'otp_screen';
+  static const notificationsSettingsScreen = 'notifications_settings_screen';
+  static const availabilityScreen = 'availability_screen';
+  static const displayScreen = 'display_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -64,6 +69,26 @@ class RouteGenerator {
       case otpScreen:
         return CupertinoPageRoute(
           builder: (context) => const OtpScreen(),
+        );
+      case deleteAccountScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const DeleteAccountScreen(),
+        );
+      case confirmDeleteAccountScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const ConfirmDeleteccountScreen(),
+        );
+      case notificationsSettingsScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const NotificationSettingsScreen(),
+        );
+      case availabilityScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AvailabilityScreen(),
+        );
+      case displayScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const DisplayScreen(),
         );
       default:
         throw UnimplementedError('Route not found');
