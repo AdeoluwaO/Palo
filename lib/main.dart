@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
           title: AppStrings.appName,
           initialRoute: RouteGenerator.addWithdrawalScreen,
           onGenerateRoute: RouteGenerator.onGenerateRoute,
-          //home: const MoreScreen(),
-          home: const AddWithdrawalAccount()
+          home: const MoreScreen(),
+          //home: const AddWithdrawalAccount()
       ),
     );
   }
