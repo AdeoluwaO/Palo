@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +45,6 @@ class AppScaffold extends StatelessWidget {
                           ),
                           onPressed: () {
                             Navigator.pop(context);
-                            log('POPING');
                           },
                         )
                     : const SizedBox.shrink(),

@@ -15,4 +15,5 @@ class AppColors {
   static const Color transparent = Colors.transparent;
   static const Color lightRed = Color.fromRGBO(82, 0, 11, 0.2);
   static const Color lighterRed =  Color.fromRGBO(94, 81, 172, 0.05);
+  static const Color yellow = Color.fromRGBO(225, 242, 172, 1);
 }
