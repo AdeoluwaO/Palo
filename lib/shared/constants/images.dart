@@ -32,4 +32,7 @@ class AppImages {
   static const String infoIcon = '$baseSvgPath/info_svg.svg';
   static const String berrystampLogo = '$baseSvgPath/berrystamp_logo.svg';
   static const String privacyIcon = '$baseSvgPath/privacy_svg.svg';
+  static const String backIcon = '$baseSvgPath/arrow_back.svg';
+  static const String close = '$baseSvgPath/close.svg';
+  static const String expandMore = '$baseSvgPath/expand_more.svg';
 }

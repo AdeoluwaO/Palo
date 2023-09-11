@@ -22,3 +22,4 @@ export '../../features/help_and_support/presentation/screens/terms_and_condition
 export '../../features/help_and_support/presentation/screens/privacy_policy_screen.dart';
 export '../../features/chat/presentation/screens/chat_screen.dart';
 export '../../features/chat/presentation/screens/chat_details_screen.dart';
+export '../../features/add_withdrawal/add_withdrawal_account.dart';

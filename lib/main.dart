@@ -1,24 +1,23 @@
-import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/login_screen.dart';
+import 'package:dispatchapp/shared/app_providers.dart';
 import 'package:dispatchapp/shared/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:dispatchapp/features/more/presentation/screens/more_screen.dart';
+import 'package:provider/provider.dart';
+
+import 'core/routers/route_generator.dart';
+import 'features/add_withdrawal/add_withdrawal_account.dart';
+import 'features/more/presentation/screens/more_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialize();
-  runApp(
-    // MultiProvider(
-    // providers: appProviders,
-    // child:
-
-    const MyApp(),
-  );
-
-  // );
+  runApp(MultiProvider(
+    providers: appProviders,
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -34,13 +33,14 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(428, 926),
       builder: (BuildContext context, Widget? child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        navigatorKey: navigatorKey,
-        scrollBehavior: SBehavior(),
-        title: AppStrings.appName,
-        initialRoute: RouteGenerator.moreScreen,
-        onGenerateRoute: RouteGenerator.onGenerateRoute,
-        home: const MoreScreen(),
+          debugShowCheckedModeBanner: false,
+          navigatorKey: navigatorKey,
+          scrollBehavior: SBehavior(),
+          title: AppStrings.appName,
+          initialRoute: RouteGenerator.addWithdrawalScreen,
+          onGenerateRoute: RouteGenerator.onGenerateRoute,
+          //home: const MoreScreen(),
+          home: const AddWithdrawalAccount()
       ),
     );
   }
