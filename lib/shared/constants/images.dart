@@ -35,4 +35,6 @@ class AppImages {
   static const String backIcon = '$baseSvgPath/arrow_back.svg';
   static const String close = '$baseSvgPath/close.svg';
   static const String expandMore = '$baseSvgPath/expand_more.svg';
+  static const String orderIcon = '$baseSvgPath/order_icon.svg';
+  static const String newOrderIcon = '$baseSvgPath/new_order_icon.svg';
 }

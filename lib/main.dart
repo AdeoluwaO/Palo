@@ -1,3 +1,4 @@
+import 'package:dispatchapp/core/routers/app_route_exports.dart';
 import 'package:dispatchapp/login_screen.dart';
 import 'package:dispatchapp/shared/app_providers.dart';
 import 'package:dispatchapp/shared/constants/strings.dart';
@@ -8,7 +9,6 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 
 import 'core/routers/route_generator.dart';
-import 'features/add_withdrawal/add_withdrawal_account.dart';
 import 'features/more/presentation/screens/more_screen.dart';
 
 void main() async {
@@ -37,10 +37,9 @@ class MyApp extends StatelessWidget {
           navigatorKey: navigatorKey,
           scrollBehavior: SBehavior(),
           title: AppStrings.appName,
-          initialRoute: RouteGenerator.addWithdrawalScreen,
+          initialRoute: RouteGenerator.orderNotificationsScreen,
           onGenerateRoute: RouteGenerator.onGenerateRoute,
-          home: const MoreScreen(),
-          //home: const AddWithdrawalAccount()
+          home: const OrderNotificationsScreen(),
       ),
     );
   }
