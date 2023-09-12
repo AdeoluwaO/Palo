@@ -47,7 +47,9 @@ class OrdersScreen extends StatelessWidget {
             orderStatus: 'In Transit',
             orderStatusTextColor: AppColors.green,
             orderStatusBackgroundColor: AppColors.green200,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.orderDetailScreen);
+            },
           ),
           const Spacing.mediumHeight(),
           RecentOrderInfoWidget(
