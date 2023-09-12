@@ -26,6 +26,9 @@ class RouteGenerator {
   static const privacyPolicyScreen = 'privay_policy_screen';
   static const chatsScreen = 'chats_screen';
   static const chatDetailsScreen = 'chat_details_screen';
+  static const ordersScreen = 'orders_screen';
+  static const noRecentOrderScreen = 'no_recent_order_screen';
+  static const orderDetailScreen = 'order_detail_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -124,6 +127,18 @@ class RouteGenerator {
       case chatDetailsScreen:
         return CupertinoPageRoute(
           builder: (context) => const ChatDetailsScreen(),
+        );
+      case ordersScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const OrdersScreen(),
+        );
+      case noRecentOrderScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const NoRecentOrderScreen(),
+        );
+      case orderDetailScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const OrderDetailScreen(),
         );
       default:
         throw UnimplementedError('Route not found');

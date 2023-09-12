@@ -1,5 +1,4 @@
 import 'package:dispatchapp/core/routers/route_generator.dart';
-import 'package:dispatchapp/login_screen.dart';
 import 'package:dispatchapp/shared/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

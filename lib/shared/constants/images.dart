@@ -7,6 +7,8 @@ class AppImages {
   static const String testProfileImage =
       '$baseImagePath/test_profile_image.png';
   static const String testVehicleImage = '$baseImagePath/vehicle_image.png';
+  static const String orderImage = '$baseImagePath/test_order_image.png';
+
 //?[SVG]
   static const String noVisisbilityIcon = '$baseSvgPath/visibility_off.svg';
   static const String profileIcon = '$baseSvgPath/person.svg';
@@ -32,4 +34,6 @@ class AppImages {
   static const String infoIcon = '$baseSvgPath/info_svg.svg';
   static const String berrystampLogo = '$baseSvgPath/berrystamp_logo.svg';
   static const String privacyIcon = '$baseSvgPath/privacy_svg.svg';
+  static const String successfulIcon = '$baseSvgPath/successful_icon.svg';
+  static const String noRecentOrderIcon = '$baseSvgPath/no_recent_orders.svg';
 }

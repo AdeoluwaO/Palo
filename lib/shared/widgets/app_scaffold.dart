@@ -30,24 +30,24 @@ class AppScaffold extends StatelessWidget {
                 ? Size.fromHeight(130.h)
                 : Size.fromHeight(200.h),
         child: AppBar(
+          automaticallyImplyLeading: false,
           flexibleSpace: Padding(
             padding: EdgeInsets.only(top: 20.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                showBackButton!
-                    ? leading ??
-                        IconButton(
-                          icon: const Icon(
-                            Icons.arrow_back,
-                            size: 30,
-                            color: AppColors.black,
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        )
-                    : const SizedBox.shrink(),
+                if (showBackButton!)
+                  leading ??
+                      IconButton(
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          size: 30,
+                          color: AppColors.black,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
                 const Spacing.mediumHeight(),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
