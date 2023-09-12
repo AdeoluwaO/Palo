@@ -9,7 +9,6 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 
 import 'core/routers/route_generator.dart';
-import 'features/add_withdrawal/add_withdrawal_account.dart';
 import 'features/more/presentation/screens/more_screen.dart';
 
 void main() async {
@@ -38,10 +37,9 @@ class MyApp extends StatelessWidget {
           navigatorKey: navigatorKey,
           scrollBehavior: SBehavior(),
           title: AppStrings.appName,
-          initialRoute: RouteGenerator.forgotPasswordScreen,
+          initialRoute: RouteGenerator.orderNotificationsScreen,
           onGenerateRoute: RouteGenerator.onGenerateRoute,
-          home: const ForgotPasswordScreen(),
-          //home: const AddWithdrawalAccount()
+          home: const OrderNotificationsScreen(),
       ),
     );
   }
