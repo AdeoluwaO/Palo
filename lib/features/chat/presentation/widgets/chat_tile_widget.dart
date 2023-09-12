@@ -1,6 +1,4 @@
-import 'package:dispatchapp/shared/constants/images.dart';
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class ChatTile extends StatelessWidget {
   const ChatTile({
