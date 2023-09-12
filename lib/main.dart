@@ -1,3 +1,4 @@
+import 'package:dispatchapp/core/routers/app_route_exports.dart';
 import 'package:dispatchapp/login_screen.dart';
 import 'package:dispatchapp/shared/app_providers.dart';
 import 'package:dispatchapp/shared/constants/strings.dart';
@@ -37,9 +38,9 @@ class MyApp extends StatelessWidget {
           navigatorKey: navigatorKey,
           scrollBehavior: SBehavior(),
           title: AppStrings.appName,
-          initialRoute: RouteGenerator.addWithdrawalScreen,
+          initialRoute: RouteGenerator.forgotPasswordScreen,
           onGenerateRoute: RouteGenerator.onGenerateRoute,
-          home: const MoreScreen(),
+          home: const ForgotPasswordScreen(),
           //home: const AddWithdrawalAccount()
       ),
     );
