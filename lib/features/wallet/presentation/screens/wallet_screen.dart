@@ -128,8 +128,8 @@ class WalletScreen extends StatelessWidget {
               ),
               title: 'Payment for Order996789123456',
               subTitle: 'Feb 23, 07:06',
-              //? expanded heres with overflow
-              //? to collapse anyover flowing
+              //? sizedbox heres helps with overflow
+              //? to ellipsis any over flowing
               trailing: SizedBox(
                 width: 40.w,
                 child: Text(
@@ -144,6 +144,6 @@ class WalletScreen extends StatelessWidget {
             ),
             const Spacing.mediumHeight(),
           ],
-        ));
+        ),);
   }
 }

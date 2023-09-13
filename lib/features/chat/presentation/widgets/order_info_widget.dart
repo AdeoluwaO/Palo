@@ -40,7 +40,11 @@ class OrderInfoWidget extends StatelessWidget {
                   color: statusColor,
                   borderRadius: BorderRadius.circular(5),
                 ),
-                child: Text(subtitle)),
+                child: Text(
+                  subtitle,
+                  style: AppTextStyle.bodySmall
+                      .copyWith(color: AppColors.darkYellow, fontSize: 12),
+                )),
           ],
         ),
       ),

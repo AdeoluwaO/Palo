@@ -68,7 +68,7 @@ class MoreScreen extends StatelessWidget {
             titleStyle: AppTextStyle.headerLarge
                 .copyWith(fontSize: 16, color: AppColors.black),
             onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.chatsScreen);
+              Navigator.pushNamed(context, RouteGenerator.ordersScreen);
             },
           ),
           const Spacing.mediumHeight()
