@@ -1,3 +1,4 @@
+import 'package:dispatchapp/features/help_and_support/presentation/widget/help_center_tile_widget.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +24,11 @@ class HelpCenterScreen extends StatelessWidget {
               textAlign: TextAlign.justify,
             ),
             const Spacing.mediumHeight(),
-            AppTextField(
-              prefixIcon: const Icon(Icons.phone_outlined),
-              hintText: '+2349065890900',
-              // enabled: false,
+            HelpCenterTile(
+              title: '+2349065890900',
+              leading: const Icon(Icons.phone_outlined),
+              color: AppColors.white,
+              borderColor: AppColors.grey,
               onTap: () {
                 final Uri telUri = Uri(
                   scheme: 'tel',
@@ -42,10 +44,11 @@ class HelpCenterScreen extends StatelessWidget {
               textAlign: TextAlign.justify,
             ),
             const Spacing.mediumHeight(),
-            AppTextField(
-              prefixIcon: const Icon(Icons.mail_outline),
-              hintText: 'berrystamp@gmail.com',
-              // enabled: false,
+            HelpCenterTile(
+              title: 'berrystamp@gmail.com',
+              leading: const Icon(Icons.mail_outline),
+              color: AppColors.white,
+              borderColor: AppColors.grey,
               onTap: () {
                 final Uri mailUri = Uri(
                   scheme: 'mailto',
@@ -53,7 +56,7 @@ class HelpCenterScreen extends StatelessWidget {
                 );
                 launchUrl(mailUri);
               },
-            )
+            ),
           ],
         ));
   }
