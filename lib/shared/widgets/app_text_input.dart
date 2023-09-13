@@ -33,6 +33,7 @@ class AppTextField extends StatefulWidget {
   final double borderRadius;
   final double? borderWidth;
   final String? initialValue;
+  final bool readOnly;
 
   const AppTextField(
       {Key? key,
@@ -70,7 +71,8 @@ class AppTextField extends StatefulWidget {
       this.labelColor,
       this.onTap,
       this.borderWidth,
-      this.borderColor})
+      this.borderColor,
+      this.readOnly = false})
       : super(key: key);
 
   @override
@@ -126,6 +128,7 @@ class _AppTextFieldState extends State<AppTextField> {
             ),
             cursorColor: AppColors.primaryColor,
             key: widget.key,
+            readOnly: widget.readOnly,
             maxLines: widget.maxLines,
             controller: widget.controller,
             obscureText: widget.obscureText!,
