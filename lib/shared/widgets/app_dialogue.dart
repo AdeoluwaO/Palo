@@ -41,6 +41,7 @@ class AppDialogue extends StatelessWidget {
                 style: AppTextStyle.bodyMediumX.copyWith(fontSize: 14),
               ),
             ),
+            // const Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: actionButtons!,
