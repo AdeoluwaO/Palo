@@ -67,7 +67,7 @@ class _NotificationSettingsScreenState
                 //! note!!! sized box removes the default leading icon
                 leading: const SizedBox.shrink(),
                 subTitle:
-                    'Allow notifications so you wont miss reples\nfrom customers',
+                    "Allow notifications so you won't miss replies\nfrom customers",
                 trailing: CupertinoSwitch(
                   value: allowMessages,
                   onChanged: (bool value) {

@@ -86,8 +86,8 @@ class OrderScreenBottomsheet extends StatelessWidget {
                             ),
                             IconButton(
                               onPressed: () {
-                                Navigator.pushNamed(
-                                    context, RouteGenerator.orderSuccessScreen);
+                                Navigator.pushNamed(context,
+                                    RouteGenerator.orderCancelledScreen);
                               },
                               tooltip: 'info',
                               icon: const Icon(Icons.info_outline_rounded),

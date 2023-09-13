@@ -10,6 +10,7 @@ class RouteGenerator {
   static const myAccountScreen = 'my_account_screen';
   static const deleteAccountScreen = 'delete_account_screen';
   static const confirmDeleteAccountScreen = 'confirm_delete_account_screen';
+  static const deleteAccountSuccessScreen = 'delete_account_success_screen';
   static const myProfileScreen = 'my_profile_screen';
   static const editProfileScreen = 'edit_screen';
   static const myWidthdrawalScreen = 'my_widthdrawal_screen';
@@ -89,6 +90,10 @@ class RouteGenerator {
       case confirmDeleteAccountScreen:
         return CupertinoPageRoute(
           builder: (context) => const ConfirmDeleteccountScreen(),
+        );
+      case deleteAccountSuccessScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const DeleteAccountSuccessScreen(),
         );
       case notificationsSettingsScreen:
         return CupertinoPageRoute(
