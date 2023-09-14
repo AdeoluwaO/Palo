@@ -64,7 +64,8 @@ class CurrentOrderInfoWidget extends StatelessWidget {
                 )
               ],
             ),
-            //? add custom stepper
+            const Spacing.mediumHeight(),
+            const DeliveryTrackerWidget(),
             const Spacing.mediumHeight(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

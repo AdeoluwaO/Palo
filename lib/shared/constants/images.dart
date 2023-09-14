@@ -42,6 +42,9 @@ class AppImages {
   static const String newOrderIcon = '$_baseSvgPath/new_order_icon.svg';
   static const String successfulIcon = '$_baseSvgPath/successful_icon.svg';
   static const String noRecentOrderIcon = '$_baseSvgPath/no_recent_orders.svg';
+  static const String activeIcon = '$_baseSvgPath/active.svg';
+  static const String inactiveIcon = '$_baseSvgPath/inactive.svg';
+  static const String checkedIcon = '$_baseSvgPath/checked.svg';
 
   //? [APP ANIMATIONS]
   static const String successAnimation = '$_animationsPath/success.json';
