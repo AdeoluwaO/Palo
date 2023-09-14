@@ -63,27 +63,29 @@ class AppImageView extends StatelessWidget {
       padding: margin ?? EdgeInsets.zero,
       child: InkWell(
         onTap: onTap,
-        child: _buildCircleImage(),
+        child: _buildImageWithBorder(),
       ),
     );
   }
 
   ///build the image with border radius
-  _buildCircleImage() {
-    if (radius != null) {
-      return ClipRRect(
-        borderRadius: radius ?? BorderRadius.zero,
-        child: _buildImageWithBorder(),
-      );
-    } else {
-      return _buildImageWithBorder();
-    }
-  }
+  // _buildCircleImage() {
+  //   if (radius != null) {
+  //     return ClipRRect(
+  //       borderRadius: radius ?? BorderRadius.zero,
+  //       child: _buildImageWithBorder(),
+  //     );
+  //   } else {
+  //     return _buildImageWithBorder();
+  //   }
+  // }
 
   ///build the image with border and border radius style
   _buildImageWithBorder() {
     if (border != null) {
       return Container(
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           border: border,
           borderRadius: radius,
@@ -143,9 +145,7 @@ class AppImageView extends StatelessWidget {
     } else if (imagePath != null && imagePath!.isNotEmpty) {
       return Image.asset(
         imagePath!,
-        height: height,
-        width: width,
-        fit: fit ?? BoxFit.cover,
+        // fit: fit ?? BoxFit.cover,
         color: color,
       );
     }

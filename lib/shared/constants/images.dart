@@ -7,6 +7,8 @@ class AppImages {
   static const String testProfileImage =
       '$baseImagePath/test_profile_image.png';
   static const String testVehicleImage = '$baseImagePath/vehicle_image.png';
+  static const String orderImage = '$baseImagePath/test_order_image.png';
+
 //?[SVG]
   static const String noVisisbilityIcon = '$baseSvgPath/visibility_off.svg';
   static const String profileIcon = '$baseSvgPath/person.svg';
@@ -43,4 +45,6 @@ class AppImages {
   static const String motorBikeIcon = '$baseSvgPath/two_wheeler.svg';
   static const String tricycleIcon = '$baseSvgPath/electric_rickshaw.svg';
   static const String othersIcon = '$baseSvgPath/truck.svg';
+  static const String successfulIcon = '$baseSvgPath/successful_icon.svg';
+  static const String noRecentOrderIcon = '$baseSvgPath/no_recent_orders.svg';
 }

@@ -32,7 +32,11 @@ class RouteGenerator {
   static const checkYourEmailScreen = 'check_your_email_screen';
   static const orderNotificationsScreen = 'order_notification_screen.dart';
   static const addYourVehicleScreen = 'add_your_vehicle.dart';
+  static const ordersScreen = 'orders_screen';
+  static const noRecentOrderScreen = 'no_recent_order_screen';
+  static const orderDetailScreen = 'order_detail_screen';
 
+  
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case moreScreen:
@@ -150,6 +154,17 @@ class RouteGenerator {
       case orderNotificationsScreen:
         return CupertinoPageRoute(
           builder: (context) => const OrderNotificationsScreen(),
+      case ordersScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const OrdersScreen(),
+        );
+      case noRecentOrderScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const NoRecentOrderScreen(),
+        );
+      case orderDetailScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const OrderDetailScreen(),
         );
       case addYourVehicleScreen:
         return CupertinoPageRoute(
