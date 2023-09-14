@@ -39,6 +39,12 @@ class AppImages {
   static const String expandMore = '$baseSvgPath/expand_more.svg';
   static const String orderIcon = '$baseSvgPath/order_icon.svg';
   static const String newOrderIcon = '$baseSvgPath/new_order_icon.svg';
+  static const String addPhotoIcon = '$baseSvgPath/add_a_photo.svg';
+  static const String carIcon = '$baseSvgPath/car.svg';
+  static const String bicycleIcon = '$baseSvgPath/bicycle.svg';
+  static const String motorBikeIcon = '$baseSvgPath/two_wheeler.svg';
+  static const String tricycleIcon = '$baseSvgPath/electric_rickshaw.svg';
+  static const String othersIcon = '$baseSvgPath/truck.svg';
   static const String successfulIcon = '$baseSvgPath/successful_icon.svg';
   static const String noRecentOrderIcon = '$baseSvgPath/no_recent_orders.svg';
 }

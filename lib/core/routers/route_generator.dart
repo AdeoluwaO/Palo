@@ -31,6 +31,7 @@ class RouteGenerator {
   static const enterNewPasswordScreen = 'enter_new_password_screen';
   static const checkYourEmailScreen = 'check_your_email_screen';
   static const orderNotificationsScreen = 'order_notification_screen.dart';
+  static const addYourVehicleScreen = 'add_your_vehicle.dart';
   static const ordersScreen = 'orders_screen';
   static const noRecentOrderScreen = 'no_recent_order_screen';
   static const orderDetailScreen = 'order_detail_screen';
@@ -164,6 +165,10 @@ class RouteGenerator {
       case orderDetailScreen:
         return CupertinoPageRoute(
           builder: (context) => const OrderDetailScreen(),
+        );
+      case addYourVehicleScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AddYourVehicleScreen(),
         );
       default:
         throw UnimplementedError('Route not found');
