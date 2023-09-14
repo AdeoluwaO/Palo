@@ -31,6 +31,7 @@ class RouteGenerator {
   static const enterNewPasswordScreen = 'enter_new_password_screen';
   static const checkYourEmailScreen = 'check_your_email_screen';
   static const orderNotificationsScreen = 'order_notification_screen.dart';
+  static const addYourVehicleScreen = 'add_your_vehicle.dart';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -149,6 +150,10 @@ class RouteGenerator {
       case orderNotificationsScreen:
         return CupertinoPageRoute(
           builder: (context) => const OrderNotificationsScreen(),
+        );
+      case addYourVehicleScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AddYourVehicleScreen(),
         );
       default:
         throw UnimplementedError('Route not found');
