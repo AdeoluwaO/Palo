@@ -18,7 +18,7 @@ class OrderScreenBottomsheet extends StatelessWidget {
       decoration: const BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.vertical(
-            top: Radius.circular(40),
+            top: Radius.circular(20),
           )),
       child: Column(
         children: [
@@ -51,7 +51,13 @@ class OrderScreenBottomsheet extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Text('Image'),
+                                AppImageView(
+                                  color: AppColors.black,
+                                  url:
+                                      'https://media.istockphoto.com/id/941858854/photo/herbs-and-spices-for-cooking-on-dark-background.webp?b=1&s=170667a&w=0&k=20&c=6SuZ9cUx6Km_dPWDORuY62_Bk_uj6UFUY-J2H7IC_Z8=',
+                                  height: 200.h,
+                                  width: 200.w,
+                                ),
                                 const Spacing.mediumWidth(),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +101,7 @@ class OrderScreenBottomsheet extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const Divider(),
+                      const Divider(thickness: 0.8),
                       Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 16.w, vertical: 16.h),

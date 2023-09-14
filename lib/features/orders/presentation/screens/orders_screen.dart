@@ -17,6 +17,54 @@ class OrdersScreen extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.w),
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              AppButton(
+                title: 'All',
+                onTap: () {},
+                height: 60.h,
+                color: AppColors.slateGray,
+              ),
+              // const Spacing.smallWidth(),
+              AppButton(
+                title: 'Ongoing',
+                onTap: () {},
+                // width: 38.w,
+                borderColor: AppColors.grey,
+                titleStyle: AppTextStyle.headerLarge.copyWith(
+                  fontSize: 14,
+                ),
+              ),
+              // const Spacing.smallWidth(),
+              AppButton(
+                title: 'Cancelled',
+                onTap: () {},
+                // width: 38.w,
+                borderColor: AppColors.grey,
+                titleStyle: AppTextStyle.headerLarge.copyWith(
+                  fontSize: 14,
+                ),
+              ),
+              // const Spacing.smallWidth(),
+              AppButton(
+                title: 'Completed',
+                onTap: () {},
+                // width: 38.w,
+                borderColor: AppColors.grey,
+                titleStyle: AppTextStyle.headerLarge.copyWith(
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
+          const Spacing.largeHeight(),
+          Text(
+            'Ongoing Orders',
+            style: AppTextStyle.bodyMediumX
+                .copyWith(fontSize: 20, color: AppColors.black),
+          ),
+          const Spacing.largeHeight(),
           const CurrentOrderInfoWidget(),
           const Spacing.bigHeight(),
           Text(

@@ -17,6 +17,7 @@
       <data android:scheme="mailto" />
     </intent>
   </queries>
+  <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="Dispatch App"
         android:name="${applicationName}"
