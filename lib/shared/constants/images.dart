@@ -35,6 +35,11 @@ class AppImages {
   static const String infoIcon = '$_baseSvgPath/info_svg.svg';
   static const String berrystampLogo = '$_baseSvgPath/berrystamp_logo.svg';
   static const String privacyIcon = '$_baseSvgPath/privacy_svg.svg';
+  static const String backIcon = '$_baseSvgPath/arrow_back.svg';
+  static const String close = '$_baseSvgPath/close.svg';
+  static const String expandMore = '$_baseSvgPath/expand_more.svg';
+  static const String orderIcon = '$_baseSvgPath/order_icon.svg';
+  static const String newOrderIcon = '$_baseSvgPath/new_order_icon.svg';
   static const String successfulIcon = '$_baseSvgPath/successful_icon.svg';
   static const String noRecentOrderIcon = '$_baseSvgPath/no_recent_orders.svg';
 
