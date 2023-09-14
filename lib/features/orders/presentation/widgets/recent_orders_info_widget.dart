@@ -31,7 +31,13 @@ class RecentOrderInfoWidget extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text('Image'),
+                AppImageView(
+                  imagePath: AppImages.orderImage,
+                  height: 60.h,
+                  width: 60.w,
+                  // color: AppColors.primaryColor,
+                  radius: BorderRadius.circular(0),
+                ),
                 const Spacing.mediumWidth(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

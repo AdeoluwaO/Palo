@@ -52,11 +52,11 @@ class OrderScreenBottomsheet extends StatelessWidget {
                             Row(
                               children: [
                                 AppImageView(
-                                  color: AppColors.black,
-                                  url:
-                                      'https://media.istockphoto.com/id/941858854/photo/herbs-and-spices-for-cooking-on-dark-background.webp?b=1&s=170667a&w=0&k=20&c=6SuZ9cUx6Km_dPWDORuY62_Bk_uj6UFUY-J2H7IC_Z8=',
-                                  height: 200.h,
-                                  width: 200.w,
+                                  imagePath: AppImages.orderImage,
+                                  height: 60.h,
+                                  width: 60.w,
+                                  // color: AppColors.primaryColor,
+                                  radius: BorderRadius.circular(0),
                                 ),
                                 const Spacing.mediumWidth(),
                                 Column(
@@ -64,27 +64,13 @@ class OrderScreenBottomsheet extends StatelessWidget {
                                   children: [
                                     Text(
                                       'orderId',
-                                      style: AppTextStyle.bodyMediumX.copyWith(
-                                          fontSize: 14, color: AppColors.black),
+                                      style: AppTextStyle.bodySmall,
                                     ),
                                     const Spacing.smallHeight(),
-                                    Container(
-                                      height: 30.h,
-                                      width: 90.w,
-                                      alignment: Alignment.center,
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 8.w, vertical: 6.h),
-                                      decoration: BoxDecoration(
-                                        color: AppColors.lightRed,
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                      child: Text(
-                                        'orderStatus',
-                                        style: AppTextStyle.bodySmall.copyWith(
-                                          fontWeight: FontWeight.w500,
-                                          color: AppColors.darkRed,
-                                        ),
-                                      ),
+                                    Text(
+                                      '996789123456',
+                                      style: AppTextStyle.bodyMediumX.copyWith(
+                                          fontSize: 14, color: AppColors.black),
                                     ),
                                   ],
                                 ),
@@ -92,8 +78,8 @@ class OrderScreenBottomsheet extends StatelessWidget {
                             ),
                             IconButton(
                               onPressed: () {
-                                Navigator.pushNamed(context,
-                                    RouteGenerator.orderCancelledScreen);
+                                Navigator.pushNamed(
+                                    context, RouteGenerator.orderSuccessScreen);
                               },
                               tooltip: 'info',
                               icon: const Icon(Icons.info_outline_rounded),

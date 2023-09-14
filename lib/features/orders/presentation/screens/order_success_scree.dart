@@ -1,9 +1,7 @@
 import 'package:dispatchapp/features/orders/presentation/widgets/custom_order_staus_scaffold.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
-import 'package:dispatchapp/shared/constants/images.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 class OrderSuccessScreen extends StatelessWidget {
@@ -13,15 +11,20 @@ class OrderSuccessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomOrderScreenScaffold(
       body: Center(
-        child: Column(
+        child: Stack(
           children: [
-            Lottie.asset(AppImages.successAnimation),
-            const Spacing.smallHeight(),
-            Text(
-              'Task successfully completed.\nYour payment will be sent into your\nwallet in minutes.',
-              style: AppTextStyle.bodySmall.copyWith(fontSize: 18),
-              textAlign: TextAlign.center,
-            )
+            Column(
+              children: [
+                Lottie.asset(AppImages.successAnimation),
+                const Spacing.smallHeight(),
+                Text(
+                  'Task successfully completed.\nYour payment will be sent into your\nwallet in minutes.',
+                  style: AppTextStyle.bodySmall.copyWith(fontSize: 18),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
+            Lottie.asset(AppImages.confettiAnimation, repeat: false),
           ],
         ),
       ),

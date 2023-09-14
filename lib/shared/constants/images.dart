@@ -45,4 +45,5 @@ class AppImages {
 
   //? [APP ANIMATIONS]
   static const String successAnimation = '$_animationsPath/success.json';
+  static const String confettiAnimation = '$_animationsPath/confetti.json';
 }

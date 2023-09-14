@@ -1,4 +1,3 @@
-
 import 'package:dispatchapp/core/routers/app_route_exports.dart';
 import 'package:dispatchapp/login_screen.dart';
 import 'package:dispatchapp/shared/app_providers.dart';
@@ -34,13 +33,13 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(428, 926),
       builder: (BuildContext context, Widget? child) => MaterialApp(
-          debugShowCheckedModeBanner: false,
-          navigatorKey: navigatorKey,
-          scrollBehavior: SBehavior(),
-          title: AppStrings.appName,
-          initialRoute: RouteGenerator.orderNotificationsScreen,
-          onGenerateRoute: RouteGenerator.onGenerateRoute,
-          home: const OrderNotificationsScreen(),
+        debugShowCheckedModeBanner: false,
+        navigatorKey: navigatorKey,
+        scrollBehavior: SBehavior(),
+        title: AppStrings.appName,
+        initialRoute: RouteGenerator.moreScreen,
+        onGenerateRoute: RouteGenerator.onGenerateRoute,
+        home: const MoreScreen(),
       ),
     );
   }
