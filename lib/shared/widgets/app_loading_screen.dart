@@ -25,6 +25,7 @@ class AppLoadingScreen extends StatelessWidget {
               message,
               style: AppTextStyle.bodySmall
                   .copyWith(fontSize: 14, color: AppColors.black),
+              textAlign: TextAlign.center,
             )
           ],
         ),

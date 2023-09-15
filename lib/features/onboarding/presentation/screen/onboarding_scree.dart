@@ -7,9 +7,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class OnboardingScreen extends StatelessWidget {
+class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
+  bool userHasGivenLoctionPermission = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,12 +61,8 @@ class OnboardingScreen extends StatelessWidget {
             AppButton(
                 title: 'New user, Sign Up!',
                 color: AppColors.darkRed,
-                onTap: () async {
-                  // Permission.location.request();
-                  // final locationStatus = Permission.location.status;
-                  // if (await locationStatus.isGranted ||
-                  //     await locationStatus.isLimited) {}
-                  Navigator.pushNamed(context, RouteGenerator.signupScreen);
+                onTap: () {
+                  Permission.location.request();
                 }),
             const Spacing.mediumHeight(),
             AppButton(
@@ -81,5 +83,19 @@ class OnboardingScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<bool> _getPermissionStatus() async {
+    final locationStatus = Permission.location.status;
+    if (await locationStatus.isGranted || await locationStatus.isLimited) {
+      return true;
+    }
+    return false;
+  }
+
+  _navigateToAuthScreen() {
+    if (userHasGivenLoctionPermission) {
+      Navigator.pushNamed(context, RouteGenerator.signupScreen);
+    }
   }
 }

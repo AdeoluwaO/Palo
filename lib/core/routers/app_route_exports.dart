@@ -39,6 +39,7 @@ export '../../features/authentication/presentation/screens/login_screen.dart';
 export '../../features/authentication/presentation/screens/register/signup_screen.dart';
 export '../../features/authentication/presentation/screens/register/signup_form_screen.dart';
 export '../../features/authentication/presentation/screens/register/select_account_type.dart';
+export '../../features/authentication/presentation/screens/register/update_account_screen.dart';
 export '../../features/authentication/presentation/screens/authentication_otp_screen.dart';
 export '../../features/authentication/presentation/screens/create_password_scren.dart';
 export '../../shared/widgets/app_loading_screen.dart';

@@ -16,33 +16,49 @@ class _SelectAccountTypeScreenState extends State<SelectAccountTypeScreen> {
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
-        titleText: 'Select your account type',
-        body: ListView(
-          padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.w),
-          children: [
-            CustomListTile(
-              leadingIcon: AppImages.profileIcon,
-              title: 'Individual',
-              subTitle: 'You own a vehicle that you ride',
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  RouteGenerator.loadingScreen,
-                  arguments: 'Creating your account',
-                );
-              },
-            ),
-            const Spacing.mediumHeight(),
-            CustomListTile(
-              leadingIcon: AppImages.businessIcon,
-              title: 'Business',
-              subTitle: 'You have more than one vehicles with drivers',
-              onTap: () {
-                Navigator.pushNamed(context, RouteGenerator.myAccountScreen);
-              },
-            ),
-          ],
-        ));
+    return isLoading
+        ? const AppLoadingScreen(
+            message: 'Creating your account',
+          )
+        : AppScaffold(
+            titleText: 'Select your account type',
+            body: ListView(
+              padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.w),
+              children: [
+                CustomListTile(
+                  leadingIcon: AppImages.profileIcon,
+                  title: 'Individual',
+                  subTitle: 'You own a vehicle that you ride',
+                  onTap: () {
+                    setState(() => isLoading = true);
+                    Future.delayed(
+                      const Duration(milliseconds: 500),
+                      () {
+                        setState(() => isLoading = false);
+                        Navigator.pushNamed(
+                            context, RouteGenerator.updateAccountScreen);
+                      },
+                    );
+                  },
+                ),
+                const Spacing.mediumHeight(),
+                CustomListTile(
+                  leadingIcon: AppImages.businessIcon,
+                  title: 'Business',
+                  subTitle: 'You have more than one vehicles with drivers',
+                  onTap: () {
+                    setState(() => isLoading = true);
+                    Future.delayed(
+                      const Duration(milliseconds: 500),
+                      () {
+                        setState(() => isLoading = false);
+                        Navigator.pushNamed(
+                            context, RouteGenerator.updateAccountScreen);
+                      },
+                    );
+                  },
+                ),
+              ],
+            ));
   }
 }
