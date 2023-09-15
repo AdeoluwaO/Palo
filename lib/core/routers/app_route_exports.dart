@@ -35,3 +35,5 @@ export '../../features/orders/presentation/screens/order_success_scree.dart';
 export '../../features/orders/presentation/screens/order_cancelled_screen.dart';
 export '../../features/orders/presentation/screens/order_details_screen.dart';
 export '../../features/onboarding/presentation/screen/onboarding_scree.dart';
+export '../../features/authentication/presentation/screens/login_screen.dart';
+export '../../features/authentication/presentation/screens/signup_screen.dart';

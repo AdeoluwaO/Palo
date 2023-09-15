@@ -12,3 +12,4 @@ export './app_dropdown.dart';
 export './pin_code_widget.dart';
 export './simple_tile_widget.dart';
 export './delivery_tracker_indicator_widget.dart';
+export './app_phone_number_input_field.dart';

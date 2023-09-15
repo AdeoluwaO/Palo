@@ -39,6 +39,8 @@ class RouteGenerator {
   static const orderCancelledScreen = 'order_cancelled_screen';
   static const orderDetailsScreen = 'order_details_screen';
   static const onboardingScreen = 'onboarding_screen';
+  static const loginScreen = 'login_screen';
+  static const signupScreen = 'signup_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -189,6 +191,14 @@ class RouteGenerator {
       case onboardingScreen:
         return CupertinoPageRoute(
           builder: (context) => const OnboardingScreen(),
+        );
+      case loginScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const LoginScreen(),
+        );
+      case signupScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const SignUpScreen(),
         );
       default:
         throw UnimplementedError('Route not found');

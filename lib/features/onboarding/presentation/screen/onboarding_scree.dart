@@ -1,3 +1,4 @@
+import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/app_button.dart';
 import 'package:dispatchapp/shared/widgets/app_spacing.dart';
@@ -54,8 +55,12 @@ class OnboardingScreen extends StatelessWidget {
             AppButton(
                 title: 'New user, Sign Up!',
                 color: AppColors.darkRed,
-                onTap: () {
-                  Permission.location.request();
+                onTap: () async {
+                  // Permission.location.request();
+                  // final locationStatus = Permission.location.status;
+                  // if (await locationStatus.isGranted ||
+                  //     await locationStatus.isLimited) {}
+                  Navigator.pushNamed(context, RouteGenerator.signupScreen);
                 }),
             const Spacing.mediumHeight(),
             AppButton(
@@ -64,8 +69,13 @@ class OnboardingScreen extends StatelessWidget {
                   color: AppColors.darkRed,
                 ),
                 color: AppColors.purple200,
-                onTap: () {
-                  Permission.location.request();
+                onTap: () async {
+                  // Permission.location.request();
+                  // final locationStatus = Permission.location.status;
+                  // if (await locationStatus.isGranted ||
+                  //     await locationStatus.isLimited) {}
+
+                  Navigator.pushNamed(context, RouteGenerator.loginScreen);
                 })
           ],
         ),
