@@ -12,12 +12,14 @@ class AppPinCodeField extends StatelessWidget {
     this.controller,
     this.obscureText,
     this.obscureCharacter,
+    this.keyboardType,
   });
   final Function(String pin) onComplete;
   final Function(String pin)? onChange;
   final TextEditingController? controller;
   final bool? obscureText;
   final String? obscureCharacter;
+  final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return PinCodeFields(
@@ -25,6 +27,7 @@ class AppPinCodeField extends StatelessWidget {
       onComplete: onComplete,
       controller: controller,
       onChange: onChange,
+      keyboardType: keyboardType ?? TextInputType.phone,
       obscureCharacter: obscureCharacter ?? "*",
       obscureText: obscureText ?? false,
       activeBorderColor: AppColors.darkGrey,

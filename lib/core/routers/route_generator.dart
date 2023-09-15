@@ -41,6 +41,9 @@ class RouteGenerator {
   static const onboardingScreen = 'onboarding_screen';
   static const loginScreen = 'login_screen';
   static const signupScreen = 'signup_screen';
+  static const signupFormScreen = 'signup_form_screen';
+  static const authOtpScreen = 'auth_otp_screen';
+  static const createPasswordScreen = 'create_password_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -129,8 +132,10 @@ class RouteGenerator {
           builder: (context) => const AboutScreen(),
         );
       case termAndConditionScreen:
+        final showAgreeToTerms = routeSettings.arguments as bool;
         return CupertinoPageRoute(
-          builder: (context) => const TermsAndConditionScreen(),
+          builder: (context) =>
+              TermsAndConditionScreen(showAgreeToTerms: showAgreeToTerms),
         );
       case privacyPolicyScreen:
         return CupertinoPageRoute(
@@ -199,6 +204,21 @@ class RouteGenerator {
       case signupScreen:
         return CupertinoPageRoute(
           builder: (context) => const SignUpScreen(),
+        );
+      case authOtpScreen:
+        final String phoneNumber = routeSettings.arguments as String;
+        return CupertinoPageRoute(
+          builder: (context) =>
+              AuthenticationOtpScreen(phoneNumber: phoneNumber),
+        );
+      case createPasswordScreen:
+        final String phoneNumber = routeSettings.arguments as String;
+        return CupertinoPageRoute(
+          builder: (context) => CreatePasswordScreen(phoneNumber: phoneNumber),
+        );
+      case signupFormScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const SignupFormScreen(),
         );
       default:
         throw UnimplementedError('Route not found');

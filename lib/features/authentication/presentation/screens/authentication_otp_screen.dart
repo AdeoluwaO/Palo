@@ -1,13 +1,23 @@
-import 'dart:developer';
-
 import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class OtpScreen extends StatelessWidget {
-  const OtpScreen({super.key});
+class AuthenticationOtpScreen extends StatefulWidget {
+  const AuthenticationOtpScreen({
+    super.key,
+    required this.phoneNumber,
+  });
+  final String phoneNumber;
+
+  @override
+  State<AuthenticationOtpScreen> createState() =>
+      _AuthenticationOtpScreenState();
+}
+
+class _AuthenticationOtpScreenState extends State<AuthenticationOtpScreen> {
+  String otpCode = '';
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +33,14 @@ class OtpScreen extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 children: [
                   Text(
-                    'We sent an otp to your email to confirm your new\ndetails',
+                    'We sent a code to ${widget.phoneNumber}',
                     style: AppTextStyle.bodySmall.copyWith(fontSize: 14),
                   ),
                   const Spacing.mediumHeight(),
                   AppPinCodeField(
-                    onComplete: (String pin) {},
+                    onComplete: (String pin) {
+                      setState(() => otpCode = pin);
+                    },
                   ),
                   const Spacing.mediumHeight(),
                   AppButton(
@@ -49,28 +61,17 @@ class OtpScreen extends StatelessWidget {
                 width: 109.w,
                 suffixIcon: const Icon(Icons.chevron_right_outlined,
                     size: 20, color: AppColors.white),
-                color: AppColors.darkRed,
+                color: otpCode.length == 6
+                    ? AppColors.darkRed
+                    : AppColors.darkRed.withOpacity(0.3),
                 titleStyle: AppTextStyle.headerLarge
                     .copyWith(fontSize: 17, color: AppColors.white),
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    //?
-                    SnackBar(
-                      backgroundColor: Colors.transparent,
-                      elevation: 0,
-                      duration: const Duration(milliseconds: 900),
-                      dismissDirection: DismissDirection.up,
-                      behavior: SnackBarBehavior.floating,
-                      margin: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).size.height - 150,
-                        left: 10.w,
-                        right: 10.w,
-                      ),
-                      content: const AppSnackbar(message: 'Password updated!'),
-                    ),
-                  );
-                  Navigator.pushNamed(
-                      context, RouteGenerator.newPasswordScreen);
+                  if (otpCode.length == 6) {
+                    Navigator.pushNamed(
+                        context, RouteGenerator.createPasswordScreen,
+                        arguments: widget.phoneNumber);
+                  }
                 },
               ),
             ),
@@ -79,5 +80,12 @@ class OtpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _navigateToCreatePassword() {
+    if (otpCode.length == 6) {
+      Navigator.pushNamed(context, RouteGenerator.createPasswordScreen,
+          arguments: widget.phoneNumber);
+    }
   }
 }
