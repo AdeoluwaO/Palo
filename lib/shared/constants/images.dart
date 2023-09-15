@@ -50,6 +50,7 @@ class AppImages {
   static const String businessIcon = '$_baseSvgPath/business_icon.svg';
   static const String imageIcon = '$_baseSvgPath/image_icon.svg';
   static const String mailIcon = '$_baseSvgPath/mail_icon.svg';
+  static const String homeIcon = '$_baseSvgPath/home.svg';
 
   //? [APP ANIMATIONS]
   static const String successAnimation = '$_animationsPath/success.json';

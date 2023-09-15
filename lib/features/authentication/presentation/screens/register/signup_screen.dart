@@ -37,7 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onInputChanged: (value) {
                         setState(() => phoneNumber = value.toString());
                       },
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -46,6 +46,7 @@ class RouteGenerator {
   static const authOtpScreen = 'auth_otp_screen';
   static const createPasswordScreen = 'create_password_screen';
   static const updateAccountScreen = 'update_profile_screen';
+  static const dashboardScreen = 'dashboard_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -228,7 +229,11 @@ class RouteGenerator {
         );
       case updateAccountScreen:
         return CupertinoPageRoute(
-          builder: (context) => UpdateAccountScreen(),
+          builder: (context) => const UpdateAccountScreen(),
+        );
+      case dashboardScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const DashboardScreen(),
         );
       default:
         throw UnimplementedError('Route not found');

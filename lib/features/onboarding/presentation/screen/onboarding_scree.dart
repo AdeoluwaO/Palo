@@ -1,3 +1,5 @@
+import 'dart:developer';
+// import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/app_button.dart';
@@ -15,7 +17,6 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  bool userHasGivenLoctionPermission = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +64,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 color: AppColors.darkRed,
                 onTap: () {
                   Permission.location.request();
+                  Navigator.pushNamed(context, RouteGenerator.signupScreen);
                 }),
             const Spacing.mediumHeight(),
             AppButton(
@@ -72,30 +74,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 color: AppColors.purple200,
                 onTap: () async {
-                  // Permission.location.request();
-                  // final locationStatus = Permission.location.status;
-                  // if (await locationStatus.isGranted ||
-                  //     await locationStatus.isLimited) {}
-
+                  Permission.location.request();
                   Navigator.pushNamed(context, RouteGenerator.loginScreen);
                 })
           ],
         ),
       ),
     );
-  }
-
-  Future<bool> _getPermissionStatus() async {
-    final locationStatus = Permission.location.status;
-    if (await locationStatus.isGranted || await locationStatus.isLimited) {
-      return true;
-    }
-    return false;
-  }
-
-  void _navigateToAuthScreen() {
-    if (userHasGivenLoctionPermission && ModalRoute.of(context)!.isCurrent) {
-      Navigator.pushNamed(context, RouteGenerator.signupScreen);
-    }
   }
 }
