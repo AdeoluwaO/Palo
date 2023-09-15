@@ -135,10 +135,10 @@ class RouteGenerator {
           builder: (context) => const AboutScreen(),
         );
       case termAndConditionScreen:
-        final showAgreeToTerms = routeSettings.arguments as bool;
+        final showAgreeToTerms = routeSettings.arguments as bool?;
         return CupertinoPageRoute(
-          builder: (context) =>
-              TermsAndConditionScreen(showAgreeToTerms: showAgreeToTerms),
+          builder: (context) => TermsAndConditionScreen(
+              showAgreeToTerms: showAgreeToTerms ?? false),
         );
       case privacyPolicyScreen:
         return CupertinoPageRoute(

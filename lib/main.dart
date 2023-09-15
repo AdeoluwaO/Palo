@@ -1,6 +1,4 @@
-import 'package:dispatchapp/core/routers/app_route_exports.dart';
 import 'package:dispatchapp/features/onboarding/presentation/screen/splash_screen.dart';
-import 'package:dispatchapp/login_screen.dart';
 import 'package:dispatchapp/shared/app_providers.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +8,6 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 
 import 'core/routers/route_generator.dart';
-import 'features/more/presentation/screens/more_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,6 +37,19 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           highlightColor: AppColors.transparent,
           splashColor: AppColors.transparent,
+          splashFactory: NoSplash.splashFactory,
+          buttonTheme: const ButtonThemeData(
+            highlightColor: AppColors.transparent,
+            splashColor: AppColors.transparent,
+          ),
+          textButtonTheme: const TextButtonThemeData(
+              style: ButtonStyle(
+                  overlayColor: MaterialStatePropertyAll(AppColors.transparent),
+                  splashFactory: NoSplash.splashFactory)),
+          iconButtonTheme: const IconButtonThemeData(
+              style: ButtonStyle(
+                  overlayColor: MaterialStatePropertyAll(AppColors.transparent),
+                  splashFactory: NoSplash.splashFactory)),
           bottomSheetTheme: const BottomSheetThemeData(
               backgroundColor: AppColors.transparent),
         ),
