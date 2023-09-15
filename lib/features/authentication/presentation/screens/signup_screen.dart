@@ -31,12 +31,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       subtitle: 'We will send a code to verify your phone',
                     ),
                     const Spacing.mediumHeight(),
-                    // AppTextField(
-                    //   hintText: 'Phone number',
-                    //   controller: phoneNumeberController,
-                    //   onChange: (String value) {},
-                    // ),
                     AppPhoneNumberInputField(
+                      controller: phoneNumeberController,
                       onInputChanged: (value) {},
                     )
                   ],
@@ -47,8 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: AppButton(
                     title: 'Next',
                     width: 109.w,
-                    color: AppColors.darkRed.withOpacity(
-                        phoneNumeberController.text.isNotEmpty ? 1 : 0.2),
+                    color: AppColors.darkRed.withOpacity(0.2),
                     suffixIcon: const Icon(
                       Icons.chevron_right,
                       size: 20,
