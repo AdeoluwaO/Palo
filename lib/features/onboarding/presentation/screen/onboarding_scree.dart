@@ -93,8 +93,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return false;
   }
 
-  _navigateToAuthScreen() {
-    if (userHasGivenLoctionPermission) {
+  void _navigateToAuthScreen() {
+    if (userHasGivenLoctionPermission && ModalRoute.of(context)!.isCurrent) {
       Navigator.pushNamed(context, RouteGenerator.signupScreen);
     }
   }
