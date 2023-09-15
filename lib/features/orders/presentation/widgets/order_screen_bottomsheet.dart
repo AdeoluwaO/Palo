@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/features/orders/presentation/widgets/order_deliver_info_widget.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
@@ -5,12 +7,22 @@ import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class OrderScreenBottomsheet extends StatelessWidget {
+class OrderScreenBottomsheet extends StatefulWidget {
   const OrderScreenBottomsheet({super.key});
 
   @override
+  State<OrderScreenBottomsheet> createState() => _OrderScreenBottomsheetState();
+}
+
+class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
+  double height = 160.h;
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
+    log('HEIGHT   $height');
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      height: height,
       padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 0),
       decoration: const BoxDecoration(
           color: AppColors.white,
@@ -19,18 +31,23 @@ class OrderScreenBottomsheet extends StatelessWidget {
           )),
       child: Column(
         children: [
-          Container(
-            width: 50.w,
-            height: 8.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: AppColors.grey,
+          GestureDetector(
+            onPanStart: (details) {
+              setState(() => height += 80);
+            },
+            child: Container(
+              width: 50.w,
+              height: 8.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: AppColors.grey,
+              ),
             ),
           ),
           const Spacing.bigHeight(),
           Expanded(
             child: ListView(
-              physics: const BouncingScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               children: [
                 GestureDetector(
                   onTap: () {

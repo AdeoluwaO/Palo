@@ -46,6 +46,7 @@ class AppImages {
   static const String activeIcon = '$_baseSvgPath/active.svg';
   static const String inactiveIcon = '$_baseSvgPath/inactive.svg';
   static const String checkedIcon = '$_baseSvgPath/checked.svg';
+  static const String onboardingIcon = '$_baseSvgPath/onboarding_image.svg';
 
   //? [APP ANIMATIONS]
   static const String successAnimation = '$_animationsPath/success.json';

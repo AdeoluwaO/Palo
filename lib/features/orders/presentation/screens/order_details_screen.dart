@@ -58,6 +58,76 @@ class OrderDetailsScreen extends StatelessWidget {
           const Spacing.mediumHeight(),
           _rowText(title: 'Vehicle used', message: 'Motorcycle'),
           const Spacing.mediumHeight(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Status',
+                style: AppTextStyle.bodyMediumX.copyWith(fontSize: 14),
+              ),
+              Container(
+                height: 30.h,
+                width: 90.w,
+                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 6.h),
+                decoration: BoxDecoration(
+                  color: AppColors.green200,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Text(
+                  'Completed',
+                  style: AppTextStyle.bodySmall
+                      .copyWith(color: AppColors.darkGreen, fontSize: 12),
+                ),
+              ),
+            ],
+          ),
+          const Spacing.mediumHeight(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Customer rating',
+                style: AppTextStyle.bodyMediumX.copyWith(fontSize: 14),
+              ),
+              Row(
+                children: [
+                  Text(
+                    '4.0',
+                    style: AppTextStyle.bodyMediumX
+                        .copyWith(fontSize: 16, color: AppColors.black),
+                  ),
+                  const Icon(
+                    Icons.star,
+                    color: AppColors.goldYellow,
+                  ),
+                  const Icon(
+                    Icons.star,
+                    color: AppColors.goldYellow,
+                  ),
+                  const Icon(
+                    Icons.star,
+                    color: AppColors.goldYellow,
+                  ),
+                  const Icon(
+                    Icons.star_outline,
+                    color: AppColors.goldYellow,
+                  ),
+                ],
+              )
+            ],
+          ),
+          const Spacing.mediumHeight(),
+          Text(
+            'Customer comment',
+            style: AppTextStyle.bodyMediumX.copyWith(fontSize: 14),
+          ),
+          const Spacing.mediumHeight(),
+          Text(
+            'A town hall different from balablu',
+            style: AppTextStyle.bodyMediumX
+                .copyWith(fontSize: 14, color: AppColors.black),
+          ),
         ],
       ),
     );

@@ -26,13 +26,13 @@ class CustomListTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 335.w,
+        // width: 335.w,
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: color ?? AppColors.lightPurple,
-          ),
+          // border: Border.all(
+          //   color: color ?? AppColors.lightPurple,
+          // ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

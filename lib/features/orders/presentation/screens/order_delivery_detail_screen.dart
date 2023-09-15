@@ -14,14 +14,6 @@ class OrderDeliveryDetailScreen extends StatefulWidget {
 
 class _OrderDeliveryDetailScreenState extends State<OrderDeliveryDetailScreen> {
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _bottomSheet();
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -51,7 +43,7 @@ class _OrderDeliveryDetailScreenState extends State<OrderDeliveryDetailScreen> {
                         size: 30,
                       ),
                       onTap: () {
-                        _bottomSheet();
+                        // _bottomSheet();
                       },
                     ),
                   ],
@@ -61,16 +53,7 @@ class _OrderDeliveryDetailScreenState extends State<OrderDeliveryDetailScreen> {
           ),
         ),
       ),
-    );
-  }
-
-  _bottomSheet() {
-    return showModalBottomSheet(
-      backgroundColor: AppColors.transparent,
-      context: context,
-      builder: (context) {
-        return OrderScreenBottomsheet();
-      },
+      bottomSheet: OrderScreenBottomsheet(),
     );
   }
 }

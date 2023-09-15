@@ -1,7 +1,8 @@
 import 'package:dispatchapp/core/routers/app_route_exports.dart';
+import 'package:dispatchapp/features/onboarding/presentation/screen/splash_screen.dart';
 import 'package:dispatchapp/login_screen.dart';
 import 'package:dispatchapp/shared/app_providers.dart';
-import 'package:dispatchapp/shared/constants/strings.dart';
+import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,10 +37,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: navigatorKey,
         scrollBehavior: SBehavior(),
+        theme: ThemeData(
+          bottomSheetTheme: const BottomSheetThemeData(
+              backgroundColor: AppColors.transparent),
+        ),
         title: AppStrings.appName,
-        initialRoute: RouteGenerator.moreScreen,
         onGenerateRoute: RouteGenerator.onGenerateRoute,
-        home: const MoreScreen(),
+        home: const SplashScreen(),
       ),
     );
   }
