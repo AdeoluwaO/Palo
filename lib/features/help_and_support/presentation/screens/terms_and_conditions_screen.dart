@@ -1,3 +1,4 @@
+import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/app_checkbox.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
@@ -65,7 +66,12 @@ class _TermsAndConditionScreenState extends State<TermsAndConditionScreen> {
                     color: userHasAgreed
                         ? AppColors.darkRed
                         : AppColors.darkRed.withOpacity(0.3),
-                    onTap: () {})
+                    onTap: () {
+                      if (userHasAgreed) {
+                        Navigator.pushNamed(
+                            context, RouteGenerator.selectAccountScreen);
+                      }
+                    })
             ],
           ),
         ));

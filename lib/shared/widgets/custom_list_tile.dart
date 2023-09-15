@@ -30,9 +30,9 @@ class CustomListTile extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          // border: Border.all(
-          //   color: color ?? AppColors.lightPurple,
-          // ),
+          border: Border.all(
+            color: color ?? AppColors.lightPurple,
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
