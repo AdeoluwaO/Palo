@@ -1,3 +1,6 @@
+import 'package:dispatchapp/features/chat/presentation/screens/chat_screen.dart';
+import 'package:dispatchapp/features/more/presentation/screens/more_screen.dart';
+import 'package:dispatchapp/features/orders/presentation/screens/orders_screen.dart';
 import 'package:dispatchapp/shared/constants/colors.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:flutter/material.dart';
@@ -16,16 +19,24 @@ class _DashboardScreenState extends State<DashboardScreen> {
     setState(() => _page = index);
   }
 
+  List<Widget> pages = const [
+    Placeholder(),
+    OrdersScreen(),
+    ChatScreen(),
+    MoreScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      // body: ,
+      body: pages[_page],
       bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: AppColors.darkRed,
           unselectedItemColor: AppColors.grey,
           type: BottomNavigationBarType.fixed,
-          currentIndex: 2,
+          currentIndex: _page,
+          onTap: _onTapItem,
           showUnselectedLabels: true,
           selectedIconTheme: const IconThemeData(color: AppColors.darkRed),
           unselectedIconTheme: const IconThemeData(color: AppColors.grey),

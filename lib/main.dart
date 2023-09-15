@@ -38,6 +38,8 @@ class MyApp extends StatelessWidget {
         navigatorKey: navigatorKey,
         scrollBehavior: SBehavior(),
         theme: ThemeData(
+          highlightColor: AppColors.transparent,
+          splashColor: AppColors.transparent,
           bottomSheetTheme: const BottomSheetThemeData(
               backgroundColor: AppColors.transparent),
         ),
