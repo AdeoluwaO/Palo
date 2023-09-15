@@ -1,18 +1,18 @@
 import 'package:dispatchapp/features/orders/presentation/widgets/order_button.dart';
 import 'package:dispatchapp/features/orders/presentation/widgets/order_screen_bottomsheet.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
-import 'package:dispatchapp/shared/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class OrderDetailScreen extends StatefulWidget {
-  const OrderDetailScreen({super.key});
+class OrderDeliveryDetailScreen extends StatefulWidget {
+  const OrderDeliveryDetailScreen({super.key});
 
   @override
-  State<OrderDetailScreen> createState() => _OrderDetailScreenState();
+  State<OrderDeliveryDetailScreen> createState() =>
+      _OrderDeliveryDetailScreenState();
 }
 
-class _OrderDetailScreenState extends State<OrderDetailScreen> {
+class _OrderDeliveryDetailScreenState extends State<OrderDeliveryDetailScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

@@ -30,6 +30,7 @@ export '../../features/forgot_password/presentation/screens/forgot_password_scre
 export '../../features/order_notifications/presentation/screens/order_notification_screen.dart';
 export '../../features/orders/presentation/screens/orders_screen.dart';
 export '../../features/orders/presentation/screens/no_recent_orders_screen.dart';
-export '../../features/orders/presentation/screens/order_detail_screen.dart';
+export '../../features/orders/presentation/screens/order_delivery_detail_screen.dart';
 export '../../features/orders/presentation/screens/order_success_scree.dart';
 export '../../features/orders/presentation/screens/order_cancelled_screen.dart';
+export '../../features/orders/presentation/screens/order_details_screen.dart';

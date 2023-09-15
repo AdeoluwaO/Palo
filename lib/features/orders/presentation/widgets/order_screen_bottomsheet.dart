@@ -11,7 +11,7 @@ class OrderScreenBottomsheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+      padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 0),
       decoration: const BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.vertical(
@@ -30,57 +30,65 @@ class OrderScreenBottomsheet extends StatelessWidget {
           const Spacing.bigHeight(),
           Expanded(
             child: ListView(
+              physics: const BouncingScrollPhysics(),
               children: [
-                Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                  decoration: BoxDecoration(
-                    color: AppColors.purple200,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: AppColors.purple100),
-                  ),
-                  child: Row(
-                    children: [
-                      AppImageView(
-                        imagePath: AppImages.orderImage,
-                        height: 60.h,
-                        width: 60.w,
-                        // color: AppColors.primaryColor,
-                        radius: BorderRadius.circular(0),
-                      ),
-                      const Spacing.mediumWidth(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'orderId',
-                            style: AppTextStyle.bodySmall,
-                          ),
-                          const Spacing.smallHeight(),
-                          Text(
-                            '996789123456',
-                            style: AppTextStyle.bodyMediumX
-                                .copyWith(fontSize: 14, color: AppColors.black),
-                          ),
-                        ],
-                      ),
-                      //? just for testing
-                      IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(
-                              context, RouteGenerator.orderSuccessScreen);
-                        },
-                        tooltip: 'info',
-                        icon: const Icon(Icons.info_outline_rounded),
-                      ),
-                    ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(
+                        context, RouteGenerator.orderDetailsScreen);
+                  },
+                  child: Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                    decoration: BoxDecoration(
+                      color: AppColors.purple200,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: AppColors.purple100),
+                    ),
+                    child: Row(
+                      children: [
+                        AppImageView(
+                          imagePath: AppImages.orderImage,
+                          height: 60.h,
+                          width: 60.w,
+                          // color: AppColors.primaryColor,
+                          radius: BorderRadius.circular(0),
+                        ),
+                        const Spacing.mediumWidth(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'orderId',
+                              style: AppTextStyle.bodySmall,
+                            ),
+                            const Spacing.smallHeight(),
+                            Text(
+                              '996789123456',
+                              style: AppTextStyle.bodyMediumX.copyWith(
+                                  fontSize: 14, color: AppColors.black),
+                            ),
+                          ],
+                        ),
+                        //? just for testing
+                        IconButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, RouteGenerator.orderSuccessScreen);
+                          },
+                          tooltip: 'info',
+                          icon: const Icon(Icons.info_outline_rounded),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const Spacing.mediumHeight(),
                 //? pass api delivery info to this widget
                 Transform.rotate(
-                    angle: 460, child: const DeliveryTrackerWidget()),
-                const OrderDeliveryInfoWidget()
+                    angle: 0, child: const DeliveryTrackerWidget()),
+                const OrderDeliveryInfoWidget(),
+                const Spacing.mediumHeight(),
               ],
             ),
           )

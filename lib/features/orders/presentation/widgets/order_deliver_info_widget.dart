@@ -10,6 +10,7 @@ class OrderDeliveryInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'On the way to Printer',
@@ -38,6 +39,21 @@ class OrderDeliveryInfoWidget extends StatelessWidget {
                   radius: const BorderRadius.all(Radius.circular(30)),
                   height: 52.h,
                   width: 50.w,
+                ),
+                const Spacing.mediumWidth(),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Printer',
+                      style: AppTextStyle.bodySmall,
+                    ),
+                    Text(
+                      'Andi Joseph',
+                      style: AppTextStyle.bodyMediumX
+                          .copyWith(color: AppColors.darkGrey),
+                    ),
+                  ],
                 )
               ],
             ),
