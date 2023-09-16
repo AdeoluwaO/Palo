@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
           navigatorKey: navigatorKey,
           scrollBehavior: SBehavior(),
           title: AppStrings.appName,
-          initialRoute: RouteGenerator.addYourVehicleScreen,
+          initialRoute: RouteGenerator.navBar,
           onGenerateRoute: RouteGenerator.onGenerateRoute,
-          home: const AddYourVehicleScreen(),
+          home: const Nav(),
       ),
     );
   }

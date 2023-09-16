@@ -35,7 +35,7 @@ class OrdersScreen extends StatelessWidget {
             orderId: 'Order 996789123456',
             orderStatus: 'In Transit',
             orderStatusTextColor: AppColors.red600,
-            orderStatusBackgroundColor: AppColors.lightRed,
+            orderStatusBackgroundColor: AppColors.lightRedd,
             onTap: () {
               Navigator.pushNamed(context, RouteGenerator.noRecentOrderScreen);
             },
@@ -57,7 +57,7 @@ class OrdersScreen extends StatelessWidget {
             orderId: 'Order 996789123456',
             orderStatus: 'In Transit',
             orderStatusTextColor: AppColors.red600,
-            orderStatusBackgroundColor: AppColors.lightRed,
+            orderStatusBackgroundColor: AppColors.lightRedd,
             onTap: () {},
           ),
           const Spacing.mediumHeight(),

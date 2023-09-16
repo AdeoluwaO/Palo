@@ -31,3 +31,5 @@ export '../../features/add_vehicle_individual/presentation/screens/add_your_vehi
 export '../../features/orders/presentation/screens/orders_screen.dart';
 export '../../features/orders/presentation/screens/no_recent_orders_screen.dart';
 export '../../features/orders/presentation/screens/order_detail_screen.dart';
+export '../../features/home/presentation/screens/home_screen.dart';
+export '../../features/home/presentation/widgets/nav_bar.dart';
