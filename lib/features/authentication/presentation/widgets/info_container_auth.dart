@@ -1,4 +1,5 @@
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
+import 'package:dispatchapp/shared/widgets/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,6 +23,7 @@ class InfoContainerAuth extends StatelessWidget {
         child: Row(
           children: [
             leadingIcon ?? const SizedBox.shrink(),
+            if (leadingIcon != null) const Spacing.smallWidth(),
             Text(
               message,
               style: AppTextStyle.redHatMedium.copyWith(

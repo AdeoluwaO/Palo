@@ -1,3 +1,4 @@
+import 'package:dispatchapp/features/authentication/presentation/widgets/select_bank_bottomshett.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,15 @@ class AddVehicleScreen extends StatelessWidget {
                     AppDropdown(
                       hintText: 'Vehicle type',
                       variant: DropDownVariant.fillWhite,
-                      onTap: () {},
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            //? the bottom sheet to be reusebale for this
+                            return const SelectBankBottomsheetWidget();
+                          },
+                        );
+                      },
                     ),
                     const Spacing.mediumHeight(),
                     Row(

@@ -60,6 +60,12 @@ class SelectBankBottomsheetWidget extends StatelessWidget {
                 message: 'Zenith',
                 onTap: () {},
               ),
+              const Spacing.mediumHeight(),
+              InfoContainerAuth(
+                leadingIcon: const Icon(Icons.two_wheeler_rounded),
+                message: 'Car',
+                onTap: () {},
+              ),
             ],
           ))
         ],
