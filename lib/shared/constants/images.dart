@@ -10,6 +10,7 @@ class AppImages {
   static const String testVehicleImage = '$_baseImagePath/vehicle_image.png';
   static const String orderImage = '$_baseImagePath/test_order_image.png';
   static const String testImage = '$_baseImagePath/test_berrystamp.jpg';
+  static const String placeholderImage = '$_baseImagePath/placeholder.jpg';
 
 //?[SVG]
   static const String noVisisbilityIcon = '$_baseSvgPath/visibility_off.svg';

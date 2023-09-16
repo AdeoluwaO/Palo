@@ -25,9 +25,13 @@ class AppSnackbar extends StatelessWidget {
             radius: 30,
           ),
           const Spacing.smallWidth(),
-          Text(
-            message,
-            style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
+          SizedBox(
+            width: 280.w,
+            child: Text(
+              message,
+              maxLines: 2,
+              style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
+            ),
           )
         ],
       ),

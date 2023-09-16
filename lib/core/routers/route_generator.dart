@@ -47,6 +47,11 @@ class RouteGenerator {
   static const createPasswordScreen = 'create_password_screen';
   static const updateAccountScreen = 'update_profile_screen';
   static const dashboardScreen = 'dashboard_screen';
+  static const verifyEmailScreen = 'verify_email_screen';
+  static const verifyEmailOtpScreen = 'verify_email_otp_screen';
+  static const addProfilePhotoScreen = 'add_profile_photo_screen';
+  static const addAccountWidthdrawalScreen = 'add_account_widthdrawal_screen';
+  static const addVehicleScreen = 'add_vehicle_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -234,6 +239,27 @@ class RouteGenerator {
       case dashboardScreen:
         return CupertinoPageRoute(
           builder: (context) => const DashboardScreen(),
+        );
+      case verifyEmailScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const VerifyEmailScreen(),
+        );
+      case verifyEmailOtpScreen:
+        final email = routeSettings.arguments as String;
+        return CupertinoPageRoute(
+          builder: (context) => VerifyEmailOtpScreen(email: email),
+        );
+      case addProfilePhotoScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AddProfilePhotoScreen(),
+        );
+      case addAccountWidthdrawalScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AddWidthdrawalAccountScreen(),
+        );
+      case addVehicleScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AddVehicleScreen(),
         );
       default:
         throw UnimplementedError('Route not found');

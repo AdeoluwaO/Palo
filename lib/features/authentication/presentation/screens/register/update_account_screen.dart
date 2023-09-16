@@ -33,7 +33,8 @@ class UpdateAccountScreen extends StatelessWidget {
             leading: SvgPicture.asset(AppImages.imageIcon),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.aboutScreen);
+              Navigator.pushNamed(
+                  context, RouteGenerator.addProfilePhotoScreen);
             },
           ),
           const Spacing.largeHeight(),
@@ -42,7 +43,7 @@ class UpdateAccountScreen extends StatelessWidget {
             leading: SvgPicture.asset(AppImages.mailIcon),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.aboutScreen);
+              Navigator.pushNamed(context, RouteGenerator.verifyEmailScreen);
             },
           ),
           const Spacing.largeHeight(),
@@ -51,7 +52,8 @@ class UpdateAccountScreen extends StatelessWidget {
             leading: SvgPicture.asset(AppImages.availableIcon),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.aboutScreen);
+              Navigator.pushNamed(
+                  context, RouteGenerator.addAccountWidthdrawalScreen);
             },
           ),
           const Spacing.largeHeight(),
@@ -60,7 +62,7 @@ class UpdateAccountScreen extends StatelessWidget {
             leading: SvgPicture.asset(AppImages.transportationIcon),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.aboutScreen);
+              Navigator.pushNamed(context, RouteGenerator.addVehicleScreen);
             },
           ),
         ],
