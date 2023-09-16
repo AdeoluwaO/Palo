@@ -63,7 +63,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   height: 55.h,
                   color: forgotPasswordProvider.isPasswordFormFilled()
                       ? AppColors.darkRed
-                      : AppColors.lightRed,
+                      : AppColors.lightRedd,
                   padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 8.w),
                   suffixIcon: const Icon(Icons.chevron_right_outlined,
                       size: 25, color: AppColors.white),

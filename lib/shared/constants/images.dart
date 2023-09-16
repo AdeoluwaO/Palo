@@ -47,4 +47,11 @@ class AppImages {
   static const String othersIcon = '$baseSvgPath/truck.svg';
   static const String successfulIcon = '$baseSvgPath/successful_icon.svg';
   static const String noRecentOrderIcon = '$baseSvgPath/no_recent_orders.svg';
+  static const String homeIcon = '$baseSvgPath/home_icon.svg';
+  static const String chatIcon = '$baseSvgPath/chat_icon.svg';
+  static const String moreIcon = '$baseSvgPath/more_icon.svg';
+  static const String homeNotifyIcon = '$baseSvgPath/home_notifications.svg';
+  static const String navOrderIcon = '$baseSvgPath/nav_orders_icon.svg';
+  static const String arrowUpIcon = '$baseSvgPath/up_icon.svg';
+  static const String arrowDownIcon = '$baseSvgPath/icon_down.svg';
 }

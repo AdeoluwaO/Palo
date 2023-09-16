@@ -1,6 +1,7 @@
 import 'package:dispatchapp/features/add_vehicle_individual/presentation/provider/add_vehicle_individual_provider.dart';
 import 'package:dispatchapp/features/add_vehicle_individual/presentation/widgets/picture_frame_widget.dart';
 import 'package:dispatchapp/features/add_vehicle_individual/presentation/widgets/vehicle_widget.dart';
+import 'package:dispatchapp/features/home/presentation/widgets/nav_bar.dart';
 import 'package:dispatchapp/shared/constants/app_text_style.dart';
 import 'package:dispatchapp/shared/constants/colors.dart';
 import 'package:dispatchapp/shared/constants/images.dart';
@@ -149,7 +150,9 @@ class AddYourVehicleScreen extends StatelessWidget {
             const Spacing.bigHeight(),
             AppButton(
               title: 'Save',
-              onTap: () {},
+              onTap: () {
+                Nav();
+              },
               width: 200.w,
               color: AppColors.darkRed,
               titleStyle: AppTextStyle.bodyMediumWhite,

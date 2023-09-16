@@ -91,7 +91,7 @@ class AddVehicleIndividualProvider extends ChangeNotifier {
 
   void startLoading() {
     _isLoading = true;
-    _buttonColor = AppColors.lightRed; // Change the button color when loading
+    _buttonColor = AppColors.lightRedd; // Change the button color when loading
     notifyListeners();
   }
 
