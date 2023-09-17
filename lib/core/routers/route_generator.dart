@@ -32,6 +32,7 @@ class RouteGenerator {
   static const enterNewPasswordScreen = 'enter_new_password_screen';
   static const checkYourEmailScreen = 'check_your_email_screen';
   static const orderNotificationsScreen = 'order_notification_screen.dart';
+  static const addYourVehicleScreen = 'add_your_vehicle.dart';
   static const ordersScreen = 'orders_screen';
   static const noRecentOrderScreen = 'no_recent_order_screen';
   static const orderDeliveryDetailScreen = 'order_detail_screen';

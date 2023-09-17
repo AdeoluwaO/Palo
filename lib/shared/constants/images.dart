@@ -42,8 +42,21 @@ class AppImages {
   static const String expandMore = '$_baseSvgPath/expand_more.svg';
   static const String orderIcon = '$_baseSvgPath/order_icon.svg';
   static const String newOrderIcon = '$_baseSvgPath/new_order_icon.svg';
+  static const String addPhotoIcon = '$_baseSvgPath/add_a_photo.svg';
+  static const String carIcon = '$_baseSvgPath/car.svg';
+  static const String bicycleIcon = '$_baseSvgPath/bicycle.svg';
+  static const String motorBikeIcon = '$_baseSvgPath/two_wheeler.svg';
+  static const String tricycleIcon = '$_baseSvgPath/electric_rickshaw.svg';
+  static const String othersIcon = '$_baseSvgPath/truck.svg';
   static const String successfulIcon = '$_baseSvgPath/successful_icon.svg';
   static const String noRecentOrderIcon = '$_baseSvgPath/no_recent_orders.svg';
+  static const String homeIcon = '$_baseSvgPath/home_icon.svg';
+  static const String chatIcon = '$_baseSvgPath/chat_icon.svg';
+  static const String moreIcon = '$_baseSvgPath/more_icon.svg';
+  static const String homeNotifyIcon = '$_baseSvgPath/home_notifications.svg';
+  static const String navOrderIcon = '$_baseSvgPath/nav_orders_icon.svg';
+  static const String arrowUpIcon = '$_baseSvgPath/up_icon.svg';
+  static const String arrowDownIcon = '$_baseSvgPath/icon_down.svg';
   static const String activeIcon = '$_baseSvgPath/active.svg';
   static const String inactiveIcon = '$_baseSvgPath/inactive.svg';
   static const String checkedIcon = '$_baseSvgPath/checked.svg';
@@ -51,7 +64,6 @@ class AppImages {
   static const String businessIcon = '$_baseSvgPath/business_icon.svg';
   static const String imageIcon = '$_baseSvgPath/image_icon.svg';
   static const String mailIcon = '$_baseSvgPath/mail_icon.svg';
-  static const String homeIcon = '$_baseSvgPath/home.svg';
 
   //? [APP ANIMATIONS]
   static const String successAnimation = '$_animationsPath/success.json';

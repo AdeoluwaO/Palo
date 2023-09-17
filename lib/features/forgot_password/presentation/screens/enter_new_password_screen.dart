@@ -89,7 +89,7 @@ class EnterNewPasswordScreen extends StatelessWidget {
                     size: 25, color: AppColors.white),
                 color: forgotPasswordProvider.isNewPasswordFormFilled()
                     ? AppColors.darkRed
-                    : AppColors.lightRed,
+                    : AppColors.lightRedd,
                 titleStyle: AppTextStyle.headerLarge
                     .copyWith(fontSize: 17, color: AppColors.white),
                 onTap: () {
