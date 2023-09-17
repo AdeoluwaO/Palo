@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dispatchapp/features/orders/presentation/widgets/order_button.dart';
 import 'package:dispatchapp/features/orders/presentation/widgets/order_screen_bottomsheet.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
@@ -34,6 +36,7 @@ class _OrderDeliveryDetailScreenState extends State<OrderDeliveryDetailScreen> {
                     OrderCustomButton(
                       icon: const Icon(Icons.arrow_back, size: 30),
                       onTap: () {
+                        log('testing');
                         Navigator.pop(context);
                       },
                     ),
