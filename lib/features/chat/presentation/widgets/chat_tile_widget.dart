@@ -1,3 +1,4 @@
+import 'package:dispatchapp/shared/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class ChatTile extends StatelessWidget {

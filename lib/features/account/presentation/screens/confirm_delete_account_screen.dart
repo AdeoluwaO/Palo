@@ -1,3 +1,4 @@
+import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/shared/constants/app_text_style.dart';
 import 'package:dispatchapp/shared/constants/colors.dart';
 import 'package:dispatchapp/shared/widgets/app_button.dart';
@@ -49,7 +50,10 @@ class ConfirmDeleteccountScreen extends StatelessWidget {
                                 .copyWith(fontSize: 14, color: AppColors.black),
                           )),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context,
+                                RouteGenerator.deleteAccountSuccessScreen);
+                          },
                           child: Text(
                             'Delete account',
                             style: AppTextStyle.bodyMediumX.copyWith(

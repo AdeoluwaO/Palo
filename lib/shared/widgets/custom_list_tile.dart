@@ -26,8 +26,7 @@ class CustomListTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 84.h,
-        width: 335.w,
+        // width: 335.w,
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -54,9 +53,12 @@ class CustomListTile extends StatelessWidget {
                       title ?? '',
                       style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
                     ),
+                    const Spacing.smallHeight(),
                     Text(
                       subTitle ?? '',
                       style: AppTextStyle.bodySmall,
+                      // overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
                     ),
                   ],
                 ),

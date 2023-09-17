@@ -33,7 +33,9 @@ class AboutScreen extends StatelessWidget {
               trailing: const Icon(Icons.chevron_right),
               onTap: () {
                 Navigator.pushNamed(
-                    context, RouteGenerator.termAndConditionScreen);
+                  context,
+                  RouteGenerator.termAndConditionScreen,
+                );
               },
             ),
             const Spacing.mediumHeight(),
