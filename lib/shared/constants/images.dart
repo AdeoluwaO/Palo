@@ -8,6 +8,9 @@ class AppImages {
       '$baseImagePath/test_profile_image.png';
   static const String testVehicleImage = '$baseImagePath/vehicle_image.png';
   static const String orderImage = '$baseImagePath/test_order_image.png';
+  static const String recentOrderImage = '$baseImagePath/order_image.png';
+  static const String homeNotifyImage = '$baseImagePath/home_notify_image.png';
+  static const String updateImage = '$baseImagePath/update_image.png';
 
 //?[SVG]
   static const String noVisisbilityIcon = '$baseSvgPath/visibility_off.svg';
@@ -54,4 +57,9 @@ class AppImages {
   static const String navOrderIcon = '$baseSvgPath/nav_orders_icon.svg';
   static const String arrowUpIcon = '$baseSvgPath/up_icon.svg';
   static const String arrowDownIcon = '$baseSvgPath/icon_down.svg';
+  static const String redChart = '$baseSvgPath/red_chart.svg';
+  static const String greenChart = '$baseSvgPath/green_chart.svg';
+  static const String homePageNotify = '$baseSvgPath/homepage_notify.svg';
+  static const String updateIcon = '$baseSvgPath/update_icon.svg';
+  static const String nothingBars = '$baseSvgPath/nothing_bars.svg';
 }
