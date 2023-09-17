@@ -27,12 +27,9 @@ class AddWidthdrawalAccountScreen extends StatelessWidget {
               hintText: 'Account Number',
               variant: DropDownVariant.fillWhite,
               onTap: () {
-                showModalBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return const SelectBankBottomsheetWidget();
-                  },
-                );
+                AppShowBottomSheet.appshowModalBottomsheet(
+                    context: context,
+                    child: const SelectBankBottomsheetWidget());
               },
             ),
             const Spacing.mediumHeight(),
@@ -50,9 +47,9 @@ class AddWidthdrawalAccountScreen extends StatelessWidget {
                 title: "Save",
                 color: AppColors.darkRed,
                 onTap: () {
-                  showTopSnackBar(
-                    context,
-                    const AppSnackbar(
+                  AppShowTopSnackbar.appshowTopSnackBar(
+                    context: context,
+                    child: const AppSnackbar(
                         message: 'Withdrawal account  added successfully!'),
                   );
                 }),

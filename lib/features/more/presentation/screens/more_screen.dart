@@ -68,9 +68,9 @@ class MoreScreen extends StatelessWidget {
             titleStyle: AppTextStyle.headerLarge
                 .copyWith(fontSize: 16, color: AppColors.black),
             onTap: () {
-              showDialog(
+              AppShowDialogue.showDialogue(
                 context: context,
-                builder: (context) => AppDialogue(
+                child: AppDialogue(
                   title: 'Log out',
                   message: 'Are you sure you want to log out of the app?',
                   actionButtons: [

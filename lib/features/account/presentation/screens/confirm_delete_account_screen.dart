@@ -6,6 +6,7 @@ import 'package:dispatchapp/shared/widgets/app_dialogue.dart';
 import 'package:dispatchapp/shared/widgets/app_scaffold.dart';
 import 'package:dispatchapp/shared/widgets/app_spacing.dart';
 import 'package:dispatchapp/shared/widgets/app_text_input.dart';
+import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -34,9 +35,9 @@ class ConfirmDeleteccountScreen extends StatelessWidget {
               title: 'Delete account',
               color: AppColors.darkRed,
               onTap: () {
-                showDialog(
+                AppShowDialogue.showDialogue(
                   context: context,
-                  builder: (context) => AppDialogue(
+                  child: AppDialogue(
                     title: 'Are you sure you want to delete your account?',
                     message: 'Once deleted, your data will be lost',
                     actionButtons: [

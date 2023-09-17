@@ -12,7 +12,7 @@ class AppSnackbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 90.h,
-      width: 320.w,
+      width: 330.w,
       padding:
           EdgeInsetsDirectional.symmetric(horizontal: 16.w, vertical: 16.h),
       decoration: BoxDecoration(

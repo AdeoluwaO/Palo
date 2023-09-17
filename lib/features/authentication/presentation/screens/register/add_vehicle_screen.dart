@@ -27,13 +27,11 @@ class AddVehicleScreen extends StatelessWidget {
                       hintText: 'Vehicle type',
                       variant: DropDownVariant.fillWhite,
                       onTap: () {
-                        showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            //? the bottom sheet to be reusebale for this
-                            return const SelectBankBottomsheetWidget();
-                          },
-                        );
+                        AppShowBottomSheet.appshowModalBottomsheet(
+                            context: context,
+                            child:
+                                //? the bottom sheet to be reusebale for this
+                                const SelectBankBottomsheetWidget());
                       },
                     ),
                     const Spacing.mediumHeight(),
@@ -72,10 +70,10 @@ class AddVehicleScreen extends StatelessWidget {
                 width: 240.w,
                 color: AppColors.darkRed,
                 onTap: () {
-                  showTopSnackBar(
-                    context,
-                    const AppSnackbar(message: 'Vehicle added successfully!'),
-                  );
+                  AppShowTopSnackbar.appshowTopSnackBar(
+                      context: context,
+                      child: const AppSnackbar(
+                          message: 'Vehicle added successfully!'));
                 },
               ),
               const Spacing.mediumHeight(),

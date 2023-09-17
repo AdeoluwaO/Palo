@@ -10,9 +10,12 @@ class AppDialogue extends StatelessWidget {
     required this.title,
     required this.message,
     this.actionButtons,
+    this.width,
+    this.height,
   });
   final String title, message;
   final List<Widget>? actionButtons;
+  final double? width, height;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +25,8 @@ class AppDialogue extends StatelessWidget {
       content: Container(
         // alignment: Alignment.center,
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-        height: 200.h,
-        width: 400.w,
+        height: height ?? 200.h,
+        width: width ?? 600.w,
         decoration: BoxDecoration(
             color: AppColors.white, borderRadius: BorderRadius.circular(30)),
         child: Column(

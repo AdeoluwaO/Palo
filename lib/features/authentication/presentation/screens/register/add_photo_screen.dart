@@ -62,28 +62,7 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
                   color: AppColors.darkRed,
                   width: 240.w,
                   onTap: () {
-                    showModalBottomSheet(
-                      context: context,
-                      backgroundColor: AppColors.transparent,
-                      builder: (context) {
-                        return AppPhotoBottomsheet(
-                          onSelctedImage: (image) {
-                            setState(() => userProfile = image);
-                            log('$userProfile');
-                            if (userProfile != null) {
-                              showTopSnackBar(
-                                context,
-                                const AppSnackbar(
-                                    message:
-                                        'Profile photo added successfully!'),
-                              );
-
-                              Navigator.pop(context);
-                            }
-                          },
-                        );
-                      },
-                    );
+                    _bottomSheet();
                   }),
               if (userProfile != null)
                 AppButton(
@@ -91,21 +70,30 @@ class _AddProfilePhotoScreenState extends State<AddProfilePhotoScreen> {
                     titleStyle: AppTextStyle.bodySmall
                         .copyWith(color: AppColors.darkRed),
                     onTap: () {
-                      showModalBottomSheet(
-                        context: context,
-                        backgroundColor: AppColors.transparent,
-                        builder: (context) {
-                          return AppPhotoBottomsheet(
-                            onSelctedImage: (image) {
-                              setState(() => userProfile = image);
-                            },
-                          );
-                        },
-                      );
-                      // Navigator.pop(context);
+                      _bottomSheet();
                     }),
             ],
           ),
         ));
+  }
+
+  _bottomSheet() {
+    AppShowBottomSheet.appshowModalBottomsheet(
+      context: context,
+      child: AppPhotoBottomsheet(
+        onSelctedImage: (image) {
+          setState(() => userProfile = image);
+          log('$userProfile');
+          if (userProfile != null) {
+            AppShowTopSnackbar.appshowTopSnackBar(
+                context: context,
+                child: const AppSnackbar(
+                    message: 'Profile photo added successfully!'));
+
+            Navigator.pop(context);
+          }
+        },
+      ),
+    );
   }
 }
