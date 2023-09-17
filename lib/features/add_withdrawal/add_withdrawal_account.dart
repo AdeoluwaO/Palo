@@ -156,7 +156,7 @@ class _AddWithdrawalAccountState extends State<AddWithdrawalAccount> {
                                     ),
                                     color: addWithdrawalProvider.isFormFilled()
                                         ? AppColors.darkRed
-                                        : AppColors.lightRed,
+                                        : AppColors.lightRedd,
                                   ),
                                   child: Center(
                                     child: addWithdrawalProvider.state ==
@@ -167,7 +167,7 @@ class _AddWithdrawalAccountState extends State<AddWithdrawalAccount> {
                                             clipBehavior: Clip.antiAlias,
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(1000),
-                                              color: AppColors.lightRed,
+                                              color: AppColors.lightRedd,
                                             ),
                                          child: Row(
                                               mainAxisAlignment:

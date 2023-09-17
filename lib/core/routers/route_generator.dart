@@ -32,9 +32,11 @@ class RouteGenerator {
   static const enterNewPasswordScreen = 'enter_new_password_screen';
   static const checkYourEmailScreen = 'check_your_email_screen';
   static const orderNotificationsScreen = 'order_notification_screen.dart';
+  static const addYourVehicleScreen = 'add_your_vehicle.dart';
   static const ordersScreen = 'orders_screen';
   static const noRecentOrderScreen = 'no_recent_order_screen';
   static const orderDetailScreen = 'order_detail_screen';
+  static const homeScreen = 'home_screen';
   static const orderSuccessScreen = 'order_success_screen';
   static const orderCancelledScreen = 'order_cancelled_screen';
   static const orderDetailsScreen = 'order_details_screen';
@@ -48,6 +50,7 @@ class RouteGenerator {
   static const updateAccountScreen = 'update_profile_screen';
   static const dashboardScreen = 'dashboard_screen';
 
+  
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case moreScreen:
@@ -234,6 +237,18 @@ class RouteGenerator {
       case dashboardScreen:
         return CupertinoPageRoute(
           builder: (context) => const DashboardScreen(),
+        );
+      case addYourVehicleScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AddYourVehicleScreen(),
+        );
+      case homeScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const HomeScreen(),
+        );
+      case navBar:
+        return CupertinoPageRoute(
+          builder: (context) => const Nav() ,
         );
       default:
         throw UnimplementedError('Route not found');

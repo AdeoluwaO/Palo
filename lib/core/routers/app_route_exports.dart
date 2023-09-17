@@ -28,8 +28,12 @@ export '../../features/forgot_password/presentation/screens/check_your_email_scr
 export '../../features/forgot_password/presentation/screens/enter_new_password_screen.dart';
 export '../../features/forgot_password/presentation/screens/forgot_password_screen.dart';
 export '../../features/order_notifications/presentation/screens/order_notification_screen.dart';
+export '../../features/add_vehicle_individual/presentation/screens/add_your_vehicle.dart';
 export '../../features/orders/presentation/screens/orders_screen.dart';
 export '../../features/orders/presentation/screens/no_recent_orders_screen.dart';
+export '../../features/orders/presentation/screens/order_detail_screen.dart';
+export '../../features/home/presentation/screens/home_screen.dart';
+export '../../features/home/presentation/widgets/nav_bar.dart';
 export '../../features/orders/presentation/screens/order_delivery_detail_screen.dart';
 export '../../features/orders/presentation/screens/order_success_scree.dart';
 export '../../features/orders/presentation/screens/order_cancelled_screen.dart';
