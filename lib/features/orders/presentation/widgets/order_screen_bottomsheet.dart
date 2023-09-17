@@ -19,7 +19,7 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
         minChildSize: 0.16,
-        maxChildSize: 0.7,
+        maxChildSize: 0.6,
         expand: false,
         builder: (context, _) {
           return Container(
@@ -48,7 +48,7 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
                 const Spacing.bigHeight(),
                 Expanded(
                   child: ListView(
-                    physics: const NeverScrollableScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
                     children: [
                       GestureDetector(
                         onTap: () {

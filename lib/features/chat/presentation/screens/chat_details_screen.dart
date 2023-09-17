@@ -1,6 +1,5 @@
 import 'package:dispatchapp/features/chat/presentation/widgets/order_info_widget.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
-import 'package:dispatchapp/shared/widgets/app_spacing.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +17,7 @@ class ChatDetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       body: Padding(
-        padding: EdgeInsets.fromLTRB(0, 40.h, 0, 8.h),
+        padding: EdgeInsets.fromLTRB(0, 40.h, 0, 16.h),
         child: Column(
           children: [
             Row(
@@ -59,9 +58,9 @@ class ChatDetailsScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    height: 90.h,
                     width: MediaQuery.sizeOf(context).width * 0.75,
                     child: AppTextField(
                       hintText: 'Aa',
@@ -70,21 +69,17 @@ class ChatDetailsScreen extends StatelessWidget {
                       borderRadius: 30,
                     ),
                   ),
-                  SizedBox(
-                    height: 90.h,
-                    width: 80.w,
+                  Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsetsDirectional.all(6),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(80),
+                      color: AppColors.primaryColor,
+                    ),
                     child: IconButton(
                       tooltip: 'Send',
                       onPressed: () {},
-                      icon: Container(
-                        alignment: Alignment.center,
-                        padding: const EdgeInsetsDirectional.all(6),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(80),
-                          color: AppColors.primaryColor,
-                        ),
-                        child: const Icon(Icons.send),
-                      ),
+                      icon: const Icon(Icons.send),
                       color: AppColors.white,
                     ),
                   )

@@ -34,7 +34,7 @@ class RouteGenerator {
   static const orderNotificationsScreen = 'order_notification_screen.dart';
   static const ordersScreen = 'orders_screen';
   static const noRecentOrderScreen = 'no_recent_order_screen';
-  static const orderDetailScreen = 'order_detail_screen';
+  static const orderDeliveryDetailScreen = 'order_detail_screen';
   static const orderSuccessScreen = 'order_success_screen';
   static const orderCancelledScreen = 'order_cancelled_screen';
   static const orderDetailsScreen = 'order_details_screen';
@@ -185,7 +185,7 @@ class RouteGenerator {
         return CupertinoPageRoute(
           builder: (context) => const NoRecentOrderScreen(),
         );
-      case orderDetailScreen:
+      case orderDeliveryDetailScreen:
         return CupertinoPageRoute(
           builder: (context) => const OrderDeliveryDetailScreen(),
         );
