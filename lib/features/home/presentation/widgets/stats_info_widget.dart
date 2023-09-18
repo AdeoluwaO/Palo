@@ -3,32 +3,32 @@ import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomStatsWidget extends StatelessWidget {
-  const CustomStatsWidget({
+class StatsInfoWidget extends StatelessWidget {
+  const StatsInfoWidget({
     super.key,
     required this.totalText,
     required this.totalValue,
     required this.percent,
     required this.percentIcon,
     required this.percentColor,
-    required this.percentBackgroundColor,
+    required this.chartImage,
     this.onTap,
   });
-  final String totalText, totalValue, percent, percentIcon;
+  final String totalText, totalValue, chartImage, percent, percentIcon;
   final Function()? onTap;
-  final Color percentColor, percentBackgroundColor;
+  final Color percentColor;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 106.h,
+        height: 138.h,
         width: 400.w,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightPurple),
-            borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: AppColors.lightPurple),
+          borderRadius: BorderRadius.circular(12),
           color: AppColors.white,
           boxShadow: [
             BoxShadow(
@@ -60,39 +60,41 @@ class CustomStatsWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 300.h,
-              top: 45.h,
-              child: Container(
-                alignment: Alignment.center,
-                height: 26.h,
-                width: 54.w,
-                decoration: BoxDecoration(
-                  color: percentBackgroundColor,
-                  borderRadius: BorderRadius.circular(
-                    1000
+              top: 80.h,
+              child: Row(
+                children: [
+                  AppImageView(
+                    svgPath: percentIcon,
+                    height: 10,
+                    width: 10,
                   ),
-                ),
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Spacing.tinyWidth(),
-                      AppImageView(
-                        svgPath: percentIcon,
-                        height: 10,
-                        width: 10,
-                      ),
-                      Text(
-                        percent,
-                        style: AppTextStyle.bodySmall.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: percentColor,
-                            overflow: TextOverflow.visible),
-                      ),
-                      const Spacing.tinyWidth(),
-                    ],
+                  const Spacing.smallWidth(),
+                  Text(
+                    percent,
+                    style: AppTextStyle.bodySmall.copyWith(
+                        fontWeight: FontWeight.w500,
+                        color: percentColor,
+                        fontSize: 14,
+                        overflow: TextOverflow.visible),
                   ),
-                ),
+                  const Spacing.tinyWidth(),
+                  Text(
+                    ' vs last month',
+                    style: AppTextStyle.headerMedium.copyWith(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: AppColors.grey),
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              top: 50.h,
+              left: 270.w,
+              child: AppImageView(
+                svgPath: chartImage,
+                width: 96.w,
+                height: 48.h,
               ),
             )
           ],

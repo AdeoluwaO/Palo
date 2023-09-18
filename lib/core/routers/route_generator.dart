@@ -37,6 +37,10 @@ class RouteGenerator {
   static const noRecentOrderScreen = 'no_recent_order_screen';
   static const orderDetailScreen = 'order_detail_screen';
   static const homeScreen = 'home_screen';
+  static const navBar = 'nav_bar';
+  static const myStatsScreen = 'my_stats_screen';
+  static const acceptRejectScreen = 'accept_reject_order_screen';
+  static const emptyHomeScreen = 'empty_home_screen';
   static const orderSuccessScreen = 'order_success_screen';
   static const orderCancelledScreen = 'order_cancelled_screen';
   static const orderDetailsScreen = 'order_details_screen';
@@ -50,7 +54,6 @@ class RouteGenerator {
   static const updateAccountScreen = 'update_profile_screen';
   static const dashboardScreen = 'dashboard_screen';
 
-  
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case moreScreen:
@@ -249,6 +252,18 @@ class RouteGenerator {
       case navBar:
         return CupertinoPageRoute(
           builder: (context) => const Nav() ,
+        );
+      case myStatsScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const MyStatsScreen() ,
+        );
+      case acceptRejectScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AcceptRejectScreen() ,
+        );
+      case emptyHomeScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const EmptyHomeScreen() ,
         );
       default:
         throw UnimplementedError('Route not found');
