@@ -14,12 +14,13 @@ class ChatScreen extends StatelessWidget {
       titleText: 'Chats',
       body: ListView(
         physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.w),
+        padding: EdgeInsets.fromLTRB(10.w, 0, 16.w, 10.w),
         children: [
           ChatTile(
             image: AppImages.testProfileImage,
             title: 'Promise',
-            subtitle: 'Tosin',
+            subtitle:
+                'Oga, shebi your house na that blue house wey dey in front chairman house.',
             onTap: () {
               Navigator.pushNamed(context, RouteGenerator.chatDetailsScreen);
             },
@@ -28,7 +29,8 @@ class ChatScreen extends StatelessWidget {
           ChatTile(
             image: AppImages.testProfileImage,
             title: 'Promise',
-            subtitle: 'Tosin',
+            subtitle:
+                'Oga, shebi your house na that blue house wey dey in front chairman house.',
             onTap: () {
               Navigator.pushNamed(context, RouteGenerator.chatDetailsScreen);
             },
@@ -37,7 +39,8 @@ class ChatScreen extends StatelessWidget {
           ChatTile(
             image: AppImages.testProfileImage,
             title: 'Promise',
-            subtitle: 'Tosin',
+            subtitle:
+                'Oga, shebi your house na that blue house wey dey in front chairman house.',
             onTap: () {
               Navigator.pushNamed(context, RouteGenerator.chatDetailsScreen);
             },
@@ -46,7 +49,8 @@ class ChatScreen extends StatelessWidget {
           ChatTile(
             image: AppImages.testProfileImage,
             title: 'Promise',
-            subtitle: 'Tosin',
+            subtitle:
+                'Oga, shebi your house na that blue house wey dey in front chairman house.',
             onTap: () {
               Navigator.pushNamed(context, RouteGenerator.chatDetailsScreen);
             },

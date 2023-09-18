@@ -10,6 +10,7 @@ class RouteGenerator {
   static const myAccountScreen = 'my_account_screen';
   static const deleteAccountScreen = 'delete_account_screen';
   static const confirmDeleteAccountScreen = 'confirm_delete_account_screen';
+  static const deleteAccountSuccessScreen = 'delete_account_success_screen';
   static const myProfileScreen = 'my_profile_screen';
   static const editProfileScreen = 'edit_screen';
   static const myWidthdrawalScreen = 'my_widthdrawal_screen';
@@ -40,6 +41,18 @@ class RouteGenerator {
   static const myStatsScreen = 'my_stats_screen';
   static const acceptRejectScreen = 'accept_reject_order_screen';
   static const emptyHomeScreen = 'empty_home_screen';
+  static const orderSuccessScreen = 'order_success_screen';
+  static const orderCancelledScreen = 'order_cancelled_screen';
+  static const orderDetailsScreen = 'order_details_screen';
+  static const onboardingScreen = 'onboarding_screen';
+  static const loginScreen = 'login_screen';
+  static const signupScreen = 'signup_screen';
+  static const signupFormScreen = 'signup_form_screen';
+  static const selectAccountScreen = 'select_account_screen';
+  static const authOtpScreen = 'auth_otp_screen';
+  static const createPasswordScreen = 'create_password_screen';
+  static const updateAccountScreen = 'update_profile_screen';
+  static const dashboardScreen = 'dashboard_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -99,6 +112,10 @@ class RouteGenerator {
         return CupertinoPageRoute(
           builder: (context) => const ConfirmDeleteccountScreen(),
         );
+      case deleteAccountSuccessScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const DeleteAccountSuccessScreen(),
+        );
       case notificationsSettingsScreen:
         return CupertinoPageRoute(
           builder: (context) => const NotificationSettingsScreen(),
@@ -124,8 +141,10 @@ class RouteGenerator {
           builder: (context) => const AboutScreen(),
         );
       case termAndConditionScreen:
+        final showAgreeToTerms = routeSettings.arguments as bool?;
         return CupertinoPageRoute(
-          builder: (context) => const TermsAndConditionScreen(),
+          builder: (context) => TermsAndConditionScreen(
+              showAgreeToTerms: showAgreeToTerms ?? false),
         );
       case privacyPolicyScreen:
         return CupertinoPageRoute(
@@ -157,7 +176,7 @@ class RouteGenerator {
         );
       case orderNotificationsScreen:
         return CupertinoPageRoute(
-          builder: (context) => const OrderNotificationsScreen()
+          builder: (context) => const OrderNotificationsScreen(),
         );
       case ordersScreen:
         return CupertinoPageRoute(
@@ -169,7 +188,58 @@ class RouteGenerator {
         );
       case orderDetailScreen:
         return CupertinoPageRoute(
-          builder: (context) => const OrderDetailScreen(),
+          builder: (context) => const OrderDeliveryDetailScreen(),
+        );
+      case orderSuccessScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const OrderSuccessScreen(),
+        );
+      case orderCancelledScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const OrderCancelledScreen(),
+        );
+      case orderDetailsScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const OrderDetailsScreen(),
+        );
+      case onboardingScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const OnboardingScreen(),
+        );
+      case loginScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const LoginScreen(),
+        );
+      case signupScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const SignUpScreen(),
+        );
+      case authOtpScreen:
+        final String phoneNumber = routeSettings.arguments as String;
+        return CupertinoPageRoute(
+          builder: (context) =>
+              AuthenticationOtpScreen(phoneNumber: phoneNumber),
+        );
+      case createPasswordScreen:
+        final String phoneNumber = routeSettings.arguments as String;
+        return CupertinoPageRoute(
+          builder: (context) => CreatePasswordScreen(phoneNumber: phoneNumber),
+        );
+      case signupFormScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const SignupFormScreen(),
+        );
+      case selectAccountScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const SelectAccountTypeScreen(),
+        );
+      case updateAccountScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const UpdateAccountScreen(),
+        );
+      case dashboardScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const DashboardScreen(),
         );
       case addYourVehicleScreen:
         return CupertinoPageRoute(

@@ -18,7 +18,7 @@ class ChatDetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 40.h),
+        padding: EdgeInsets.fromLTRB(0, 40.h, 0, 8.h),
         child: Column(
           children: [
             Row(

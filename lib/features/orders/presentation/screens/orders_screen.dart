@@ -33,7 +33,7 @@ class OrdersScreen extends StatelessWidget {
           RecentOrderInfoWidget(
             orderImage: '',
             orderId: 'Order 996789123456',
-            orderStatus: 'In Transit',
+            orderStatus: 'Cancelled',
             orderStatusTextColor: AppColors.red600,
             orderStatusBackgroundColor: AppColors.lightRedd,
             onTap: () {
@@ -44,7 +44,7 @@ class OrdersScreen extends StatelessWidget {
           RecentOrderInfoWidget(
             orderImage: '',
             orderId: 'Order 996789123456',
-            orderStatus: 'In Transit',
+            orderStatus: 'Completed',
             orderStatusTextColor: AppColors.green,
             orderStatusBackgroundColor: AppColors.green200,
             onTap: () {
@@ -55,7 +55,7 @@ class OrdersScreen extends StatelessWidget {
           RecentOrderInfoWidget(
             orderImage: '',
             orderId: 'Order 996789123456',
-            orderStatus: 'In Transit',
+            orderStatus: 'Cancelled',
             orderStatusTextColor: AppColors.red600,
             orderStatusBackgroundColor: AppColors.lightRedd,
             onTap: () {},
@@ -64,7 +64,7 @@ class OrdersScreen extends StatelessWidget {
           RecentOrderInfoWidget(
             orderImage: '',
             orderId: 'Order 996789123456',
-            orderStatus: 'In Transit',
+            orderStatus: 'Compeleted',
             orderStatusTextColor: AppColors.green,
             orderStatusBackgroundColor: AppColors.green200,
             onTap: () {},
