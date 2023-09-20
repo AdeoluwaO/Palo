@@ -1,6 +1,5 @@
-import 'dart:io';
+import 'package:dispatchapp/features/home/presentation/widgets/currency.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/customer_stats_rating_widget.dart';
-import 'package:dispatchapp/features/home/presentation/widgets/home_notification_widget.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/stats_info_widget.dart';
 import 'package:dispatchapp/shared/constants/colors.dart';
 import 'package:dispatchapp/shared/constants/images.dart';
@@ -8,7 +7,6 @@ import 'package:dispatchapp/shared/widgets/app_scaffold.dart';
 import 'package:dispatchapp/shared/widgets/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 
 
 class MyStatsScreen extends StatelessWidget {
@@ -24,7 +22,7 @@ class MyStatsScreen extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.w),
         children: [
           const Spacing.mediumHeight(),
-          StatsInfoWidget(
+          const StatsInfoWidget(
               totalText: 'Total completed orders',
               totalValue: '300',
               percent: '10%',
@@ -35,14 +33,14 @@ class MyStatsScreen extends StatelessWidget {
           const Spacing.mediumHeight(),
           StatsInfoWidget(
             totalText: 'Total money earned',
-            totalValue: '${currencyNG(context).currencySymbol}300k',
+            totalValue: '${currency(context).currencySymbol}300k',
             percent: '5%',
             chartImage: AppImages.redChart,
             percentIcon: AppImages.arrowDownIcon,
             percentColor: AppColors.darkRed,
           ),
           const Spacing.mediumHeight(),
-          CustomerStatsRatingWidget(
+          const CustomerStatsRatingWidget(
             customerNumber: '200',
             totalText: 'Customer ratings',
             totalValue: '4.0',
@@ -52,9 +50,4 @@ class MyStatsScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-currencyNG(context){
-  var format = NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN');
-  return format;
 }

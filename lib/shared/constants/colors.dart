@@ -4,6 +4,7 @@ class AppColors {
   AppColors._();
   static const Color primaryColor = Color(0xff3E2F8A);
   static const Color white = Color.fromRGBO(255, 255, 255, 1);
+  static const Color opaqueWhite = Color.fromRGBO(255, 255, 255, 0.28);
   static const Color offWhite = Color.fromRGBO(243, 243, 243, 1);
   static const Color black = Color.fromRGBO(45, 45, 45, 1);
   static const Color slateGray = Color.fromRGBO(97, 59, 76, 1);
@@ -19,7 +20,6 @@ class AppColors {
   static const Color transparent = Colors.transparent;
   static const Color lightRedd = Color.fromRGBO(82, 0, 11, 0.2);
   static const Color lighterRed =  Color.fromRGBO(94, 81, 172, 0.05);
-  static const Color lighterRed = Color.fromRGBO(94, 81, 172, 0.05);
   static const Color yellow = Color.fromRGBO(225, 242, 172, 1);
   static const Color faintGrey = Color.fromRGBO(94, 81, 172, 0.05);
   static const Color darkYellow = Color.fromRGBO(148, 142, 0, 1);
