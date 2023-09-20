@@ -1,16 +1,14 @@
-import 'dart:io';
 import 'package:dispatchapp/core/routers/route_generator.dart';
+import 'package:dispatchapp/features/home/presentation/widgets/currency.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/custom_stats_widget.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/customer_rating_widget.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/home_notification_widget.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/recent_orders_widget.dart';
-import 'package:dispatchapp/features/orders/presentation/widgets/recent_orders_info_widget.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/app_image_view.dart';
 import 'package:dispatchapp/shared/widgets/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -57,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                 title: 'You have an order!',
                 subTitle: 'Sola is requesting for your delivery services.',
                 onTap: (){
-                  Navigator.pushNamed(context, RouteGenerator.emptyHomeScreen);
+                  Navigator.pushNamed(context, RouteGenerator.acceptRejectScreen);
                 },
               ),
               const Spacing.mediumHeight(),
@@ -187,9 +185,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-currency(context){
-  var format = NumberFormat.simpleCurrency(locale: Platform.localeName, name: 'NGN');
-  return format;
 }

@@ -1,9 +1,7 @@
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class CustomerRatingWidget extends StatelessWidget {
   const CustomerRatingWidget({
@@ -61,18 +59,25 @@ class CustomerRatingWidget extends StatelessWidget {
                     style: AppTextStyle.headerLarge.copyWith(fontSize: 30),
                   ),
                   const Spacing.tinyWidth(),
-                  RatingBar.builder(
-                    initialRating: 4,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemSize: 18,
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber
-                    ),
-                    onRatingUpdate: (rating) {},
+                  const Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: AppColors.goldYellow,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: AppColors.goldYellow,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: AppColors.goldYellow,
+                      ),
+                      Icon(
+                        Icons.star_outline,
+                        color: AppColors.goldYellow,
+                      ),
+                    ],
                   )
                 ],
               ),

@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
         ),
         title: AppStrings.appName,
         onGenerateRoute: RouteGenerator.onGenerateRoute,
-        home: const SplashScreen(),
+        home: const Nav(),
       ),
     );
   }

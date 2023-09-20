@@ -51,7 +51,7 @@ class _NavState extends State<Nav> {
           BottomNavigationBarItem(
               icon: SizedBox(
                   child: AppImageView(
-                svgPath: AppImages.homeIcon,
+                svgPath: _currentIndex == 0 ? AppImages.homeIcon: AppImages.initialHomeIcon,
                 width: 24,
                 height: 24,
                 color: _currentIndex == 0 ? AppColors.darkRed : null,

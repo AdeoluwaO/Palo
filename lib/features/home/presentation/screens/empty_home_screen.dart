@@ -1,19 +1,12 @@
-import 'dart:io';
 import 'package:dispatchapp/core/routers/route_generator.dart';
-import 'package:dispatchapp/features/home/presentation/widgets/custom_stats_widget.dart';
-import 'package:dispatchapp/features/home/presentation/widgets/customer_rating_widget.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/home_notification_widget.dart';
-import 'package:dispatchapp/features/home/presentation/widgets/recent_orders_widget.dart';
-import 'package:dispatchapp/features/orders/presentation/widgets/recent_orders_info_widget.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/app_button.dart';
-import 'package:dispatchapp/features/home/presentation/widgets/nav_bar.dart';
 import 'package:dispatchapp/shared/widgets/app_image_view.dart';
 import 'package:dispatchapp/shared/widgets/app_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:intl/intl.dart';
 
 class EmptyHomeScreen extends StatelessWidget {
   const EmptyHomeScreen({Key? key}) : super(key: key);

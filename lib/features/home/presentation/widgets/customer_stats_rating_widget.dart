@@ -1,9 +1,7 @@
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class CustomerStatsRatingWidget extends StatelessWidget {
   const CustomerStatsRatingWidget({
@@ -23,7 +21,7 @@ class CustomerStatsRatingWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 300.h,
+        height: 260.h,
         width: 400.w,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
@@ -32,91 +30,191 @@ class CustomerStatsRatingWidget extends StatelessWidget {
           color: AppColors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey
-                  .withOpacity(0.1), // Shadow color
+              color: Colors.grey.withOpacity(0.1), // Shadow color
               spreadRadius: 0, // Spread radius
               blurRadius: 3, // Blur radius
-              offset: const Offset(
-                  0, 1), // Offset for shadow
+              offset: const Offset(0, 1), // Offset for shadow
             ),
           ],
         ),
-
-        child: Stack(
+        child: Column(
           children: [
-            Text(
-              totalText,
-              style: AppTextStyle.headerMedium.copyWith(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14,
-                  color: AppColors.grey),
+            Row(
+              children: [
+                Text(
+                  totalText,
+                  style: AppTextStyle.headerMedium.copyWith(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                      color: AppColors.grey),
+                ),
+              ],
             ),
             const Spacing.smallHeight(),
-            Positioned(
-              top: 30.h,
-              child: Row(
-                children: [
-                  Text(
-                    totalValue,
-                    style: AppTextStyle.headerLarge.copyWith(fontSize: 30),
-                  ),
-                  const Spacing.tinyWidth(),
-                  const Spacing.tinyWidth(),
-                  RatingBar.builder(
-                    initialRating: 4,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemSize: 20,
-                    itemBuilder: (context, _) => const Icon(
+            Row(
+              children: [
+                Text(
+                  totalValue,
+                  style: AppTextStyle.headerLarge.copyWith(fontSize: 30),
+                ),
+                const Spacing.tinyWidth(),
+                const Spacing.tinyWidth(),
+                const Row(
+                  children: [
+                    Icon(
                       Icons.star,
-                      color: Colors.amber
+                      color: AppColors.goldYellow,
                     ),
-                    onRatingUpdate: (rating) {},
-                  )
-                ],
-              ),
+                    Icon(
+                      Icons.star,
+                      color: AppColors.goldYellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: AppColors.goldYellow,
+                    ),
+                    Icon(
+                      Icons.star_outline,
+                      color: AppColors.goldYellow,
+                    ),
+                  ],
+                ),
+                const Spacing.largeWidth(),
+                const Spacing.largeWidth(),
+                Container(
+                  alignment: Alignment.center,
+                  height: 26.h,
+                  width: 106.w,
+                  decoration: BoxDecoration(
+                    color: numberBackgroundColor,
+                    borderRadius: BorderRadius.circular(1000),
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Spacing.tinyWidth(),
+                        const Spacing.tinyWidth(),
+                        Text(
+                          customerNumber,
+                          style: AppTextStyle.bodySmall.copyWith(
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.green,
+                              overflow: TextOverflow.visible),
+                        ),
+                        Text(
+                          'customers',
+                          style: AppTextStyle.bodySmall.copyWith(
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.green,
+                              overflow: TextOverflow.visible),
+                        ),
+                        const Spacing.tinyWidth(),
+                        const Spacing.tinyWidth(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Positioned(
-              left: 250.h,
-              top: 45.h,
-              child: Container(
-                alignment: Alignment.center,
-                height: 26.h,
-                width: 106.w,
-                decoration: BoxDecoration(
-                  color: numberBackgroundColor,
-                  borderRadius: BorderRadius.circular(
-                      1000
+            const Spacing.smallHeight(),
+            Row(
+              children: [
+                Text(
+                  '5',
+                  style: AppTextStyle.headerMedium
+                      .copyWith(fontSize: 14, color: AppColors.grey),
+                ),
+                const Spacing.smallWidth(),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 1,
+                    color: AppColors.goldYellow,
+                    borderRadius: BorderRadius.circular(2.0),
+                    minHeight: 8,
                   ),
                 ),
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Spacing.tinyWidth(),
-                      const Spacing.tinyWidth(),
-                      Text(
-                        customerNumber,
-                        style: AppTextStyle.bodySmall.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.green,
-                            overflow: TextOverflow.visible),
-                      ),
-                      Text(
-                        'customers',
-                        style: AppTextStyle.bodySmall.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.green,
-                            overflow: TextOverflow.visible),
-                      ),
-                      const Spacing.tinyWidth(),
-                      const Spacing.tinyWidth(),
-                    ],
+              ],
+            ),
+            const Spacing.smallHeight(),
+            Row(
+              children: [
+                Text(
+                  '4',
+                  style: AppTextStyle.headerMedium
+                      .copyWith(fontSize: 14, color: AppColors.grey),
+                ),
+                const Spacing.smallWidth(),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.8,
+                    color: AppColors.goldYellow,
+                    minHeight: 8,
+                    borderRadius: BorderRadius.circular(2.0),
+                    backgroundColor: AppColors.lightGrey,
                   ),
                 ),
-              ),
+              ],
+            ),
+            const Spacing.smallHeight(),
+            Row(
+              children: [
+                Text(
+                  '3',
+                  style: AppTextStyle.headerMedium
+                      .copyWith(fontSize: 14, color: AppColors.grey),
+                ),
+                const Spacing.smallWidth(),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.6,
+                    color: AppColors.goldYellow,
+                    borderRadius: BorderRadius.circular(2.0),
+                    minHeight: 8,
+                    backgroundColor: AppColors.lightGrey,
+                  ),
+                ),
+              ],
+            ),
+            const Spacing.smallHeight(),
+            Row(
+              children: [
+                Text(
+                  '2',
+                  style: AppTextStyle.headerMedium
+                      .copyWith(fontSize: 14, color: AppColors.grey),
+                ),
+                const Spacing.smallWidth(),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.4,
+                    color: AppColors.goldYellow,
+                    borderRadius: BorderRadius.circular(2.0),
+                    minHeight: 8,
+                    backgroundColor: AppColors.lightGrey,
+                  ),
+                ),
+              ],
+            ),
+            const Spacing.smallHeight(),
+            Row(
+              children: [
+                Text(
+                  '1',
+                  style: AppTextStyle.headerMedium
+                      .copyWith(fontSize: 14, color: AppColors.grey),
+                ),
+                const Spacing.smallWidth(),
+                Expanded(
+                  child: LinearProgressIndicator(
+                    value: 0.2,
+                    color: AppColors.goldYellow,
+                    borderRadius: BorderRadius.circular(2.0),
+                    minHeight: 8,
+                    backgroundColor: AppColors.lightGrey,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
