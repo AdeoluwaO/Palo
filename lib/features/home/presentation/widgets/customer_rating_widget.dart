@@ -3,20 +3,18 @@ import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomStatsWidget extends StatelessWidget {
-  const CustomStatsWidget({
+class CustomerRatingWidget extends StatelessWidget {
+  const CustomerRatingWidget({
     super.key,
     required this.totalText,
     required this.totalValue,
-    required this.percent,
-    required this.percentIcon,
-    required this.percentColor,
-    required this.percentBackgroundColor,
+    required this.customerNumber,
+    required this.numberBackgroundColor,
     this.onTap,
   });
-  final String totalText, totalValue, percent, percentIcon;
+  final String totalText, customerNumber, totalValue;
   final Function()? onTap;
-  final Color percentColor, percentBackgroundColor;
+  final Color numberBackgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +25,8 @@ class CustomStatsWidget extends StatelessWidget {
         width: 400.w,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightPurple),
-            borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: AppColors.lightPurple),
+          borderRadius: BorderRadius.circular(12),
           color: AppColors.white,
           boxShadow: [
             BoxShadow(
@@ -54,22 +52,47 @@ class CustomStatsWidget extends StatelessWidget {
             const Spacing.smallHeight(),
             Positioned(
               top: 30.h,
-              child: Text(
-                totalValue,
-                style: AppTextStyle.headerLarge.copyWith(fontSize: 30),
+              child: Row(
+                children: [
+                  Text(
+                    totalValue,
+                    style: AppTextStyle.headerLarge.copyWith(fontSize: 30),
+                  ),
+                  const Spacing.tinyWidth(),
+                  const Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: AppColors.goldYellow,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: AppColors.goldYellow,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: AppColors.goldYellow,
+                      ),
+                      Icon(
+                        Icons.star_outline,
+                        color: AppColors.goldYellow,
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
             Positioned(
-              left: 300.h,
+              left: 250.h,
               top: 45.h,
               child: Container(
                 alignment: Alignment.center,
                 height: 26.h,
-                width: 54.w,
+                width: 106.w,
                 decoration: BoxDecoration(
-                  color: percentBackgroundColor,
+                  color: numberBackgroundColor,
                   borderRadius: BorderRadius.circular(
-                    1000
+                      1000
                   ),
                 ),
                 child: Center(
@@ -77,18 +100,22 @@ class CustomStatsWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Spacing.tinyWidth(),
-                      AppImageView(
-                        svgPath: percentIcon,
-                        height: 10,
-                        width: 10,
-                      ),
+                      const Spacing.tinyWidth(),
                       Text(
-                        percent,
+                        customerNumber,
                         style: AppTextStyle.bodySmall.copyWith(
                             fontWeight: FontWeight.w500,
-                            color: percentColor,
+                            color: AppColors.green,
                             overflow: TextOverflow.visible),
                       ),
+                      Text(
+                        'customers',
+                        style: AppTextStyle.bodySmall.copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.green,
+                            overflow: TextOverflow.visible),
+                      ),
+                      const Spacing.tinyWidth(),
                       const Spacing.tinyWidth(),
                     ],
                   ),
