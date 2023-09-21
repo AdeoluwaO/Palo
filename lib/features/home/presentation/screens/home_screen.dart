@@ -2,8 +2,6 @@ import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/custom_stats_widget.dart';
 import 'package:dispatchapp/features/home/presentation/widgets/nav_bar.dart';
 import 'package:dispatchapp/features/orders/presentation/widgets/recent_orders_info_widget.dart';
-import 'package:dispatchapp/shared/constants/app_text_style.dart';
-import 'package:dispatchapp/shared/constants/colors.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/app_image_view.dart';
 import 'package:dispatchapp/shared/widgets/app_scaffold.dart';
@@ -21,18 +19,15 @@ class HomeScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Row(
           children: [
-            Text(
-                "Home",
-                style: AppTextStyle.headerLarge.copyWith(
-                    fontSize: 24
-                )
-            ),
+            Text("Home",
+                style: AppTextStyle.headerLarge.copyWith(fontSize: 24)),
           ],
         ),
         actions: [
           GestureDetector(
-            onTap: (){
-              Navigator.pushNamed(context, RouteGenerator.orderNotificationsScreen);
+            onTap: () {
+              Navigator.pushNamed(
+                  context, RouteGenerator.orderNotificationsScreen);
             },
             child: AppImageView(
               svgPath: AppImages.homeNotifyIcon,
@@ -41,7 +36,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Spacing.mediumWidth(),
-
         ],
         backgroundColor: AppColors.white,
         elevation: 0,
@@ -56,19 +50,14 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                      "My Stats",
-                      style: AppTextStyle.headerLarge.copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500
-                      )),
-                  Text(
-                      "View report",
+                  Text("My Stats",
+                      style: AppTextStyle.headerLarge
+                          .copyWith(fontSize: 20, fontWeight: FontWeight.w500)),
+                  Text("View report",
                       style: AppTextStyle.headerLarge.copyWith(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
-                        color: AppColors.grey
-                      )),
+                          color: AppColors.grey)),
                 ],
               ),
               const Spacing.smallHeight(),
@@ -78,8 +67,7 @@ class HomeScreen extends StatelessWidget {
                   percent: "10%",
                   percentIcon: AppImages.arrowUpIcon,
                   percentColor: AppColors.green,
-                  percentBackgroundColor: AppColors.lightGreen
-              ),
+                  percentBackgroundColor: AppColors.lightGreen),
               const Spacing.smallHeight(),
               const CustomStatsWidget(
                   totalText: 'Total money earned',
@@ -87,8 +75,7 @@ class HomeScreen extends StatelessWidget {
                   percent: "5%",
                   percentIcon: AppImages.arrowDownIcon,
                   percentColor: AppColors.red,
-                  percentBackgroundColor: AppColors.lightRed
-              ),
+                  percentBackgroundColor: AppColors.lightRed),
               const Spacing.smallHeight(),
               const CustomStatsWidget(
                   totalText: 'Total completed orders',
@@ -96,25 +83,19 @@ class HomeScreen extends StatelessWidget {
                   percent: "5%",
                   percentIcon: AppImages.arrowDownIcon,
                   percentColor: AppColors.red,
-                  percentBackgroundColor: AppColors.lightRed
-              ),
+                  percentBackgroundColor: AppColors.lightRed),
               const Spacing.mediumHeight(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                      "Recent Orders",
-                      style: AppTextStyle.headerLarge.copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500
-                      )),
-                  Text(
-                      "See All",
+                  Text("Recent Orders",
+                      style: AppTextStyle.headerLarge
+                          .copyWith(fontSize: 20, fontWeight: FontWeight.w500)),
+                  Text("See All",
                       style: AppTextStyle.headerLarge.copyWith(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
-                          color: AppColors.grey
-                      )),
+                          color: AppColors.grey)),
                 ],
               ),
               const Spacing.mediumHeight(),
@@ -125,7 +106,8 @@ class HomeScreen extends StatelessWidget {
                 orderStatusTextColor: AppColors.red600,
                 orderStatusBackgroundColor: AppColors.lightRedd,
                 onTap: () {
-                  Navigator.pushNamed(context, RouteGenerator.noRecentOrderScreen);
+                  Navigator.pushNamed(
+                      context, RouteGenerator.noRecentOrderScreen);
                 },
               ),
               const Spacing.mediumHeight(),
@@ -136,7 +118,8 @@ class HomeScreen extends StatelessWidget {
                 orderStatusTextColor: AppColors.green,
                 orderStatusBackgroundColor: AppColors.green200,
                 onTap: () {
-                  Navigator.pushNamed(context, RouteGenerator.orderDetailScreen);
+                  Navigator.pushNamed(
+                      context, RouteGenerator.orderDeliveryDetailScreen);
                 },
               ),
               const Spacing.mediumHeight(),
@@ -147,7 +130,8 @@ class HomeScreen extends StatelessWidget {
                 orderStatusTextColor: AppColors.red600,
                 orderStatusBackgroundColor: AppColors.lightRedd,
                 onTap: () {
-                  Navigator.pushNamed(context, RouteGenerator.noRecentOrderScreen);
+                  Navigator.pushNamed(
+                      context, RouteGenerator.noRecentOrderScreen);
                 },
               ),
               const Spacing.mediumHeight(),
@@ -158,11 +142,11 @@ class HomeScreen extends StatelessWidget {
                 orderStatusTextColor: AppColors.green,
                 orderStatusBackgroundColor: AppColors.green200,
                 onTap: () {
-                  Navigator.pushNamed(context, RouteGenerator.orderDetailScreen);
+                  Navigator.pushNamed(
+                      context, RouteGenerator.orderDeliveryDetailScreen);
                 },
               ),
             ],
-
           ),
         ),
       ),

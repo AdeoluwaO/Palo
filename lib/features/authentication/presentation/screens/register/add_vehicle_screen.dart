@@ -56,12 +56,56 @@ class AddVehicleScreen extends StatelessWidget {
                     AppTextField(
                       hintText: 'Registration number',
                       onChange: (p0) {},
-                      suffixIcon: IconButton(
-                        tooltip: 'Bicycles are exempted',
-                        icon: const Icon(Icons.info_outline_rounded),
-                        onPressed: () {},
+                      suffixIcon: Tooltip(
+                        message: 'Bicycles are exempted',
+                        textStyle: AppTextStyle.bodySmall
+                            .copyWith(fontSize: 13, color: AppColors.black),
+                        // margin: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            color: AppColors.white,
+                            border: Border.all(color: AppColors.lightPurple),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(8),
+                              bottomRight: Radius.circular(8),
+                              bottomLeft: Radius.circular(8),
+                            )),
+                        child: IconButton(
+                          icon: const Icon(Icons.info_outline_rounded),
+                          onPressed: () {},
+                        ),
                       ),
                     ),
+                    const Spacing.largeHeight(),
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        AppImageView(
+                          color: AppColors.lightPurple,
+                          height: 150.h,
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Column(
+                            children: [
+                              Transform.flip(
+                                flipX: true,
+                                child: const Icon(
+                                  Icons.add_a_photo_outlined,
+                                  size: 60,
+                                  color: AppColors.grey,
+                                ),
+                              ),
+                              const Spacing.mediumHeight(),
+                              Text(
+                                'Take vehicle picture',
+                                style: AppTextStyle.bodySmall.copyWith(
+                                    fontSize: 16, color: AppColors.black),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    )
                   ],
                 ),
               ),
