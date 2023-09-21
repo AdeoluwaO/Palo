@@ -1,5 +1,5 @@
-import 'package:dispatchapp/features/account/presentation/widgets/auth_custom_scaffold.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
+import 'package:dispatchapp/shared/widgets/simple_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class DeleteAccountSuccessScreen extends StatelessWidget {
@@ -7,7 +7,7 @@ class DeleteAccountSuccessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomAuthScaffold(
+    return SimpleScaffoled(
       body: Center(
         child: Text(
           'Your account has been\nsuccessfully deleted!',

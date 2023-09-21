@@ -2,13 +2,12 @@ import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-//? this scaffold is used in the succesfully deleted accoutn screen
-class CustomAuthScaffold extends StatelessWidget {
-  const CustomAuthScaffold({
-    super.key,
-    required this.body,
-  });
+//? this is a simple scaffold used in the
+//? successfullty deleted account, order cancelled
+class SimpleScaffoled extends StatelessWidget {
+  const SimpleScaffoled({super.key, required this.body});
   final Widget body;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

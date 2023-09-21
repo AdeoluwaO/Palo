@@ -73,7 +73,10 @@ class _OrderDeliveryDetailScreenState extends State<OrderDeliveryDetailScreen> {
                                   ),
                                 ),
                                 TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.popAndPushNamed(context,
+                                        RouteGenerator.orderCancelledScreen);
+                                  },
                                   child: Text(
                                     'Cancel order',
                                     style: AppTextStyle.bodyMediumX.copyWith(

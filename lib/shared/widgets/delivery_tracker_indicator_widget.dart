@@ -25,20 +25,28 @@ class _DeliveryTrackerWidgetState extends State<DeliveryTrackerWidget> {
               ),
             ),
           ),
-          Row(
-            children: [
-              SvgPicture.asset(AppImages.checkedIcon),
-              //! animate width simultaneously with deliveryIcon offset
-              Container(
-                height: 6.h,
-                //? initially [0] increase by 0.4 or any digit
-                //? as delivery step gets completed
-                //? maximum width must be [0.8 (80%)] multiplied by the device's width
-                width: MediaQuery.sizeOf(context).width * 0.2,
-                color: AppColors.primaryColor,
-              ),
-            ],
+          Container(
+            height: 6.h,
+            //? initially [0] increase by 0.4 or any digit
+            //? as delivery step gets completed
+            //? maximum width must be [0.8 (80%)] multiplied by the device's width
+            width: MediaQuery.sizeOf(context).width * 0.2,
+            color: AppColors.primaryColor,
           ),
+          // Row(
+          //   children: [
+          //     SvgPicture.asset(AppImages.checkedIcon),
+          //     //! animate width simultaneously with deliveryIcon offset
+          //     Container(
+          //       height: 6.h,
+          //       //? initially [0] increase by 0.4 or any digit
+          //       //? as delivery step gets completed
+          //       //? maximum width must be [0.8 (80%)] multiplied by the device's width
+          //       width: MediaQuery.sizeOf(context).width * 0.2,
+          //       color: AppColors.primaryColor,
+          //     ),
+          //   ],
+          // ),
           PositionedDirectional(
             end: 10.w,
             child: Transform.translate(

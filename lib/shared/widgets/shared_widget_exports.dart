@@ -19,3 +19,4 @@ export 'package:top_snackbar_flutter/top_snack_bar.dart';
 export './app_show_bottomsheet.dart';
 export './app_show_dialogue.dart';
 export './app_show_top_snackbar.dart';
+export 'simple_scaffold.dart';
