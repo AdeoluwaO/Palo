@@ -1,6 +1,11 @@
+import 'dart:developer';
+
+import 'package:dispatchapp/core/routers/route_generator.dart';
 import 'package:dispatchapp/features/orders/presentation/widgets/order_button.dart';
 import 'package:dispatchapp/features/orders/presentation/widgets/order_screen_bottomsheet.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
+import 'package:dispatchapp/shared/widgets/app_show_dialogue.dart';
+import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -37,14 +42,49 @@ class _OrderDeliveryDetailScreenState extends State<OrderDeliveryDetailScreen> {
                         Navigator.pop(context);
                       },
                     ),
-                    OrderCustomButton(
-                      icon: const Icon(
-                        Icons.more_vert,
-                        size: 30,
+                    Tooltip(
+                      message: 'Cancel order',
+                      decoration: BoxDecoration(
+                          color: AppColors.darkRed,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: OrderCustomButton(
+                        icon: const Icon(
+                          Icons.more_vert,
+                          size: 30,
+                        ),
+                        onTap: () {
+                          AppShowDialogue.showDialogue(
+                            context: context,
+                            child: AppDialogue(
+                              title:
+                                  'Are you sure you want to cancel this order?',
+                              message:
+                                  'Once cancelled, your progress will be lost and you won’t receive any payment.',
+                              height: 260.h,
+                              actionButtons: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text(
+                                    'Cancel',
+                                    style: AppTextStyle.bodyMediumX.copyWith(
+                                        fontSize: 14, color: AppColors.black),
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Cancel order',
+                                    style: AppTextStyle.bodyMediumX.copyWith(
+                                        fontSize: 14, color: AppColors.darkRed),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
-                      onTap: () {
-                        // _bottomSheet();
-                      },
                     ),
                   ],
                 ),
@@ -53,7 +93,7 @@ class _OrderDeliveryDetailScreenState extends State<OrderDeliveryDetailScreen> {
           ),
         ),
       ),
-      bottomSheet: OrderScreenBottomsheet(),
+      bottomSheet: const OrderScreenBottomsheet(),
     );
   }
 }

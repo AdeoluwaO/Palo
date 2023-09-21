@@ -10,6 +10,7 @@ class AppImages {
   static const String testVehicleImage = '$_baseImagePath/vehicle_image.png';
   static const String orderImage = '$_baseImagePath/test_order_image.png';
   static const String testImage = '$_baseImagePath/test_berrystamp.jpg';
+  static const String placeholderImage = '$_baseImagePath/placeholder.jpg';
   static const String recentOrderImage = '$_baseImagePath/order_image.png';
   static const String homeNotifyImage = '$_baseImagePath/home_notify_image.png';
   static const String updateImage = '$_baseImagePath/update_image.png';
@@ -54,6 +55,7 @@ class AppImages {
   static const String othersIcon = '$_baseSvgPath/truck.svg';
   static const String successfulIcon = '$_baseSvgPath/successful_icon.svg';
   static const String noRecentOrderIcon = '$_baseSvgPath/no_recent_orders.svg';
+//   static const String homeIcon = '$_baseSvgPath/home_icon.svg';
   static const String chatIcon = '$_baseSvgPath/chat_icon.svg';
   static const String moreIcon = '$_baseSvgPath/more_icon.svg';
   static const String homeNotifyIcon = '$_baseSvgPath/home_notifications.svg';

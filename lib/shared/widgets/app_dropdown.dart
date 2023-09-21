@@ -4,25 +4,28 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class AppDropdown extends StatelessWidget {
-  AppDropdown(
-      {super.key,
-      this.shape,
-      this.padding,
-      this.variant,
-      this.fontStyle,
-      this.alignment,
-      this.width,
-      this.margin,
-      this.focusNode,
-      this.icon,
-      this.hintText,
-      this.prefix,
-      this.prefixConstraints,
-      this.items,
-      this.onChanged,
-      this.onSaved,
-      this.borderRadius,
-      this.validator});
+  AppDropdown({
+    super.key,
+    this.shape,
+    this.padding,
+    this.variant,
+    this.fontStyle,
+    this.alignment,
+    this.width,
+    this.height,
+    this.margin,
+    this.focusNode,
+    this.icon,
+    this.hintText,
+    this.prefix,
+    this.prefixConstraints,
+    this.items,
+    this.onChanged,
+    this.onSaved,
+    this.borderRadius,
+    this.validator,
+    this.onTap,
+  });
 
   DropDownShape? shape;
 
@@ -34,7 +37,7 @@ class AppDropdown extends StatelessWidget {
 
   Alignment? alignment;
 
-  double? width;
+  double? width, height;
 
   EdgeInsetsGeometry? margin;
 
@@ -49,6 +52,8 @@ class AppDropdown extends StatelessWidget {
   BoxConstraints? prefixConstraints;
 
   List<String>? items;
+
+  final void Function()? onTap;
 
   Function(String)? onChanged;
   Function(String)? onSaved;
@@ -67,38 +72,41 @@ class AppDropdown extends StatelessWidget {
   }
 
   _buildDropDownWidget() {
-    return Container(
-      width: width ?? double.maxFinite,
-      height: 64.h,
-      margin: margin,
-      decoration: BoxDecoration(
-          borderRadius: borderRadius ?? BorderRadius.circular(12)),
-      child: DropdownButtonFormField(
-        focusNode: focusNode,
-        isExpanded: true,
-        icon: icon ??
-            const Icon(
-              Icons.expand_more,
-              color: AppColors.grey,
-            ),
-        style: _setFontStyle(),
-        decoration: _buildDecoration(),
-        items: items?.map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(
-              value,
-              overflow: TextOverflow.ellipsis,
-            ),
-          );
-        }).toList(),
-        onChanged: (value) {
-          onChanged!(value.toString());
-        },
-        validator: validator,
-        onSaved: (v) {
-          onSaved!(v.toString());
-        },
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width ?? double.maxFinite,
+        height: height,
+        margin: margin,
+        decoration: BoxDecoration(
+            borderRadius: borderRadius ?? BorderRadius.circular(12)),
+        child: DropdownButtonFormField(
+          focusNode: focusNode,
+          isExpanded: true,
+          icon: icon ??
+              const Icon(
+                Icons.expand_more,
+                color: AppColors.grey,
+              ),
+          style: _setFontStyle(),
+          decoration: _buildDecoration(),
+          items: items?.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(
+                value,
+                overflow: TextOverflow.ellipsis,
+              ),
+            );
+          }).toList(),
+          onChanged: (value) {
+            onChanged!(value.toString());
+          },
+          validator: validator,
+          onSaved: (v) {
+            onSaved!(v.toString());
+          },
+        ),
       ),
     );
   }
@@ -158,6 +166,13 @@ class AppDropdown extends StatelessWidget {
           borderRadius: _setOutlineBorderRadius(),
           borderSide: BorderSide.none,
         );
+      case DropDownVariant.fillWhite:
+        return OutlineInputBorder(
+            borderRadius: _setOutlineBorderRadius(),
+            borderSide: const BorderSide(
+              color: AppColors.lightPurple,
+              width: 1,
+            ));
       case DropDownVariant.none:
         return InputBorder.none;
       default:
@@ -172,6 +187,8 @@ class AppDropdown extends StatelessWidget {
     switch (variant) {
       case DropDownVariant.fillGray900:
         return AppColors.lightPurple;
+      case DropDownVariant.fillWhite:
+        return AppColors.white;
       default:
         return AppColors.lightPurple;
     }
@@ -208,11 +225,7 @@ enum DropDownPadding {
   paddingT11,
 }
 
-enum DropDownVariant {
-  none,
-  fillGray100,
-  fillGray900,
-}
+enum DropDownVariant { none, fillGray100, fillGray900, fillWhite }
 
 enum DropDownFontStyle {
   DmSans14,

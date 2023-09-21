@@ -46,6 +46,11 @@ export '../../features/authentication/presentation/screens/register/signup_scree
 export '../../features/authentication/presentation/screens/register/signup_form_screen.dart';
 export '../../features/authentication/presentation/screens/register/select_account_type.dart';
 export '../../features/authentication/presentation/screens/register/update_account_screen.dart';
+export '../../features/authentication/presentation/screens/register/verify_email_screen.dart';
+export '../../features/authentication/presentation/screens/register/verify_email_otp_screen.dart';
+export '../../features/authentication/presentation/screens/register/add_photo_screen.dart';
+export '../../features/authentication/presentation/screens/register/add_widthdrawal_account_screen.dart';
+export '../../features/authentication/presentation/screens/register/add_vehicle_screen.dart';
 export '../../features/authentication/presentation/screens/authentication_otp_screen.dart';
 export '../../features/authentication/presentation/screens/create_password_scren.dart';
 export '../../features/dashboard/presentation/screens/dashboard_screen.dart';

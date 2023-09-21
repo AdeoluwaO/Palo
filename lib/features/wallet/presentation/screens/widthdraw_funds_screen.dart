@@ -45,13 +45,12 @@ class WidthdrawFundsScreen extends StatelessWidget {
                   AppTextStyle.bodyMedium.copyWith(color: AppColors.white),
               color: AppColors.darkRed,
               onTap: () {
-                showModalBottomSheet(
-                    backgroundColor: Colors.transparent,
+                AppShowBottomSheet.appshowModalBottomsheet(
                     context: context,
-                    builder: (context) => const WithdrawBottomSheet(
-                          message:
-                              'You are about to make a withdrawal to this Firstbank account with number 3115607405',
-                        ));
+                    child: const WithdrawBottomSheet(
+                      message:
+                          'You are about to make a withdrawal to this Firstbank account with number 3115607405',
+                    ));
               },
             ),
             const Spacing.mediumHeight(),

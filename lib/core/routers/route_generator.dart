@@ -35,7 +35,7 @@ class RouteGenerator {
   static const addYourVehicleScreen = 'add_your_vehicle.dart';
   static const ordersScreen = 'orders_screen';
   static const noRecentOrderScreen = 'no_recent_order_screen';
-  static const orderDetailScreen = 'order_detail_screen';
+  static const orderDeliveryDetailScreen = 'order_detail_screen';
   static const homeScreen = 'home_screen';
   static const navBar = 'nav_bar';
   static const myStatsScreen = 'my_stats_screen';
@@ -53,6 +53,11 @@ class RouteGenerator {
   static const createPasswordScreen = 'create_password_screen';
   static const updateAccountScreen = 'update_profile_screen';
   static const dashboardScreen = 'dashboard_screen';
+  static const verifyEmailScreen = 'verify_email_screen';
+  static const verifyEmailOtpScreen = 'verify_email_otp_screen';
+  static const addProfilePhotoScreen = 'add_profile_photo_screen';
+  static const addAccountWidthdrawalScreen = 'add_account_widthdrawal_screen';
+  static const addVehicleScreen = 'add_vehicle_screen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -186,7 +191,7 @@ class RouteGenerator {
         return CupertinoPageRoute(
           builder: (context) => const NoRecentOrderScreen(),
         );
-      case orderDetailScreen:
+      case orderDeliveryDetailScreen:
         return CupertinoPageRoute(
           builder: (context) => const OrderDeliveryDetailScreen(),
         );
@@ -241,17 +246,26 @@ class RouteGenerator {
         return CupertinoPageRoute(
           builder: (context) => const DashboardScreen(),
         );
-      case addYourVehicleScreen:
+      case verifyEmailScreen:
         return CupertinoPageRoute(
-          builder: (context) => const AddYourVehicleScreen(),
+          builder: (context) => const VerifyEmailScreen(),
         );
-      case homeScreen:
+      case verifyEmailOtpScreen:
+        final email = routeSettings.arguments as String;
         return CupertinoPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (context) => VerifyEmailOtpScreen(email: email),
         );
-      case navBar:
+      case addProfilePhotoScreen:
         return CupertinoPageRoute(
-          builder: (context) => const Nav() ,
+          builder: (context) => const AddProfilePhotoScreen(),
+        );
+      case addAccountWidthdrawalScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AddWidthdrawalAccountScreen(),
+        );
+      case addVehicleScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AddVehicleScreen(),
         );
       case myStatsScreen:
         return CupertinoPageRoute(

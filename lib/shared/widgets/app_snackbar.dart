@@ -12,7 +12,7 @@ class AppSnackbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 90.h,
-      width: 320.w,
+      width: 330.w,
       padding:
           EdgeInsetsDirectional.symmetric(horizontal: 16.w, vertical: 16.h),
       decoration: BoxDecoration(
@@ -25,9 +25,13 @@ class AppSnackbar extends StatelessWidget {
             radius: 30,
           ),
           const Spacing.smallWidth(),
-          Text(
-            message,
-            style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
+          SizedBox(
+            width: 280.w,
+            child: Text(
+              message,
+              maxLines: 2,
+              style: AppTextStyle.headerLarge.copyWith(fontSize: 16),
+            ),
           )
         ],
       ),
