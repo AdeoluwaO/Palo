@@ -102,7 +102,9 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
                       const Spacing.mediumHeight(),
                       //? pass api delivery info to this widget
                       DeliveryTrackerWidget(
-                        activeStep: 0,
+                        activeStep: 1,
+                        totalStepsCount: 4,
+                        showHorizontalSteper: false,
                         activeStepsIcon: Transform.scale(
                           scale: 1,
                           child: SvgPicture.asset(AppImages.checkedIcon),
@@ -112,6 +114,10 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
                           child: SvgPicture.asset(AppImages.inactiveIcon),
                         ),
                         stepMessage: const OrderDeliveryInfoWidget(),
+                        onFinished: () {
+                          Navigator.pushNamed(
+                              context, RouteGenerator.orderSuccessScreen);
+                        },
                       ),
                       // const OrderDeliveryInfoWidget(),
                       const Spacing.mediumHeight(),
@@ -123,4 +129,6 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
           );
         });
   }
+
+  _navigateToSuccessPage() {}
 }
