@@ -28,60 +28,49 @@ class OrderDeliveryInfoWidget extends StatelessWidget {
           style: AppTextStyle.bodyMediumX
               .copyWith(fontSize: 14, color: AppColors.darkGrey),
         ),
-        const Spacing.largeHeight(),
+        const Spacing.smallHeight(),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
+            AppImageView(
+              imagePath: AppImages.testProfileImage,
+              radius: const BorderRadius.all(Radius.circular(30)),
+              height: 52.h,
+              width: 50.w,
+            ),
+            const Spacing.mediumWidth(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppImageView(
-                  imagePath: AppImages.testProfileImage,
-                  radius: const BorderRadius.all(Radius.circular(30)),
-                  height: 52.h,
-                  width: 50.w,
+                const Text(
+                  'Printer',
+                  style: AppTextStyle.bodySmall,
                 ),
-                const Spacing.mediumWidth(),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Printer',
-                      style: AppTextStyle.bodySmall,
-                    ),
-                    Text(
-                      'Andi Joseph',
-                      style: AppTextStyle.bodyMediumX
-                          .copyWith(color: AppColors.darkGrey),
-                    ),
-                  ],
-                )
+                Text(
+                  'Andi Joseph',
+                  style: AppTextStyle.bodyMediumX
+                      .copyWith(color: AppColors.darkGrey),
+                ),
               ],
             ),
-            GestureDetector(
-              onTap: () {
-                final Uri telUri = Uri(
-                  scheme: 'tel',
-                  path: '09077826377',
-                );
-
-                launchUrl(telUri);
-              },
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: AppColors.green,
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
-                ),
-                height: 52.h,
-                width: 50.w,
-                child: const Icon(
+            Spacing.width(MediaQuery.sizeOf(context).width * 0.1),
+            AppButton(
+                title: '',
+                color: AppColors.green,
+                leading: const Icon(
                   Icons.phone_outlined,
                   color: AppColors.white,
                 ),
-              ),
-            ),
+                onTap: () {
+                  final Uri telUri = Uri(
+                    scheme: 'tel',
+                    path: '09077826377',
+                  );
+
+                  launchUrl(telUri);
+                }),
           ],
         ),
-        const Spacing.largeHeight(),
+        const Spacing.smallHeight(),
         AppButton(
           title: 'Printer’s location reached',
           onTap: () {},

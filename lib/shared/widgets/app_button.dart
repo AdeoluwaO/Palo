@@ -17,6 +17,7 @@ class AppButton extends StatelessWidget {
     this.borderColor,
     this.padding,
     this.titleStyle,
+    this.leading,
     this.suffixIcon,
   });
   final Function() onTap;
@@ -27,7 +28,7 @@ class AppButton extends StatelessWidget {
   final EdgeInsets? padding;
   final double? width, height, borderRadius;
   final TextStyle? titleStyle;
-  final Widget? suffixIcon;
+  final Widget? leading, suffixIcon;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -48,13 +49,14 @@ class AppButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              title,
-              style: titleStyle ??
-                  AppTextStyle.headerLarge
-                      .copyWith(fontSize: 16, color: AppColors.white),
-              textAlign: TextAlign.center,
-            ),
+            leading ??
+                Text(
+                  title,
+                  style: titleStyle ??
+                      AppTextStyle.headerLarge
+                          .copyWith(fontSize: 16, color: AppColors.white),
+                  textAlign: TextAlign.center,
+                ),
             suffixIcon != null
                 ? const Spacing.mediumWidth()
                 : const SizedBox.shrink(),

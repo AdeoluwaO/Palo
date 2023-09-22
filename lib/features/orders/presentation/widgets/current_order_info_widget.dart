@@ -71,7 +71,7 @@ class CurrentOrderInfoWidget extends StatelessWidget {
                 ],
               ),
               const Spacing.mediumHeight(),
-              const DeliveryTrackerWidget(),
+              // const DeliveryTrackerWidget(),
               const Spacing.mediumHeight(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

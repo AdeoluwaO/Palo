@@ -6,6 +6,7 @@ import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class OrderScreenBottomsheet extends StatefulWidget {
   const OrderScreenBottomsheet({super.key});
@@ -100,7 +101,18 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
                       ),
                       const Spacing.mediumHeight(),
                       //? pass api delivery info to this widget
-                      const DeliveryTrackerWidget(),
+                      DeliveryTrackerWidget(
+                        activeStep: 0,
+                        activeStepsIcon: Transform.scale(
+                          scale: 1,
+                          child: SvgPicture.asset(AppImages.checkedIcon),
+                        ),
+                        inactiveStepsIcon: Transform.scale(
+                          scale: 1,
+                          child: SvgPicture.asset(AppImages.inactiveIcon),
+                        ),
+                        stepMessage: const OrderDeliveryInfoWidget(),
+                      ),
                       // const OrderDeliveryInfoWidget(),
                       const Spacing.mediumHeight(),
                     ],
