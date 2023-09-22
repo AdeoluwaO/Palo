@@ -18,7 +18,7 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-        minChildSize: 0.16,
+        minChildSize: 0.17,
         maxChildSize: 0.6,
         expand: false,
         builder: (context, _) {
@@ -76,7 +76,7 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'orderId',
                                     style: AppTextStyle.bodySmall,
                                   ),

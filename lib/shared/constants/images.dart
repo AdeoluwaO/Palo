@@ -11,6 +11,11 @@ class AppImages {
   static const String orderImage = '$_baseImagePath/test_order_image.png';
   static const String testImage = '$_baseImagePath/test_berrystamp.jpg';
   static const String placeholderImage = '$_baseImagePath/placeholder.jpg';
+  static const String recentOrderImage = '$_baseImagePath/order_image.png';
+  static const String homeNotifyImage = '$_baseImagePath/home_notify_image.png';
+  static const String updateImage = '$_baseImagePath/update_image.png';
+  static const String mrCustomerImage = '$_baseImagePath/mr_customer.png';
+  static const String mrPrinterImage = '$_baseImagePath/mr_printer.png';
 
 //?[SVG]
   static const String noVisisbilityIcon = '$_baseSvgPath/visibility_off.svg';
@@ -50,13 +55,18 @@ class AppImages {
   static const String othersIcon = '$_baseSvgPath/truck.svg';
   static const String successfulIcon = '$_baseSvgPath/successful_icon.svg';
   static const String noRecentOrderIcon = '$_baseSvgPath/no_recent_orders.svg';
-  static const String homeIcon = '$_baseSvgPath/home_icon.svg';
+//   static const String homeIcon = '$_baseSvgPath/home_icon.svg';
   static const String chatIcon = '$_baseSvgPath/chat_icon.svg';
   static const String moreIcon = '$_baseSvgPath/more_icon.svg';
   static const String homeNotifyIcon = '$_baseSvgPath/home_notifications.svg';
   static const String navOrderIcon = '$_baseSvgPath/nav_orders_icon.svg';
   static const String arrowUpIcon = '$_baseSvgPath/up_icon.svg';
   static const String arrowDownIcon = '$_baseSvgPath/icon_down.svg';
+  static const String redChart = '$_baseSvgPath/red_chart.svg';
+  static const String greenChart = '$_baseSvgPath/green_chart.svg';
+  static const String homePageNotify = '$_baseSvgPath/homepage_notify.svg';
+  static const String updateIcon = '$_baseSvgPath/update_icon.svg';
+  static const String nothingBars = '$_baseSvgPath/nothing_bars.svg';
   static const String activeIcon = '$_baseSvgPath/active.svg';
   static const String inactiveIcon = '$_baseSvgPath/inactive.svg';
   static const String checkedIcon = '$_baseSvgPath/checked.svg';
@@ -64,6 +74,8 @@ class AppImages {
   static const String businessIcon = '$_baseSvgPath/business_icon.svg';
   static const String imageIcon = '$_baseSvgPath/image_icon.svg';
   static const String mailIcon = '$_baseSvgPath/mail_icon.svg';
+  static const String homeIcon = '$_baseSvgPath/home.svg';
+  static const String initialHomeIcon = '$_baseSvgPath/initial_home.svg';
 
   //? [APP ANIMATIONS]
   static const String successAnimation = '$_animationsPath/success.json';

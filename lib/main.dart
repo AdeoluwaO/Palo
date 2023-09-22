@@ -1,4 +1,3 @@
-
 import 'package:dispatchapp/core/routers/app_route_exports.dart';
 import 'package:dispatchapp/features/onboarding/presentation/screen/splash_screen.dart';
 import 'package:dispatchapp/shared/app_providers.dart';
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(428, 926),
       builder: (BuildContext context, Widget? child) => MaterialApp(
-      debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         navigatorKey: navigatorKey,
         scrollBehavior: SBehavior(),
         theme: ThemeData(
@@ -57,7 +56,7 @@ class MyApp extends StatelessWidget {
         ),
         title: AppStrings.appName,
         onGenerateRoute: RouteGenerator.onGenerateRoute,
-        home: const SplashScreen(),
+        home: const OnboardingScreen(),
       ),
     );
   }

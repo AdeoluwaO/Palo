@@ -15,15 +15,10 @@ class _DeliveryTrackerWidgetState extends State<DeliveryTrackerWidget> {
     return Container(
       child: Stack(
         children: [
-          Center(
-            child: Transform.translate(
-              offset: Offset(0, 10.h),
-              child: Container(
-                height: 6.h,
-                width: MediaQuery.sizeOf(context).width * 0.8,
-                color: AppColors.lightPurple,
-              ),
-            ),
+          Container(
+            height: 6.h,
+            width: MediaQuery.sizeOf(context).width * 0.8,
+            color: AppColors.lightPurple,
           ),
           Container(
             height: 6.h,
@@ -33,6 +28,10 @@ class _DeliveryTrackerWidgetState extends State<DeliveryTrackerWidget> {
             width: MediaQuery.sizeOf(context).width * 0.2,
             color: AppColors.primaryColor,
           ),
+          // Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: SvgPicture.asset(AppImages.checkedIcon),
+          // ),
           // Row(
           //   children: [
           //     SvgPicture.asset(AppImages.checkedIcon),

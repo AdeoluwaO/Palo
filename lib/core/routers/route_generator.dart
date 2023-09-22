@@ -36,6 +36,11 @@ class RouteGenerator {
   static const ordersScreen = 'orders_screen';
   static const noRecentOrderScreen = 'no_recent_order_screen';
   static const orderDeliveryDetailScreen = 'order_detail_screen';
+  static const homeScreen = 'home_screen';
+  static const navBar = 'nav_bar';
+  static const myStatsScreen = 'my_stats_screen';
+  static const acceptRejectScreen = 'accept_reject_order_screen';
+  static const emptyHomeScreen = 'empty_home_screen';
   static const orderSuccessScreen = 'order_success_screen';
   static const orderCancelledScreen = 'order_cancelled_screen';
   static const orderDetailsScreen = 'order_details_screen';
@@ -47,7 +52,7 @@ class RouteGenerator {
   static const authOtpScreen = 'auth_otp_screen';
   static const createPasswordScreen = 'create_password_screen';
   static const updateAccountScreen = 'update_profile_screen';
-  static const dashboardScreen = 'dashboard_screen';
+  // static const dashboardScreen = 'dashboard_screen';
   static const verifyEmailScreen = 'verify_email_screen';
   static const verifyEmailOtpScreen = 'verify_email_otp_screen';
   static const addProfilePhotoScreen = 'add_profile_photo_screen';
@@ -237,10 +242,6 @@ class RouteGenerator {
         return CupertinoPageRoute(
           builder: (context) => const UpdateAccountScreen(),
         );
-      case dashboardScreen:
-        return CupertinoPageRoute(
-          builder: (context) => const DashboardScreen(),
-        );
       case verifyEmailScreen:
         return CupertinoPageRoute(
           builder: (context) => const VerifyEmailScreen(),
@@ -261,6 +262,22 @@ class RouteGenerator {
       case addVehicleScreen:
         return CupertinoPageRoute(
           builder: (context) => const AddVehicleScreen(),
+        );
+      case myStatsScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const MyStatsScreen(),
+        );
+      case acceptRejectScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const AcceptRejectScreen(),
+        );
+      case emptyHomeScreen:
+        return CupertinoPageRoute(
+          builder: (context) => const EmptyHomeScreen(),
+        );
+      case navBar:
+        return CupertinoPageRoute(
+          builder: (context) => const Nav(),
         );
       default:
         throw UnimplementedError('Route not found');

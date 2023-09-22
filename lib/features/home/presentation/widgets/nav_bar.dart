@@ -36,14 +36,10 @@ class _NavState extends State<Nav> {
         selectedItemColor: AppColors.darkRed,
         backgroundColor: white,
         elevation: 2.0,
-        selectedLabelStyle: AppTextStyle.headerMedium.copyWith(
-          fontWeight: FontWeight.w400,
-          fontSize: 12
-        ),
-        unselectedLabelStyle: AppTextStyle.headerMedium.copyWith(
-            fontWeight: FontWeight.w400,
-            fontSize: 12
-        ),
+        selectedLabelStyle: AppTextStyle.headerMedium
+            .copyWith(fontWeight: FontWeight.w400, fontSize: 12),
+        unselectedLabelStyle: AppTextStyle.headerMedium
+            .copyWith(fontWeight: FontWeight.w400, fontSize: 12),
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: tabItem,
@@ -51,7 +47,9 @@ class _NavState extends State<Nav> {
           BottomNavigationBarItem(
               icon: SizedBox(
                   child: AppImageView(
-                svgPath: AppImages.homeIcon,
+                svgPath: _currentIndex == 0
+                    ? AppImages.homeIcon
+                    : AppImages.initialHomeIcon,
                 width: 24,
                 height: 24,
                 color: _currentIndex == 0 ? AppColors.darkRed : null,
@@ -59,7 +57,7 @@ class _NavState extends State<Nav> {
               label: 'Home'),
           BottomNavigationBarItem(
               icon: SizedBox(
-                child: AppImageView(
+                  child: AppImageView(
                 svgPath: AppImages.navOrderIcon,
                 width: 24,
                 height: 24,
@@ -68,7 +66,7 @@ class _NavState extends State<Nav> {
               label: 'Orders'),
           BottomNavigationBarItem(
               icon: SizedBox(
-                child: AppImageView(
+                  child: AppImageView(
                 svgPath: AppImages.chatIcon,
                 width: 24,
                 height: 24,

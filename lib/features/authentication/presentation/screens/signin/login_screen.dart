@@ -57,8 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   title: 'Login',
                   color: AppColors.darkRed,
                   onTap: () {
-                    Navigator.pushNamed(
-                        context, RouteGenerator.dashboardScreen);
+                    Navigator.pushNamed(context, RouteGenerator.navBar);
                   }),
               const Spacing.mediumHeight(),
             ],
