@@ -51,8 +51,9 @@ class HomeScreen extends StatelessWidget {
                 notifyImage: AppImages.homeNotifyImage,
                 title: 'You have an order!',
                 subTitle: 'Sola is requesting for your delivery services.',
-                onTap: (){
-                  Navigator.pushNamed(context, RouteGenerator.acceptRejectScreen);
+                onTap: () {
+                  Navigator.pushNamed(
+                      context, RouteGenerator.acceptRejectScreen);
                 },
               ),
               const Spacing.mediumHeight(),
@@ -60,47 +61,43 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                      "My Stats",
-                      style: AppTextStyle.headerLarge.copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500
-                      )),
+                  Text("My Stats",
+                      style: AppTextStyle.headerLarge
+                          .copyWith(fontSize: 20, fontWeight: FontWeight.w500)),
                   GestureDetector(
-                    onTap: (){
-                      Navigator.pushNamed(context, RouteGenerator.myStatsScreen);
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, RouteGenerator.myStatsScreen);
                     },
-                    child: Text(
-                        "View report",
+                    child: Text("View report",
                         style: AppTextStyle.headerLarge.copyWith(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
-                          color: AppColors.grey
-                        )),
+                            color: AppColors.grey)),
                   ),
                 ],
               ),
               const Spacing.smallHeight(),
               CustomStatsWidget(
-                  totalText: 'Total completed orders',
-                  totalValue: "300",
-                  percent: "10%",
-                  percentIcon: AppImages.arrowUpIcon,
-                  percentColor: AppColors.green,
-                  percentBackgroundColor: AppColors.lightGreen,
-                  onTap: (){
+                totalText: 'Total completed orders',
+                totalValue: "300",
+                percent: "10%",
+                percentIcon: AppImages.arrowUpIcon,
+                percentColor: AppColors.green,
+                percentBackgroundColor: AppColors.lightGreen,
+                onTap: () {
                   Navigator.pushNamed(context, RouteGenerator.myStatsScreen);
                 },
               ),
               const Spacing.smallHeight(),
               CustomStatsWidget(
-                  totalText: 'Total money earned',
-                  totalValue: '${currency(context).currencySymbol}300k',
-                  percent: "5%",
-                  percentIcon: AppImages.arrowDownIcon,
-                  percentColor: AppColors.red,
-                  percentBackgroundColor: AppColors.lightRed,
-                  onTap: (){
+                totalText: 'Total money earned',
+                totalValue: '${currency(context).currencySymbol}300k',
+                percent: "5%",
+                percentIcon: AppImages.arrowDownIcon,
+                percentColor: AppColors.red,
+                percentBackgroundColor: AppColors.lightRed,
+                onTap: () {
                   Navigator.pushNamed(context, RouteGenerator.myStatsScreen);
                 },
               ),
@@ -108,10 +105,9 @@ class HomeScreen extends StatelessWidget {
               CustomerRatingWidget(
                   totalText: 'Customer ratings',
                   totalValue: '4.0',
-                  onTap: (){},
+                  onTap: () {},
                   customerNumber: '200',
-                  numberBackgroundColor: AppColors.lightGreen
-              ),
+                  numberBackgroundColor: AppColors.lightGreen),
               const Spacing.mediumHeight(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -147,7 +143,7 @@ class HomeScreen extends StatelessWidget {
                 orderStatusBackgroundColor: AppColors.green200,
                 onTap: () {
                   Navigator.pushNamed(
-                      context, RouteGenerator.orderDeliveryDetailScreen);
+                      context, RouteGenerator.orderDetailsScreen);
                 },
               ),
               const Spacing.mediumHeight(),
@@ -159,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                 orderStatusBackgroundColor: AppColors.lightRed,
                 onTap: () {
                   Navigator.pushNamed(
-                      context, RouteGenerator.noRecentOrderScreen);
+                      context, RouteGenerator.orderDetailsScreen);
                 },
               ),
               const Spacing.mediumHeight(),
@@ -171,7 +167,7 @@ class HomeScreen extends StatelessWidget {
                 orderStatusBackgroundColor: AppColors.green200,
                 onTap: () {
                   Navigator.pushNamed(
-                      context, RouteGenerator.orderDeliveryDetailScreen);
+                      context, RouteGenerator.orderDetailsScreen);
                 },
               ),
             ],

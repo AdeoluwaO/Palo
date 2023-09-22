@@ -51,10 +51,7 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
                     physics: const BouncingScrollPhysics(),
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(
-                              context, RouteGenerator.orderDetailsScreen);
-                        },
+                        onTap: () {},
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: 16.w, vertical: 16.h),
@@ -103,9 +100,8 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
                       ),
                       const Spacing.mediumHeight(),
                       //? pass api delivery info to this widget
-                      Transform.rotate(
-                          angle: 0, child: const DeliveryTrackerWidget()),
-                      const OrderDeliveryInfoWidget(),
+                      const DeliveryTrackerWidget(),
+                      // const OrderDeliveryInfoWidget(),
                       const Spacing.mediumHeight(),
                     ],
                   ),

@@ -48,8 +48,7 @@ class OrdersScreen extends StatelessWidget {
             orderStatusTextColor: AppColors.green,
             orderStatusBackgroundColor: AppColors.green200,
             onTap: () {
-              Navigator.pushNamed(
-                  context, RouteGenerator.orderDeliveryDetailScreen);
+              Navigator.pushNamed(context, RouteGenerator.orderDetailsScreen);
             },
           ),
           const Spacing.mediumHeight(),
@@ -59,7 +58,9 @@ class OrdersScreen extends StatelessWidget {
             orderStatus: 'Cancelled',
             orderStatusTextColor: AppColors.red600,
             orderStatusBackgroundColor: AppColors.lightRedd,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.orderDetailsScreen);
+            },
           ),
           const Spacing.mediumHeight(),
           RecentOrderInfoWidget(
@@ -68,7 +69,9 @@ class OrdersScreen extends StatelessWidget {
             orderStatus: 'Compeleted',
             orderStatusTextColor: AppColors.green,
             orderStatusBackgroundColor: AppColors.green200,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteGenerator.orderDetailsScreen);
+            },
           ),
         ],
       ),
