@@ -3,6 +3,7 @@ import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CurrentOrderInfoWidget extends StatelessWidget {
   const CurrentOrderInfoWidget({super.key});
@@ -71,7 +72,26 @@ class CurrentOrderInfoWidget extends StatelessWidget {
                 ],
               ),
               const Spacing.mediumHeight(),
-              // const DeliveryTrackerWidget(),
+              Center(
+                child: DeliveryTrackerWidget(
+                  activeStep: 1,
+                  totalStepsCount: 4,
+                  showHorizontalSteper: true,
+                  activeLineWidth: 90.w,
+                  activeStepsIcon: Transform.scale(
+                    scale: 1,
+                    child: SvgPicture.asset(AppImages.checkedIcon),
+                  ),
+                  inactiveStepsIcon: Transform.scale(
+                    scale: 1,
+                    child: SvgPicture.asset(AppImages.inactiveIcon),
+                  ),
+                  onFinished: () {
+                    Navigator.pushNamed(
+                        context, RouteGenerator.orderSuccessScreen);
+                  },
+                ),
+              ),
               const Spacing.mediumHeight(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

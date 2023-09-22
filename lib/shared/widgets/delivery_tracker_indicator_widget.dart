@@ -1,7 +1,6 @@
 import 'package:dispatchapp/features/orders/presentation/widgets/order_deliver_info_widget.dart';
 import 'package:dispatchapp/shared/constants/constants_exports.dart';
 import 'package:dispatchapp/shared/widgets/shared_widget_exports.dart';
-import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +14,7 @@ class DeliveryTrackerWidget extends StatefulWidget {
     required this.totalStepsCount,
     required this.activeStepsIcon,
     required this.inactiveStepsIcon,
-    required this.stepMessage,
+    this.stepMessage,
     this.showHorizontalSteper = false,
     this.activeStepColor,
     this.inactiveStepColor,
@@ -28,7 +27,8 @@ class DeliveryTrackerWidget extends StatefulWidget {
   final int activeStep;
   final int totalStepsCount;
   final bool showHorizontalSteper;
-  final Widget activeStepsIcon, inactiveStepsIcon, stepMessage;
+  final Widget activeStepsIcon, inactiveStepsIcon;
+  final Widget? stepMessage;
   final Color? activeStepColor, inactiveStepColor;
   final double? activeLineHeight,
       inactiveLineHeight,
@@ -88,7 +88,8 @@ class _DeliveryTrackerWidgetState extends State<DeliveryTrackerWidget> {
                   ],
                 ),
                 const Spacing.mediumWidth(),
-                if (_activeStep == index) widget.stepMessage,
+                if (_activeStep == index)
+                  widget.stepMessage ?? const SizedBox.shrink(),
               ],
             );
           },
@@ -107,7 +108,8 @@ class _DeliveryTrackerWidgetState extends State<DeliveryTrackerWidget> {
                 : widget.inactiveStepsIcon,
             Container(
               height: widget.inactiveLineHeight ?? 6.h,
-              width: MediaQuery.sizeOf(context).width / widget.totalStepsCount,
+              width: widget.activeLineWidth ??
+                  MediaQuery.sizeOf(context).width / widget.totalStepsCount,
               color: index < _activeStep && _activeStep == widget.activeStep
                   ? widget.activeStepColor ?? AppColors.primaryColor
                   : widget.inactiveStepColor ?? AppColors.lightPurple,
@@ -122,18 +124,6 @@ class _DeliveryTrackerWidgetState extends State<DeliveryTrackerWidget> {
   }
 
   double getHeightLineHeight(int activeStep, int index) {
-    final deviceWidth = MediaQuery.sizeOf(context).width;
-    if (activeStep == index) {
-      return widget.activeLineWidth ??
-          (deviceWidth * 0.7) / widget.totalStepsCount;
-    } else if (index + 1 == widget.totalStepsCount) {
-      return 0;
-    } else {
-      return widget.inactiveLineWidth ?? 30.w;
-    }
-  }
-
-  double getLineWidth(int activeStep, int index) {
     if (activeStep == index) {
       return widget.activeLineHeight ?? 300.h;
     } else if (index + 1 == widget.totalStepsCount) {

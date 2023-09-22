@@ -71,12 +71,14 @@ class OrderDeliveryInfoWidget extends StatelessWidget {
           ],
         ),
         const Spacing.smallHeight(),
-        AppButton(
-          title: 'Printer’s location reached',
-          onTap: () {},
-          borderColor: AppColors.primaryColor,
-          titleStyle: AppTextStyle.bodyMediumX
-              .copyWith(fontSize: 14, color: AppColors.primaryColor),
+        Center(
+          child: AppButton(
+            title: 'Printer’s location reached',
+            onTap: () {},
+            borderColor: AppColors.primaryColor,
+            titleStyle: AppTextStyle.bodyMediumX
+                .copyWith(fontSize: 14, color: AppColors.primaryColor),
+          ),
         )
       ],
     );

@@ -119,7 +119,6 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
                               context, RouteGenerator.orderSuccessScreen);
                         },
                       ),
-                      // const OrderDeliveryInfoWidget(),
                       const Spacing.mediumHeight(),
                     ],
                   ),
@@ -129,6 +128,4 @@ class _OrderScreenBottomsheetState extends State<OrderScreenBottomsheet> {
           );
         });
   }
-
-  _navigateToSuccessPage() {}
 }
