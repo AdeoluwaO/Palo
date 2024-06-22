@@ -92,8 +92,11 @@ class _AppTextFieldState extends State<AppTextField> {
         if (widget.label != null)
           Text(
             widget.label!,
-            style: textTheme.headlineMedium?.copyWith(
-              color: widget.labelColor ?? colorScheme.onBackground,
+            // style: textTheme.headlineSmall?.copyWith(
+            style: AppTextStyle.headerMedium.copyWith(
+              color: widget.labelColor ?? AppColors.darkRed,
+              fontSize: 16
+
             ),
           ),
         Transform.scale(
@@ -167,7 +170,7 @@ class _AppTextFieldState extends State<AppTextField> {
               disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
                 borderSide: const BorderSide(
-                  color: AppColors.primaryColor,
+                   color: AppColors.lightPurple,
                   width: 0.5,
                 ),
               ),
@@ -191,7 +194,7 @@ class _AppTextFieldState extends State<AppTextField> {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
                 borderSide: const BorderSide(
-                  color: AppColors.lightPurple,
+                 color: AppColors.primaryColor,
                   width: 1,
                 ),
               ),

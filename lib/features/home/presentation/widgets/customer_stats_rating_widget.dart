@@ -21,7 +21,7 @@ class CustomerStatsRatingWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 260.h,
+        // height: 260.h,
         width: 400.w,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(

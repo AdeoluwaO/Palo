@@ -26,49 +26,13 @@ class MyAccountScreen extends StatelessWidget {
             },
           ),
           const Spacing.mediumHeight(),
-          CustomListTile(
-            title: 'Widthdrawal account',
-            leadingIcon: AppImages.availableIcon,
-            subTitle: 'Add your widthdrawal account',
-            onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.myWidthdrawalScreen);
-            },
-          ),
-          const Spacing.mediumHeight(),
-          CustomListTile(
-            title: 'Display',
-            leadingIcon: AppImages.availableIcon,
-            subTitle: 'Upload profile photo',
-            onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.displayScreen);
-            },
-          ),
-          const Spacing.mediumHeight(),
-          CustomListTile(
-            title: 'Password settings',
-            leadingIcon: AppImages.passwordIcon,
-            subTitle: 'Update your password',
-            onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.changePasswordScreen);
-            },
-          ),
-          const Spacing.mediumHeight(),
-          CustomListTile(
+         CustomListTile(
             title: 'Notifications',
             leadingIcon: AppImages.notificationIcon,
             subTitle: 'Update your notifications settings',
             onTap: () {
               Navigator.pushNamed(
                   context, RouteGenerator.notificationsSettingsScreen);
-            },
-          ),
-          const Spacing.mediumHeight(),
-          CustomListTile(
-            title: 'Availability',
-            leadingIcon: AppImages.availableIcon,
-            subTitle: 'Set your available time',
-            onTap: () {
-              Navigator.pushNamed(context, RouteGenerator.availabilityScreen);
             },
           ),
           const Spacing.mediumHeight(),

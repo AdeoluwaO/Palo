@@ -29,7 +29,7 @@
   </queries>
   <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="Dispatch App"
+        android:label="Palo Flutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

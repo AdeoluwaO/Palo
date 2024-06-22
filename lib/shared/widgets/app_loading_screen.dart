@@ -5,31 +5,53 @@ import 'package:flutter/material.dart';
 class AppLoadingScreen extends StatelessWidget {
   const AppLoadingScreen({
     super.key,
-    required this.message,
+    this.message,
   });
-  final String message;
+  final String? message;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.white,
-      body: Center(
-        child: Column(
+    final OverlayPortalController _overlayController =
+        OverlayPortalController()..show();
+    return OverlayPortal(
+      controller: _overlayController,
+      overlayChildBuilder: (context) {
+        return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const CircularProgressIndicator(
-              color: AppColors.primaryColor,
+              color: AppColors.darkRed,
             ),
             const Spacing.mediumHeight(),
             Text(
-              message,
+              message ?? 'Loading...',
               style: AppTextStyle.bodySmall
-                  .copyWith(fontSize: 14, color: AppColors.black),
+                  .copyWith(fontSize: 14, color: AppColors.grey50),
               textAlign: TextAlign.center,
             )
           ],
-        ),
-      ),
+        );
+      },
     );
+    // return Scaffold(
+    //   backgroundColor: AppColors.white,
+    //   body: Center(
+    //     child: Column(
+    //       mainAxisAlignment: MainAxisAlignment.center,
+    //       children: [
+    //         const CircularProgressIndicator(
+    //           color: AppColors.primaryColor,
+    //         ),
+    //         const Spacing.mediumHeight(),
+    //         Text(
+    //           message,
+    //           style: AppTextStyle.bodySmall
+    //               .copyWith(fontSize: 14, color: AppColors.black),
+    //           textAlign: TextAlign.center,
+    //         )
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 }

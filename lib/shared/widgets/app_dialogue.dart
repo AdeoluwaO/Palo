@@ -25,26 +25,25 @@ class AppDialogue extends StatelessWidget {
       content: Container(
         // alignment: Alignment.center,
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-        height: height ?? 200.h,
-        width: width ?? 600.w,
+        height: height ?? 250,
+        width: width ?? 600,
         decoration: BoxDecoration(
             color: AppColors.white, borderRadius: BorderRadius.circular(30)),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
               title,
-              style: AppTextStyle.bodyMediumX
-                  .copyWith(fontSize: 20, color: AppColors.black),
+              style: AppTextStyle.headerLarge
+                  .copyWith(fontSize: 16, color: AppColors.darkRed,),
+                  textAlign: TextAlign.center,
             ),
             const Spacing.mediumHeight(),
-            Expanded(
-              child: Text(
-                message,
-                style: AppTextStyle.bodyMediumX.copyWith(fontSize: 14),
-              ),
+            Text(
+              message,
+              style: AppTextStyle.bodyMediumX.copyWith(fontSize: 14),
+              textAlign: TextAlign.center,
             ),
-            // const Divider(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: actionButtons!,
