@@ -5,6 +5,7 @@ import 'package:dispatchapp/shared/constants/app_text_style.dart';
 import 'package:dispatchapp/shared/constants/colors.dart';
 import 'package:dispatchapp/shared/constants/images.dart';
 import 'package:dispatchapp/shared/widgets/app_button.dart';
+import 'package:dispatchapp/shared/widgets/app_loading_screen.dart';
 import 'package:dispatchapp/shared/widgets/app_scaffold.dart';
 import 'package:dispatchapp/shared/widgets/app_spacing.dart';
 import 'package:flutter/material.dart';
@@ -19,16 +20,24 @@ class DeleteAccountScreen extends StatefulWidget {
 }
 
 class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
-   @override
+  @override
   void initState() {
     super.initState();
-    Provider.of<ProfileProvider>(context, listen: false);
+    final profileProvider =
+        Provider.of<ProfileProvider>(context, listen: false);
+    (() async {
+      final storeddId = await ProfileStore.getStoredUserId();
+      await profileProvider.getUser(id: storeddId);
+      await ProfileStore.storeUser(
+          profile: profileProvider.profileResp?.profile);
+    })();
   }
+
   @override
   Widget build(BuildContext context) {
-    final provider = context.read<ProfileProvider>();
+    final provider = context.watch<ProfileProvider>();
     final profile = provider.profile;
-
+    final isLoading = provider.loading;
     return AppScaffold(
         titleText: 'Delete account',
         showBackButton: true,
@@ -80,7 +89,8 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                   textAlign: TextAlign.center,
                 ),
               ),
-
+              if (isLoading)
+                const AppLoadingScreen(message: "Loadding..."),
               const Spacer(),
               AppButton(
                 title: 'Delete account',
@@ -88,7 +98,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
                 onTap: () async {
                   Navigator.pushNamed(
                       context, RouteGenerator.confirmDeleteAccountScreen);
-                        await ProfileStore.deleteProfile();
+                  await ProfileStore.deleteProfile();
                 },
               ),
               const Spacing.mediumHeight(),
